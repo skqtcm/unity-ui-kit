@@ -1,0 +1,16 @@
+{
+  "name": "unity-ui-kit",
+  "version": "1.0.0",
+  "description": "Unity UI Kit v1.0 design tokens, component APIs, and icon keys extracted from Figma",
+  "main": "index.js",
+  "types": "unity-ui-kit.d.ts",
+  "files": [
+    "index.js",
+    "unity-ui-kit-complete.json",
+    "unity-ui-kit-icons.json",
+    "unity-ui-kit.d.ts"
+  ],
+  "keywords": ["unity", "ui-kit", "design-tokens", "figma"],
+  "license": "UNLICENSED",
+  "private": true
+}
