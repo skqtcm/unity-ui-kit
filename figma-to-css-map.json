@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "description": "Maps Figma Unity UI Kit component names to CSS classes",
+    "version": "1.1",
+    "exportedAt": "2026-08-24"
+  },
+  "components": {
+    "button_unity": {
+      "baseClass": "unity-btn",
+      "variants": {
+        "Primary": "unity-btn-primary",
+        "Secondary": "unity-btn-secondary",
+        "Link": "unity-btn-link",
+        "Danger": "unity-btn-danger",
+        "Disabled": "unity-btn-disabled"
+      },
+      "sizes": {
+        "Large": "unity-btn-lg",
+        "Medium": "unity-btn-md",
+        "Small": "unity-btn-sm"
+      },
+      "example": "<button class=\"unity-btn unity-btn-primary unity-btn-lg\"><span class=\"material-symbols-outlined icon-sm\">add</span> Label</button>"
+    },
+    "input": {
+      "baseClass": "unity-input",
+      "modifiers": {
+        "Error": "unity-input-error",
+        "Disabled": "disabled attribute"
+      },
+      "wrapper": "unity-form-field",
+      "label": "unity-label",
+      "helpText": "unity-help-text",
+      "example": "<div class=\"unity-form-field\"><label class=\"unity-label unity-label-required\">Field Name</label><input class=\"unity-input\" placeholder=\"Enter value\"><span class=\"unity-help-text\">Helper text</span></div>"
+    },
+    "select_unity": {
+      "baseClass": "unity-input unity-select",
+      "example": "<select class=\"unity-input unity-select\"><option>Option 1</option></select>"
+    },
+    "textarea": {
+      "baseClass": "unity-input unity-textarea",
+      "example": "<textarea class=\"unity-input unity-textarea\" rows=\"4\"></textarea>"
+    },
+    "checkbox_unity": {
+      "baseClass": "unity-checkbox",
+      "example": "<label class=\"unity-checkbox\"><input type=\"checkbox\"> Label text</label>"
+    },
+    "radiobutton_unity": {
+      "baseClass": "unity-radio",
+      "cardVariant": "unity-radio-option",
+      "groupClass": "unity-radio-group",
+      "example": "<div class=\"unity-radio-group\"><label class=\"unity-radio-option\"><input type=\"radio\" name=\"group\"><span>Option A</span></label></div>"
+    },
+    "card_content": {
+      "baseClass": "unity-card",
+      "header": "unity-card-header",
+      "title": "unity-card-title",
+      "example": "<div class=\"unity-card\"><div class=\"unity-card-header\"><h3 class=\"unity-card-title\">Title</h3></div><div>Content</div></div>"
+    },
+    "message": {
+      "baseClass": "unity-message",
+      "variants": {
+        "Warning": "unity-message-warning",
+        "Error": "unity-message-error",
+        "Success": "unity-message-success",
+        "Info": "unity-message-info"
+      },
+      "example": "<div class=\"unity-message unity-message-warning\"><span class=\"material-symbols-outlined filled\">warning</span><span>Message text</span></div>"
+    },
+    "badge_unity": {
+      "baseClass": "unity-badge",
+      "variants": {
+        "Default": "unity-badge-default",
+        "Success": "unity-badge-success",
+        "Warning": "unity-badge-warning",
+        "Danger": "unity-badge-danger",
+        "Secondary": "unity-badge-secondary"
+      },
+      "example": "<span class=\"unity-badge unity-badge-warning\">Pending</span>"
+    },
+    "tag_unity": {
+      "baseClass": "unity-tag",
+      "variants": {
+        "Primary": "unity-tag-primary",
+        "Success": "unity-tag-success",
+        "Warning": "unity-tag-warning",
+        "Danger": "unity-tag-danger",
+        "Info": "unity-tag-info"
+      },
+      "example": "<span class=\"unity-tag unity-tag-success\"><span class=\"material-symbols-outlined icon-sm\">check</span> Active</span>"
+    },
+    "table-th": {
+      "baseClass": "unity-table thead th",
+      "note": "Use inside .unity-table"
+    },
+    "table-td": {
+      "baseClass": "unity-table tbody td",
+      "note": "Use inside .unity-table"
+    },
+    "Paginator": {
+      "baseClass": "unity-paginator",
+      "example": "<div class=\"unity-paginator\"><span>1-10 of 47</span><div class=\"unity-paginator-pages\"><span class=\"unity-paginator-page active\">1</span><span class=\"unity-paginator-page\">2</span></div></div>"
+    },
+    "Topbar": {
+      "baseClass": "unity-topbar",
+      "children": {
+        "logo": "unity-topbar-logo",
+        "tabs": "unity-tabs",
+        "tab": "unity-tab"
+      }
+    },
+    "Navigation Bar": {
+      "baseClass": "unity-navbar",
+      "children": {
+        "link": "unity-nav-link"
+      }
+    },
+    "RHRP footer": {
+      "baseClass": "unity-footer",
+      "children": {
+        "cui": "unity-footer-cui",
+        "row": "unity-footer-row",
+        "copyright": "unity-footer-copyright",
+        "links": "unity-footer-links"
+      }
+    },
+    "dialog toast": {
+      "baseClass": "unity-modal",
+      "overlay": "unity-modal-overlay",
+      "children": {
+        "header": "unity-modal-header",
+        "title": "unity-modal-title",
+        "close": "unity-modal-close",
+        "body": "unity-modal-body",
+        "footer": "unity-modal-footer"
+      }
+    },
+    "toast": {
+      "baseClass": "unity-toast",
+      "variants": {
+        "Info": "unity-toast-info",
+        "Success": "unity-toast-success",
+        "Warning": "unity-toast-warning",
+        "Error": "unity-toast-error"
+      }
+    },
+    "Tooltips": {
+      "baseClass": "unity-tooltip",
+      "wrapper": "unity-tooltip-wrapper"
+    },
+    "Stepper": {
+      "baseClass": "unity-stepper",
+      "children": {
+        "step": "unity-step",
+        "number": "unity-step-number",
+        "connector": "unity-step-connector"
+      }
+    },
+    "avatar": {
+      "baseClass": "unity-avatar",
+      "sizes": {
+        "Small": "unity-avatar-sm",
+        "Default": "",
+        "Large": "unity-avatar-lg"
+      }
+    },
+    "Loading...": {
+      "baseClass": "unity-spinner"
+    },
+    "divider": {
+      "baseClass": "unity-divider",
+      "element": "hr"
+    },
+    "inputswitch_mcm": {
+      "baseClass": "unity-switch"
+    },
+    "Help Text": {
+      "baseClass": "unity-help-text",
+      "errorVariant": "unity-help-text-error"
+    },
+    "Panel": {
+      "baseClass": "unity-panel"
+    },
+    "Search bar": {
+      "baseClass": "unity-input",
+      "note": "Input with search icon: add material-symbols-outlined 'search' as start icon"
+    },
+    "DatePicker": {
+      "baseClass": "unity-input",
+      "note": "Input type=date or with calendar icon"
+    }
+  },
+  "tokens": {
+    "colors": {
+      "figmaCollection": "Colors",
+      "cssPrefix": "--unity-",
+      "note": "All color tokens available as --unity-{name} custom properties"
+    },
+    "spacing": {
+      "figmaCollection": "Spacing",
+      "cssPrefix": "--unity-space-",
+      "note": "Available as --unity-space-{value}px, e.g. --unity-space-16"
+    },
+    "typography": {
+      "cssPrefix": "unity-h1 through unity-h6, unity-body, unity-sub",
+      "note": "Applied via CSS classes, not custom properties"
+    },
+    "effects": {
+      "cssPrefix": "--unity-shadow-",
+      "mapping": {
+        "Container": "--unity-shadow-container",
+        "Dialog Shadow": "--unity-shadow-dialog",
+        "Drawer": "--unity-shadow-drawer",
+        "Focus/Default": "--unity-focus-default",
+        "Focus/Error": "--unity-focus-error",
+        "Stepmenu": "--unity-shadow-stepmenu"
+      }
+    }
+  },
+  "icons": {
+    "figma": "Use unity-ui-kit-icons.json keys with importComponentSetByKeyAsync() in Figma Plugin API",
+    "web": "Use Material Symbols: <span class=\"material-symbols-outlined\">icon_name</span>",
+    "sizes": {
+      "16px": "icon-sm",
+      "20px": "icon-md (default)",
+      "24px": "icon-lg",
+      "32px": "icon-xl"
+    },
+    "filled": "Add class 'filled' for solid variant"
+  }
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detail View — Unity UI Kit Template</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="../unity-ui-kit.css" rel="stylesheet">
+<script src="../unity-ui-kit.js" defer></script>
+</head>
+<body>
+<div class="unity-page" style="flex-direction:row;">
+
+  <!-- Side Navigation -->
+  <aside class="unity-navbar" style="width:240px; min-height:100vh;">
+    <div class="unity-topbar-logo" style="margin-bottom:var(--unity-space-24);">LQTCHS</div>
+    <a href="#" class="unity-nav-link active">
+      <span class="material-symbols-outlined icon-sm">dashboard</span> Dashboard
+    </a>
+    <a href="#" class="unity-nav-link">
+      <span class="material-symbols-outlined icon-sm">event</span> Events
+    </a>
+    <a href="#" class="unity-nav-link">
+      <span class="material-symbols-outlined icon-sm">people</span> Service Members
+    </a>
+    <a href="#" class="unity-nav-link">
+      <span class="material-symbols-outlined icon-sm">upload_file</span> Uploads
+    </a>
+    <a href="#" class="unity-nav-link">
+      <span class="material-symbols-outlined icon-sm">bar_chart</span> Reports
+    </a>
+    <div style="flex:1;"></div>
+    <a href="#" class="unity-nav-link">
+      <span class="material-symbols-outlined icon-sm">settings</span> Settings
+    </a>
+    <a href="#" class="unity-nav-link">
+      <span class="material-symbols-outlined icon-sm">logout</span> Sign Out
+    </a>
+  </aside>
+
+  <!-- Main Content -->
+  <div style="flex:1; display:flex; flex-direction:column;">
+    <!-- Content -->
+    <div class="unity-content">
+      <!-- Breadcrumb + Title -->
+      <div>
+        <div class="unity-sub unity-text-secondary" style="margin-bottom:var(--unity-space-4);">
+          <a class="unity-action-link">Events</a> / <a class="unity-action-link">IL-BB-20250523-D-01</a> / Detail
+        </div>
+        <div class="unity-page-header">
+          <h1 class="unity-h2">Event Detail — IL-BB-20250523-D-01</h1>
+          <div class="unity-row">
+            <span class="unity-tag unity-tag-warning">
+              <span class="material-symbols-outlined icon-sm">warning</span> UIC Review Required
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info cards in grid -->
+      <div class="unity-grid">
+        <div class="unity-card unity-col-6">
+          <div class="unity-card-header">
+            <h3 class="unity-card-title">Event Information</h3>
+            <button class="unity-btn unity-btn-link unity-btn-sm">
+              <span class="material-symbols-outlined icon-sm">edit</span> Edit
+            </button>
+          </div>
+          <div class="unity-col unity-gap-12">
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">Event ID</span>
+              <span class="unity-body-semibold">IL-BB-20250523-D-01</span>
+            </div>
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">Type</span>
+              <span>Medical — Dental</span>
+            </div>
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">Service Component</span>
+              <span>USANG</span>
+            </div>
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">Location</span>
+              <span>Camp Lincoln, IL</span>
+            </div>
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">Date</span>
+              <span>May 23–25, 2025</span>
+            </div>
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">Status</span>
+              <span class="unity-badge unity-badge-warning">Pending UIC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="unity-card unity-col-6">
+          <div class="unity-card-header">
+            <h3 class="unity-card-title">Service Members</h3>
+          </div>
+          <div class="unity-col unity-gap-12">
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">Total Rostered</span>
+              <span class="unity-h3">47</span>
+            </div>
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">UIC Mismatches</span>
+              <span class="unity-h3" style="color:var(--unity-flagged-red);">5</span>
+            </div>
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">Scheduled</span>
+              <span class="unity-h3">32</span>
+            </div>
+            <div class="unity-row" style="justify-content:space-between;">
+              <span class="unity-text-secondary">Completed</span>
+              <span class="unity-h3" style="color:var(--unity-success-green);">10</span>
+            </div>
+          </div>
+          <hr class="unity-divider">
+          <button class="unity-btn unity-btn-primary unity-btn-md" style="width:100%;">
+            <span class="material-symbols-outlined icon-sm">people</span> View Full Roster
+          </button>
+        </div>
+      </div>
+
+      <!-- Stepper for workflow -->
+      <div class="unity-card">
+        <div class="unity-card-header">
+          <h3 class="unity-card-title">Event Workflow</h3>
+        </div>
+        <div class="unity-stepper" style="justify-content:center; padding:var(--unity-space-16) 0;">
+          <div class="unity-step completed">
+            <div class="unity-step-number"><span class="material-symbols-outlined icon-sm">check</span></div>
+            <span class="unity-sub-bold">Created</span>
+          </div>
+          <div class="unity-step-connector" style="background:var(--unity-success-green);"></div>
+          <div class="unity-step completed">
+            <div class="unity-step-number"><span class="material-symbols-outlined icon-sm">check</span></div>
+            <span class="unity-sub-bold">Roster Uploaded</span>
+          </div>
+          <div class="unity-step-connector" style="background:var(--unity-success-green);"></div>
+          <div class="unity-step active">
+            <div class="unity-step-number">3</div>
+            <span class="unity-sub-bold">UIC Review</span>
+          </div>
+          <div class="unity-step-connector"></div>
+          <div class="unity-step">
+            <div class="unity-step-number">4</div>
+            <span class="unity-sub-bold">Scheduling</span>
+          </div>
+          <div class="unity-step-connector"></div>
+          <div class="unity-step">
+            <div class="unity-step-number">5</div>
+            <span class="unity-sub-bold">Complete</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast demo button -->
+      <div class="unity-row">
+        <button class="unity-btn unity-btn-secondary unity-btn-md" onclick="Unity.toast.show({message:'Event saved successfully', type:'success'})">
+          <span class="material-symbols-outlined icon-sm">notifications</span> Test Toast
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="unity-footer">
+      <div class="unity-footer-cui">Controlled Unclassified Information</div>
+      <div class="unity-footer-row">
+        <div class="unity-footer-copyright">Copyright &copy; 1980-2026 <a href="#">QTC - A Leidos Company</a></div>
+        <div class="unity-footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility/Section 508</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

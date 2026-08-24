@@ -1100,3 +1100,224 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--unity-gray-600);
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   24. DARK MODE
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-dark {
+  --unity-bg-main: #1A1A2E;
+  --unity-bg-modal: #1E1E32;
+  --unity-bg-filled: #12121F;
+  --unity-bg-overlay: #252540;
+  --unity-bg-disabled: #2A2A3E;
+  --unity-text-primary: #E8E8F0;
+  --unity-text-secondary: #A0A0B8;
+  --unity-text-placeholder: #6B6B85;
+  --unity-text-disabled: #4A4A60;
+  --unity-stroke-gray: #3A3A50;
+  --unity-divider: #2E2E42;
+  --unity-gray-100: #1E1E30;
+  --unity-gray-200: #252538;
+  --unity-gray-400: #3A3A50;
+  --unity-white: #1A1A2E;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --unity-bg-main: #1A1A2E;
+    --unity-bg-modal: #1E1E32;
+    --unity-bg-filled: #12121F;
+    --unity-bg-overlay: #252540;
+    --unity-bg-disabled: #2A2A3E;
+    --unity-text-primary: #E8E8F0;
+    --unity-text-secondary: #A0A0B8;
+    --unity-text-placeholder: #6B6B85;
+    --unity-text-disabled: #4A4A60;
+    --unity-stroke-gray: #3A3A50;
+    --unity-divider: #2E2E42;
+    --unity-gray-100: #1E1E30;
+    --unity-gray-200: #252538;
+    --unity-gray-400: #3A3A50;
+    --unity-white: #1A1A2E;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   25. RESPONSIVE BREAKPOINTS & GRID
+   ═══════════════════════════════════════════════════════════ */
+
+/*
+ * Breakpoints:
+ *   sm  = 640px
+ *   md  = 768px
+ *   lg  = 1024px
+ *   xl  = 1280px
+ *   2xl = 1440px
+ */
+
+/* 12-column grid */
+.unity-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--unity-space-16);
+}
+
+/* Column spans */
+.unity-col-1  { grid-column: span 1; }
+.unity-col-2  { grid-column: span 2; }
+.unity-col-3  { grid-column: span 3; }
+.unity-col-4  { grid-column: span 4; }
+.unity-col-5  { grid-column: span 5; }
+.unity-col-6  { grid-column: span 6; }
+.unity-col-7  { grid-column: span 7; }
+.unity-col-8  { grid-column: span 8; }
+.unity-col-9  { grid-column: span 9; }
+.unity-col-10 { grid-column: span 10; }
+.unity-col-11 { grid-column: span 11; }
+.unity-col-12 { grid-column: span 12; }
+
+/* Responsive: md (768px+) */
+@media (min-width: 768px) {
+  .unity-md-col-1  { grid-column: span 1; }
+  .unity-md-col-2  { grid-column: span 2; }
+  .unity-md-col-3  { grid-column: span 3; }
+  .unity-md-col-4  { grid-column: span 4; }
+  .unity-md-col-5  { grid-column: span 5; }
+  .unity-md-col-6  { grid-column: span 6; }
+  .unity-md-col-7  { grid-column: span 7; }
+  .unity-md-col-8  { grid-column: span 8; }
+  .unity-md-col-9  { grid-column: span 9; }
+  .unity-md-col-10 { grid-column: span 10; }
+  .unity-md-col-11 { grid-column: span 11; }
+  .unity-md-col-12 { grid-column: span 12; }
+}
+
+/* Responsive: lg (1024px+) */
+@media (min-width: 1024px) {
+  .unity-lg-col-1  { grid-column: span 1; }
+  .unity-lg-col-2  { grid-column: span 2; }
+  .unity-lg-col-3  { grid-column: span 3; }
+  .unity-lg-col-4  { grid-column: span 4; }
+  .unity-lg-col-5  { grid-column: span 5; }
+  .unity-lg-col-6  { grid-column: span 6; }
+  .unity-lg-col-7  { grid-column: span 7; }
+  .unity-lg-col-8  { grid-column: span 8; }
+  .unity-lg-col-9  { grid-column: span 9; }
+  .unity-lg-col-10 { grid-column: span 10; }
+  .unity-lg-col-11 { grid-column: span 11; }
+  .unity-lg-col-12 { grid-column: span 12; }
+}
+
+/* Container */
+.unity-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--unity-space-24);
+}
+
+/* Hide/Show utilities */
+@media (max-width: 639px) {
+  .unity-hidden-sm { display: none !important; }
+}
+
+@media (max-width: 767px) {
+  .unity-hidden-md { display: none !important; }
+  .unity-visible-md { display: none !important; }
+}
+
+@media (min-width: 768px) {
+  .unity-visible-md { display: block !important; }
+}
+
+@media (max-width: 1023px) {
+  .unity-hidden-lg { display: none !important; }
+  .unity-visible-lg { display: none !important; }
+}
+
+@media (min-width: 1024px) {
+  .unity-visible-lg { display: block !important; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   26. ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes unity-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes unity-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes unity-slide-up {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes unity-slide-down {
+  from { transform: translateY(-16px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes unity-slide-in-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes unity-scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* Animation utility classes */
+.unity-animate-fade-in {
+  animation: unity-fade-in 200ms ease-out both;
+}
+
+.unity-animate-fade-out {
+  animation: unity-fade-out 200ms ease-out both;
+}
+
+.unity-animate-slide-up {
+  animation: unity-slide-up 200ms ease-out both;
+}
+
+.unity-animate-slide-down {
+  animation: unity-slide-down 200ms ease-out both;
+}
+
+.unity-animate-slide-in-right {
+  animation: unity-slide-in-right 200ms ease-out both;
+}
+
+.unity-animate-scale-in {
+  animation: unity-scale-in 200ms ease-out both;
+}
+
+/* Modal overlay backdrop transition */
+.unity-modal-overlay {
+  transition: opacity 200ms ease-out;
+  opacity: 0;
+}
+
+.unity-modal-overlay.visible {
+  opacity: 1;
+}
+
+/* Modal entering animation */
+.unity-modal.entering {
+  animation: unity-scale-in 200ms ease-out both;
+}
+
+/* Toast entering animation */
+.unity-toast.entering {
+  animation: unity-slide-up 200ms ease-out both;
+}

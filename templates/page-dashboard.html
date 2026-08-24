@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Unity UI Kit Template</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="../unity-ui-kit.css" rel="stylesheet">
+<script src="../unity-ui-kit.js" defer></script>
+</head>
+<body>
+<div class="unity-page">
+
+  <!-- Topbar -->
+  <div class="unity-topbar">
+    <div class="unity-topbar-logo">LQTCHS</div>
+    <div class="unity-tabs">
+      <div class="unity-tab active">Dashboard</div>
+      <div class="unity-tab">Events</div>
+      <div class="unity-tab">Reports</div>
+      <div class="unity-tab">Settings</div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="unity-content">
+    <div class="unity-page-header">
+      <h1 class="unity-h2">Dashboard</h1>
+      <div class="unity-row">
+        <button class="unity-btn unity-btn-secondary unity-btn-md">
+          <span class="material-symbols-outlined icon-sm">download</span> Export
+        </button>
+        <button class="unity-btn unity-btn-primary unity-btn-md">
+          <span class="material-symbols-outlined icon-sm">add</span> New Event
+        </button>
+      </div>
+    </div>
+
+    <!-- KPI Cards Row -->
+    <div class="unity-grid">
+      <div class="unity-card unity-col-3">
+        <div class="unity-row unity-gap-12">
+          <span class="material-symbols-outlined icon-lg" style="color:var(--unity-primary-blue);">event</span>
+          <div>
+            <div class="unity-sub unity-text-secondary">Total Events</div>
+            <div class="unity-h1">142</div>
+          </div>
+        </div>
+      </div>
+      <div class="unity-card unity-col-3">
+        <div class="unity-row unity-gap-12">
+          <span class="material-symbols-outlined icon-lg" style="color:var(--unity-success-green);">check_circle</span>
+          <div>
+            <div class="unity-sub unity-text-secondary">Completed</div>
+            <div class="unity-h1">98</div>
+          </div>
+        </div>
+      </div>
+      <div class="unity-card unity-col-3">
+        <div class="unity-row unity-gap-12">
+          <span class="material-symbols-outlined icon-lg" style="color:var(--unity-warning-yellow);">pending</span>
+          <div>
+            <div class="unity-sub unity-text-secondary">Pending</div>
+            <div class="unity-h1">37</div>
+          </div>
+        </div>
+      </div>
+      <div class="unity-card unity-col-3">
+        <div class="unity-row unity-gap-12">
+          <span class="material-symbols-outlined icon-lg" style="color:var(--unity-flagged-red);">error</span>
+          <div>
+            <div class="unity-sub unity-text-secondary">Requires Action</div>
+            <div class="unity-h1">7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="unity-grid">
+      <!-- Recent Activity -->
+      <div class="unity-card unity-col-8">
+        <div class="unity-card-header">
+          <h3 class="unity-card-title">Recent Activity</h3>
+          <a class="unity-action-link">View All</a>
+        </div>
+        <table class="unity-table">
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>IL-BB-20250523-D-01</strong></td>
+              <td>Medical</td>
+              <td><span class="unity-badge unity-badge-warning">Pending UIC</span></td>
+              <td>08/24/2026</td>
+            </tr>
+            <tr>
+              <td><strong>CA-SF-20250601-M-03</strong></td>
+              <td>Dental</td>
+              <td><span class="unity-badge unity-badge-success">Complete</span></td>
+              <td>08/23/2026</td>
+            </tr>
+            <tr>
+              <td><strong>TX-HO-20250715-D-02</strong></td>
+              <td>Medical</td>
+              <td><span class="unity-badge unity-badge-default">Scheduled</span></td>
+              <td>08/22/2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Alerts Sidebar -->
+      <div class="unity-col-4 unity-col unity-gap-12">
+        <div class="unity-card">
+          <div class="unity-card-header">
+            <h3 class="unity-card-title">Alerts</h3>
+            <span class="unity-badge unity-badge-danger">3</span>
+          </div>
+          <div class="unity-col unity-gap-8">
+            <div class="unity-message unity-message-warning" style="font-size:12px;">
+              <span class="material-symbols-outlined icon-sm filled">warning</span>
+              <span>5 SM with UIC mismatch</span>
+            </div>
+            <div class="unity-message unity-message-error" style="font-size:12px;">
+              <span class="material-symbols-outlined icon-sm filled">error</span>
+              <span>Upload failed — retry needed</span>
+            </div>
+            <div class="unity-message unity-message-info" style="font-size:12px;">
+              <span class="material-symbols-outlined icon-sm filled">info</span>
+              <span>System maintenance tonight</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="unity-card">
+          <div class="unity-card-header">
+            <h3 class="unity-card-title">Quick Actions</h3>
+          </div>
+          <div class="unity-col unity-gap-8">
+            <button class="unity-btn unity-btn-secondary unity-btn-sm" style="width:100%;justify-content:flex-start;">
+              <span class="material-symbols-outlined icon-sm">upload</span> Upload Roster
+            </button>
+            <button class="unity-btn unity-btn-secondary unity-btn-sm" style="width:100%;justify-content:flex-start;">
+              <span class="material-symbols-outlined icon-sm">calendar_today</span> Schedule Event
+            </button>
+            <button class="unity-btn unity-btn-secondary unity-btn-sm" style="width:100%;justify-content:flex-start;">
+              <span class="material-symbols-outlined icon-sm">bar_chart</span> Generate Report
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="unity-footer">
+    <div class="unity-footer-cui">Controlled Unclassified Information</div>
+    <div class="unity-footer-row">
+      <div class="unity-footer-copyright">Copyright &copy; 1980-2026 <a href="#">QTC - A Leidos Company</a></div>
+      <div class="unity-footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility/Section 508</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

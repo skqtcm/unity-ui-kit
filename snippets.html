@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity UI Kit — Component Snippets</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="unity-ui-kit.css" rel="stylesheet">
+<script src="unity-ui-kit.js" defer></script>
+<style>
+  .snippet-section { padding: 32px 24px; border-bottom: 1px solid var(--unity-divider); }
+  .snippet-section h2 { margin-bottom: 16px; }
+  .snippet-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 12px; }
+  .snippet-label { font-size: 11px; color: var(--unity-text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+</style>
+</head>
+<body style="background:var(--unity-bg-filled);">
+
+<!-- ═══════════════ BUTTONS ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Buttons</h2>
+
+  <div class="snippet-label">Variants</div>
+  <div class="snippet-row">
+    <button class="unity-btn unity-btn-primary unity-btn-lg">Primary</button>
+    <button class="unity-btn unity-btn-secondary unity-btn-lg">Secondary</button>
+    <button class="unity-btn unity-btn-link unity-btn-lg">Link</button>
+    <button class="unity-btn unity-btn-danger unity-btn-lg">Danger</button>
+    <button class="unity-btn unity-btn-disabled unity-btn-lg">Disabled</button>
+  </div>
+
+  <div class="snippet-label">Sizes</div>
+  <div class="snippet-row">
+    <button class="unity-btn unity-btn-primary unity-btn-lg">Large</button>
+    <button class="unity-btn unity-btn-primary unity-btn-md">Medium</button>
+    <button class="unity-btn unity-btn-primary unity-btn-sm">Small</button>
+  </div>
+
+  <div class="snippet-label">With Icons</div>
+  <div class="snippet-row">
+    <button class="unity-btn unity-btn-primary unity-btn-lg"><span class="material-symbols-outlined icon-sm">add</span> Add New</button>
+    <button class="unity-btn unity-btn-secondary unity-btn-md"><span class="material-symbols-outlined icon-sm">download</span> Export</button>
+    <button class="unity-btn unity-btn-danger unity-btn-sm"><span class="material-symbols-outlined icon-sm">delete</span> Remove</button>
+  </div>
+</div>
+
+<!-- ═══════════════ INPUTS ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Form Inputs</h2>
+
+  <div class="unity-form-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 800px;">
+    <div class="unity-form-field">
+      <label class="unity-label unity-label-required">Text Input</label>
+      <input class="unity-input" type="text" placeholder="Enter value">
+      <span class="unity-help-text">Helper text below input</span>
+    </div>
+    <div class="unity-form-field">
+      <label class="unity-label">Select</label>
+      <select class="unity-input unity-select">
+        <option>Option One</option>
+        <option>Option Two</option>
+      </select>
+    </div>
+    <div class="unity-form-field">
+      <label class="unity-label">Error State</label>
+      <input class="unity-input unity-input-error" type="text" value="Invalid">
+      <span class="unity-help-text unity-help-text-error">This field is required</span>
+    </div>
+  </div>
+
+  <div style="margin-top:16px; max-width:400px;">
+    <div class="unity-form-field">
+      <label class="unity-label">Textarea</label>
+      <textarea class="unity-input unity-textarea" rows="3" placeholder="Enter description..."></textarea>
+    </div>
+  </div>
+
+  <div class="snippet-label" style="margin-top:16px;">Disabled</div>
+  <input class="unity-input" type="text" value="Disabled input" disabled style="max-width:250px;">
+</div>
+
+<!-- ═══════════════ CHECKBOXES & RADIOS ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Checkboxes & Radios</h2>
+
+  <div class="snippet-row" style="gap:24px; align-items:flex-start;">
+    <div class="unity-col unity-gap-8">
+      <div class="snippet-label">Checkboxes</div>
+      <label class="unity-checkbox"><input type="checkbox" checked> Checked</label>
+      <label class="unity-checkbox"><input type="checkbox"> Unchecked</label>
+      <label class="unity-checkbox"><input type="checkbox" disabled> Disabled</label>
+    </div>
+
+    <div class="unity-col unity-gap-8">
+      <div class="snippet-label">Inline Radios</div>
+      <label class="unity-radio"><input type="radio" name="demo" checked> Option A</label>
+      <label class="unity-radio"><input type="radio" name="demo"> Option B</label>
+    </div>
+
+    <div class="unity-col unity-gap-8" style="max-width:300px;">
+      <div class="snippet-label">Card Radios</div>
+      <div class="unity-radio-group">
+        <label class="unity-radio-option">
+          <input type="radio" name="card-demo" checked>
+          <span>Accept as part of this Event</span>
+        </label>
+        <label class="unity-radio-option">
+          <input type="radio" name="card-demo">
+          <span>Remove from Event</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MESSAGES / ALERTS ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Messages / Alerts</h2>
+
+  <div class="unity-col unity-gap-12" style="max-width:700px;">
+    <div class="unity-message unity-message-info">
+      <span class="material-symbols-outlined filled">info</span>
+      <span>Informational message with helpful context.</span>
+    </div>
+    <div class="unity-message unity-message-success">
+      <span class="material-symbols-outlined filled">check_circle</span>
+      <span>Operation completed successfully.</span>
+    </div>
+    <div class="unity-message unity-message-warning">
+      <span class="material-symbols-outlined filled">warning</span>
+      <span>Warning — action required before proceeding.</span>
+    </div>
+    <div class="unity-message unity-message-error">
+      <span class="material-symbols-outlined filled">error</span>
+      <span>Error — something went wrong. Please try again.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ BADGES & TAGS ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Badges & Tags</h2>
+
+  <div class="snippet-label">Badges</div>
+  <div class="snippet-row">
+    <span class="unity-badge unity-badge-default">Default</span>
+    <span class="unity-badge unity-badge-success">Success</span>
+    <span class="unity-badge unity-badge-warning">Warning</span>
+    <span class="unity-badge unity-badge-danger">Danger</span>
+    <span class="unity-badge unity-badge-secondary">Secondary</span>
+  </div>
+
+  <div class="snippet-label">Tags</div>
+  <div class="snippet-row">
+    <span class="unity-tag unity-tag-primary"><span class="material-symbols-outlined icon-sm">label</span> Primary</span>
+    <span class="unity-tag unity-tag-success"><span class="material-symbols-outlined icon-sm">check</span> Active</span>
+    <span class="unity-tag unity-tag-warning"><span class="material-symbols-outlined icon-sm">warning</span> Review</span>
+    <span class="unity-tag unity-tag-danger"><span class="material-symbols-outlined icon-sm">close</span> Rejected</span>
+    <span class="unity-tag unity-tag-info"><span class="material-symbols-outlined icon-sm">info</span> Info</span>
+  </div>
+</div>
+
+<!-- ═══════════════ CARDS ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Cards</h2>
+
+  <div class="snippet-row" style="align-items:flex-start;">
+    <div class="unity-card" style="width:320px;">
+      <div class="unity-card-header">
+        <h3 class="unity-card-title">Card Title</h3>
+        <span class="material-symbols-outlined icon-sm" style="color:var(--unity-text-secondary); cursor:pointer;">more_vert</span>
+      </div>
+      <p class="unity-body unity-text-secondary">Card body content with description text. Supports any nested elements.</p>
+      <hr class="unity-divider">
+      <div class="unity-row" style="justify-content:flex-end;">
+        <button class="unity-btn unity-btn-link unity-btn-sm">Cancel</button>
+        <button class="unity-btn unity-btn-primary unity-btn-sm">Action</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TABLE ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Table</h2>
+
+  <div class="unity-card" style="max-width:800px;">
+    <div class="unity-table-wrapper">
+      <table class="unity-table">
+        <thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th>Name</th>
+            <th>Grade</th>
+            <th>Component</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>JOHNSON</strong>, Michael R</td>
+            <td>SGT</td>
+            <td>USANG</td>
+            <td><span class="unity-badge unity-badge-warning">Pending</span></td>
+            <td><a class="unity-action-link">Resolve</a></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>WILLIAMS</strong>, Sarah A</td>
+            <td>SPC</td>
+            <td>USAR</td>
+            <td><span class="unity-badge unity-badge-success">OK</span></td>
+            <td><span class="unity-text-secondary">—</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="unity-paginator">
+      <span>1-2 of 47 records</span>
+      <div class="unity-paginator-pages">
+        <span class="unity-paginator-page"><span class="material-symbols-outlined icon-sm">chevron_left</span></span>
+        <span class="unity-paginator-page active">1</span>
+        <span class="unity-paginator-page">2</span>
+        <span class="unity-paginator-page">3</span>
+        <span class="unity-paginator-page"><span class="material-symbols-outlined icon-sm">chevron_right</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MODAL ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Modal</h2>
+  <button class="unity-btn unity-btn-primary unity-btn-md" data-unity-modal-open="demo-modal">Open Modal</button>
+</div>
+
+<div class="unity-modal-overlay" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title">
+  <div class="unity-modal">
+    <div class="unity-modal-header">
+      <h2 class="unity-modal-title" id="demo-modal-title">Modal Title</h2>
+      <button class="unity-modal-close" data-unity-modal-close aria-label="Close">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="unity-modal-body">
+      <p>Modal body with content. Supports forms, text, and any other components inside.</p>
+      <div class="unity-radio-group">
+        <label class="unity-radio-option">
+          <input type="radio" name="modal-choice" checked>
+          <span>Option A — first choice</span>
+        </label>
+        <label class="unity-radio-option">
+          <input type="radio" name="modal-choice">
+          <span>Option B — second choice</span>
+        </label>
+      </div>
+    </div>
+    <div class="unity-modal-footer">
+      <button class="unity-btn unity-btn-secondary unity-btn-md" data-unity-modal-close>Cancel</button>
+      <button class="unity-btn unity-btn-primary unity-btn-md">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TOAST ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Toasts</h2>
+  <div class="snippet-row">
+    <button class="unity-btn unity-btn-primary unity-btn-sm" onclick="Unity.toast.show({message:'Success! Record saved.', type:'success'})">Success Toast</button>
+    <button class="unity-btn unity-btn-secondary unity-btn-sm" onclick="Unity.toast.show({message:'Warning: UIC mismatch detected.', type:'warning'})">Warning Toast</button>
+    <button class="unity-btn unity-btn-danger unity-btn-sm" onclick="Unity.toast.show({message:'Error: Upload failed.', type:'error'})">Error Toast</button>
+    <button class="unity-btn unity-btn-link unity-btn-sm" onclick="Unity.toast.show({message:'Info: System maintenance at 10pm.', type:'info'})">Info Toast</button>
+  </div>
+</div>
+
+<!-- ═══════════════ TOOLTIP ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Tooltips</h2>
+  <div class="snippet-row">
+    <button class="unity-btn unity-btn-secondary unity-btn-md" data-unity-tooltip="This is a tooltip">Hover me</button>
+    <span class="material-symbols-outlined" style="cursor:help;" data-unity-tooltip="DEERS component: USNG | UIC component: USANG">help</span>
+  </div>
+</div>
+
+<!-- ═══════════════ STEPPER ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Stepper</h2>
+  <div class="unity-stepper">
+    <div class="unity-step completed">
+      <div class="unity-step-number"><span class="material-symbols-outlined icon-sm">check</span></div>
+      <span class="unity-sub-bold">Step 1</span>
+    </div>
+    <div class="unity-step-connector" style="background:var(--unity-success-green);"></div>
+    <div class="unity-step active">
+      <div class="unity-step-number">2</div>
+      <span class="unity-sub-bold">Step 2</span>
+    </div>
+    <div class="unity-step-connector"></div>
+    <div class="unity-step">
+      <div class="unity-step-number">3</div>
+      <span class="unity-sub-bold">Step 3</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ AVATARS & SPINNERS ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Avatar & Loading</h2>
+  <div class="snippet-row">
+    <div class="unity-avatar unity-avatar-sm">JD</div>
+    <div class="unity-avatar">MR</div>
+    <div class="unity-avatar unity-avatar-lg">SK</div>
+    <div style="margin-left:24px;"></div>
+    <div class="unity-spinner"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ ACCORDION ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Accordion</h2>
+  <div class="unity-card" style="max-width:500px;">
+    <button class="unity-btn unity-btn-link unity-btn-md" data-unity-collapse="accordion-1" aria-expanded="false" style="width:100%;justify-content:space-between;">
+      <span>Section One — Click to expand</span>
+      <span class="material-symbols-outlined icon-sm">expand_more</span>
+    </button>
+    <div id="accordion-1" style="display:none; padding:var(--unity-space-12) 0;">
+      <p class="unity-body unity-text-secondary">Hidden content revealed on toggle. Supports any nested elements.</p>
+    </div>
+    <hr class="unity-divider" style="margin:8px 0;">
+    <button class="unity-btn unity-btn-link unity-btn-md" data-unity-collapse="accordion-2" aria-expanded="false" style="width:100%;justify-content:space-between;">
+      <span>Section Two — Click to expand</span>
+      <span class="material-symbols-outlined icon-sm">expand_more</span>
+    </button>
+    <div id="accordion-2" style="display:none; padding:var(--unity-space-12) 0;">
+      <p class="unity-body unity-text-secondary">Another collapsible section with different content.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TYPOGRAPHY ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Typography</h2>
+  <div class="unity-col unity-gap-8">
+    <span class="unity-h1">H1 Semibold — 24px/32px</span>
+    <span class="unity-h2">H2 Semibold — 20px/26px</span>
+    <span class="unity-h3">H3 Semibold — 18px/24px</span>
+    <span class="unity-h4">H4 Semibold — 16px/24px</span>
+    <span class="unity-h5">H5 Semibold — 14px/20px</span>
+    <span class="unity-h6">H6 Bold — 14px/20px</span>
+    <span class="unity-body">Body Regular — 14px/20px</span>
+    <span class="unity-body-semibold">Body Semibold — 14px/20px</span>
+    <span class="unity-sub">Sub Text — 12px/150%</span>
+    <span class="unity-sub-bold">Sub Bold — 12px/150%</span>
+  </div>
+</div>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Topbar + Tabs</h2>
+  <div class="unity-topbar" style="border-radius:var(--unity-radius-md);">
+    <div class="unity-topbar-logo">LOGO</div>
+    <div class="unity-tabs">
+      <div class="unity-tab active">Active Tab</div>
+      <div class="unity-tab">Tab Two</div>
+      <div class="unity-tab">Tab Three</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ DROPDOWN ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Dropdown</h2>
+  <div style="position:relative; display:inline-block;">
+    <button class="unity-btn unity-btn-secondary unity-btn-md" data-unity-dropdown aria-expanded="false">
+      Actions <span class="material-symbols-outlined icon-sm">expand_more</span>
+    </button>
+    <div class="unity-dropdown-menu" style="display:none; position:absolute; top:100%; left:0; margin-top:4px; background:var(--unity-bg-main); border:1px solid var(--unity-divider); border-radius:var(--unity-radius-md); box-shadow:var(--unity-shadow-dialog); min-width:160px; z-index:100;">
+      <a href="#" style="display:block; padding:8px 12px; color:var(--unity-text-primary); text-decoration:none; font-size:13px;">Edit</a>
+      <a href="#" style="display:block; padding:8px 12px; color:var(--unity-text-primary); text-decoration:none; font-size:13px;">Duplicate</a>
+      <hr class="unity-divider" style="margin:4px 0;">
+      <a href="#" style="display:block; padding:8px 12px; color:var(--unity-flagged-red); text-decoration:none; font-size:13px;">Delete</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

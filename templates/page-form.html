@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Page — Unity UI Kit Template</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="../unity-ui-kit.css" rel="stylesheet">
+<script src="../unity-ui-kit.js" defer></script>
+</head>
+<body>
+<div class="unity-page">
+
+  <!-- Topbar -->
+  <div class="unity-topbar">
+    <div class="unity-topbar-logo">LQTCHS</div>
+    <div class="unity-tabs">
+      <div class="unity-tab">Overview</div>
+      <div class="unity-tab active">Details</div>
+      <div class="unity-tab">History</div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="unity-content">
+    <div class="unity-page-header">
+      <h1 class="unity-h2">Service Member — Details</h1>
+      <span class="unity-badge unity-badge-default">In Progress</span>
+    </div>
+
+    <!-- Form Card -->
+    <div class="unity-card">
+      <div class="unity-card-header">
+        <h3 class="unity-card-title">Personal Information</h3>
+      </div>
+
+      <div class="unity-form-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="unity-form-field">
+          <label class="unity-label unity-label-required">Last Name</label>
+          <input class="unity-input" type="text" value="JOHNSON">
+        </div>
+        <div class="unity-form-field">
+          <label class="unity-label unity-label-required">First Name</label>
+          <input class="unity-input" type="text" value="Michael">
+        </div>
+        <div class="unity-form-field">
+          <label class="unity-label">MI</label>
+          <input class="unity-input" type="text" value="R">
+        </div>
+      </div>
+
+      <hr class="unity-divider">
+
+      <div class="unity-form-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="unity-form-field">
+          <label class="unity-label unity-label-required">DODID</label>
+          <input class="unity-input" type="text" value="1234567890">
+        </div>
+        <div class="unity-form-field">
+          <label class="unity-label">Grade</label>
+          <select class="unity-input unity-select">
+            <option>SGT</option>
+            <option>SPC</option>
+            <option>CPL</option>
+            <option>PFC</option>
+          </select>
+        </div>
+        <div class="unity-form-field">
+          <label class="unity-label">Branch</label>
+          <input class="unity-input" type="text" value="Army" readonly>
+        </div>
+      </div>
+
+      <hr class="unity-divider">
+
+      <div class="unity-form-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="unity-form-field">
+          <label class="unity-label unity-label-required">Service Component</label>
+          <select class="unity-input unity-select">
+            <option>U.S. Army National Guard (USANG)</option>
+            <option>U.S. National Guard (USNG)</option>
+            <option>U.S. Army Reserve (USAR)</option>
+          </select>
+          <span class="unity-help-text">Select the Service Component for this exam</span>
+        </div>
+        <div class="unity-form-field">
+          <label class="unity-label">UIC</label>
+          <input class="unity-input" type="text" value="WXXXAA" readonly>
+        </div>
+        <div class="unity-form-field">
+          <label class="unity-label unity-label-required">Exam Type</label>
+          <select class="unity-input unity-select">
+            <option>Periodic Health Assessment</option>
+            <option>Separation Health Assessment</option>
+          </select>
+        </div>
+      </div>
+
+      <hr class="unity-divider">
+
+      <!-- Error example -->
+      <div class="unity-form-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="unity-form-field">
+          <label class="unity-label unity-label-required">Email</label>
+          <input class="unity-input unity-input-error" type="email" value="invalid-email">
+          <span class="unity-help-text unity-help-text-error">Please enter a valid email address</span>
+        </div>
+        <div class="unity-form-field">
+          <label class="unity-label">Phone</label>
+          <input class="unity-input" type="tel" placeholder="(555) 000-0000">
+        </div>
+        <div class="unity-form-field">
+          <label class="unity-label">Notes</label>
+          <textarea class="unity-input unity-textarea" rows="3" placeholder="Optional notes..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkbox / Radio Card -->
+    <div class="unity-card">
+      <div class="unity-card-header">
+        <h3 class="unity-card-title">Preferences</h3>
+      </div>
+
+      <div class="unity-row unity-gap-24" style="align-items:flex-start;">
+        <div class="unity-col unity-gap-12">
+          <span class="unity-h5">Notifications</span>
+          <label class="unity-checkbox"><input type="checkbox" checked> Email notifications</label>
+          <label class="unity-checkbox"><input type="checkbox"> SMS notifications</label>
+          <label class="unity-checkbox"><input type="checkbox" disabled> Push notifications (unavailable)</label>
+        </div>
+
+        <div class="unity-col unity-gap-12">
+          <span class="unity-h5">Preferred Contact Method</span>
+          <div class="unity-radio-group">
+            <label class="unity-radio-option">
+              <input type="radio" name="contact" checked>
+              <span>Email — primary communication channel</span>
+            </label>
+            <label class="unity-radio-option">
+              <input type="radio" name="contact">
+              <span>Phone — for urgent matters only</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky Footer Actions -->
+    <div class="unity-row" style="justify-content:flex-end;">
+      <button class="unity-btn unity-btn-link unity-btn-lg">Discard Changes</button>
+      <button class="unity-btn unity-btn-secondary unity-btn-lg">Save as Draft</button>
+      <button class="unity-btn unity-btn-primary unity-btn-lg">
+        <span class="material-symbols-outlined icon-sm">check</span> Submit
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="unity-footer">
+    <div class="unity-footer-cui">Controlled Unclassified Information</div>
+    <div class="unity-footer-row">
+      <div class="unity-footer-copyright">Copyright &copy; 1980-2026 <a href="#">QTC - A Leidos Company</a></div>
+      <div class="unity-footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility/Section 508</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
