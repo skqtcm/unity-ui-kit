@@ -1388,6 +1388,271 @@ body {
 
 
 /* ═══════════════════════════════════════════════════════════
+   23f-ii. BRANDED HEADER
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-header-branded {
+  background: var(--unity-leidos-purple);
+  padding: var(--unity-space-16) var(--unity-space-24);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--unity-white);
+}
+
+.unity-header-branded .unity-h2,
+.unity-header-branded .unity-h3 {
+  color: inherit;
+}
+
+.unity-header-branded-title {
+  display: flex;
+  align-items: center;
+  gap: var(--unity-space-12);
+}
+
+.unity-header-branded-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--unity-radius-full);
+  background: var(--unity-warning-yellow);
+  flex-shrink: 0;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   23f-iii. SEGMENTED BUTTON GROUP
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-btn-group {
+  display: inline-flex;
+  border-radius: var(--unity-radius-sm);
+  overflow: hidden;
+}
+
+.unity-btn-group .unity-btn {
+  border-radius: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.unity-btn-group .unity-btn:first-child {
+  border-radius: var(--unity-radius-sm) 0 0 var(--unity-radius-sm);
+}
+
+.unity-btn-group .unity-btn:last-child {
+  border-radius: 0 var(--unity-radius-sm) var(--unity-radius-sm) 0;
+  border-right: none;
+}
+
+.unity-btn-group-active {
+  background: var(--unity-primary-blue);
+  border-color: var(--unity-primary-blue);
+  color: var(--unity-white);
+}
+
+.unity-btn-group-active:hover {
+  background: var(--unity-btn-primary-hover);
+}
+
+.unity-btn-group-inactive {
+  background: var(--unity-bg-main);
+  border-color: var(--unity-divider);
+  color: var(--unity-text-primary);
+}
+
+.unity-btn-group-inactive:hover {
+  background: var(--unity-bg-filled);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   23f-iv. TOOLBAR
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--unity-space-12) var(--unity-space-24);
+  background: var(--unity-bg-main);
+  border-bottom: 1px solid var(--unity-divider);
+  gap: var(--unity-space-16);
+}
+
+.unity-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--unity-space-8);
+}
+
+.unity-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--unity-space-8);
+}
+
+.unity-filter-inline {
+  display: flex;
+  align-items: center;
+  gap: var(--unity-space-8);
+  font-size: 13px;
+  font-weight: var(--unity-font-weight-bold);
+  text-transform: uppercase;
+}
+
+.unity-filter-inline input {
+  width: 160px;
+  height: 32px;
+  padding: 0 var(--unity-space-8);
+  border: 1px solid var(--unity-stroke-gray);
+  border-radius: var(--unity-radius-sm);
+  font-size: 13px;
+  font-family: var(--unity-font-family);
+  outline: none;
+}
+
+.unity-filter-inline input:focus {
+  border-color: var(--unity-primary-blue);
+  box-shadow: var(--unity-focus-default);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   23f-v. ADDITIONAL BUTTON VARIANTS
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-btn-success {
+  background: var(--unity-success-green);
+  border-color: var(--unity-success-green);
+  color: var(--unity-white);
+}
+
+.unity-btn-success:hover {
+  background: #006B12;
+  border-color: #006B12;
+}
+
+.unity-btn-warning {
+  background: var(--unity-message-warning-dark);
+  border-color: var(--unity-message-warning-dark);
+  color: var(--unity-white);
+}
+
+.unity-btn-warning:hover {
+  background: #C06D10;
+  border-color: #C06D10;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   23f-vi. TABLE DENSITY
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-table-dense thead th {
+  padding: 8px 10px;
+  font-size: 11px;
+}
+
+.unity-table-dense tbody td {
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   23f-vii. ENHANCED PAGINATION
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-paginator-text {
+  border: none;
+  background: none;
+  color: var(--unity-primary-blue);
+  font-weight: var(--unity-font-weight-semibold);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0 var(--unity-space-8);
+  font-family: var(--unity-font-family);
+}
+
+.unity-paginator-text:hover {
+  text-decoration: underline;
+}
+
+.unity-paginator-ellipsis {
+  color: var(--unity-text-secondary);
+  font-size: 13px;
+  padding: 0 var(--unity-space-4);
+}
+
+.unity-paginator-separator {
+  color: var(--unity-text-disabled);
+  padding: 0 var(--unity-space-4);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   23f-viii. SEARCH PANEL / FILTER FORM
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-search-panel {
+  background: var(--unity-bg-main);
+  padding: var(--unity-space-20) var(--unity-space-24);
+  border-bottom: 1px solid var(--unity-divider);
+}
+
+.unity-filter-grid {
+  display: grid;
+  gap: var(--unity-space-16);
+  margin-bottom: var(--unity-space-16);
+}
+
+.unity-filter-grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.unity-filter-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.unity-filter-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.unity-filter-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.unity-label-uppercase {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: var(--unity-font-weight-bold);
+  letter-spacing: 0.3px;
+}
+
+.unity-date-range {
+  display: flex;
+  align-items: center;
+  gap: var(--unity-space-8);
+}
+
+.unity-date-range input {
+  flex: 1;
+}
+
+.unity-date-range-separator {
+  color: var(--unity-text-secondary);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.unity-actions-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--unity-space-8);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
    23g. TOGGLE / SWITCH (enhanced)
    ═══════════════════════════════════════════════════════════ */
 
