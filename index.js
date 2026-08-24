@@ -1,5 +1,6 @@
 const kit = require('./unity-ui-kit-complete.json');
 const icons = require('./unity-ui-kit-icons.json');
+const materialIcons = require('./unity-ui-kit-material-icons.json');
 
 module.exports = {
   meta: kit.meta,
@@ -9,6 +10,7 @@ module.exports = {
   effects: kit.effects,
   components: kit.components,
   icons: icons.icons,
+  materialIcons: materialIcons,
   usage: kit.usage,
 
   getComponent(name) {
@@ -21,6 +23,14 @@ module.exports = {
 
   getIcon(name) {
     return icons.icons[name] || null;
+  },
+
+  getMaterialIcon(name) {
+    return materialIcons.icons.includes(name) ? { name, usage: `<span class="material-symbols-outlined">${name}</span>` } : null;
+  },
+
+  listMaterialIcons() {
+    return materialIcons.icons;
   },
 
   getColor(name) {

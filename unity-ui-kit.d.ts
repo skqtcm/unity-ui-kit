@@ -105,6 +105,23 @@ export interface IconsFile {
   icons: Record<string, IconEntry>;
 }
 
+export interface MaterialIconsFile {
+  meta: {
+    name: string;
+    version: string;
+    exportedAt: string;
+    totalIcons: number;
+    cdn: string;
+    usage: string;
+  };
+  icons: string[];
+}
+
+export interface MaterialIconResult {
+  name: string;
+  usage: string;
+}
+
 export interface UsageSnippets {
   importVariable: string;
   importStyle: string;
