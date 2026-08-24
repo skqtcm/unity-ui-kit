@@ -65,9 +65,17 @@ All tokens from the Figma library are available as CSS custom properties:
 /* Primitives */
 --unity-primary-blue: #235899;
 --unity-dark-blue: #1E2F5A;
+--unity-leidos-purple: #4C3291;
 --unity-success-green: #008817;
 --unity-flagged-red: #B21D38;
 --unity-warning-yellow: #FACE00;
+--unity-flagged-light: #FDE8E8;
+--unity-warning-light: #FAE3D2;
+--unity-success-light: #CDFFD6;
+--unity-light-red: #FF5757;
+--unity-light-green: #2EB745;
+--unity-light-orange: #FFAD52;
+--unity-light-blue: #679AD8;
 
 /* Semantic */
 --unity-bg-main: #FFFFFF;
@@ -331,6 +339,50 @@ Unity.toast.show({ message: 'Upload failed', type: 'error', duration: 8000 });
 <button data-unity-collapse="section-1" aria-expanded="false">Toggle Section</button>
 <div id="section-1" style="display:none;">
   <p>Collapsible content</p>
+</div>
+```
+
+### Chips
+
+```html
+<!-- Default -->
+<span class="unity-chip">Label</span>
+
+<!-- With icon -->
+<span class="unity-chip"><span class="material-symbols-outlined icon-sm">label</span> Tag</span>
+
+<!-- Active / selected -->
+<span class="unity-chip unity-chip-active"><span class="material-symbols-outlined icon-sm">check</span> Selected</span>
+
+<!-- Removable -->
+<span class="unity-chip">Filter <button class="unity-chip-remove" aria-label="Remove">&times;</button></span>
+```
+
+### Menu
+
+```html
+<div class="unity-menu">
+  <button class="unity-menu-item"><span class="material-symbols-outlined icon-sm">edit</span> Edit</button>
+  <button class="unity-menu-item"><span class="material-symbols-outlined icon-sm">content_copy</span> Duplicate</button>
+  <hr class="unity-divider">
+  <button class="unity-menu-item unity-menu-item-danger"><span class="material-symbols-outlined icon-sm">delete</span> Delete</button>
+</div>
+```
+
+### Listbox
+
+```html
+<div class="unity-listbox" role="listbox">
+  <div class="unity-listbox-item selected" role="option" aria-selected="true">
+    <span>Selected Item</span>
+    <span class="material-symbols-outlined icon-sm">check</span>
+  </div>
+  <div class="unity-listbox-item" role="option">
+    <span>Another Item</span>
+  </div>
+  <div class="unity-listbox-item disabled" role="option" aria-disabled="true">
+    <span>Disabled Item</span>
+  </div>
 </div>
 ```
 

@@ -22,6 +22,10 @@
   --unity-flagged-light: #FDE8E8;
   --unity-warning-light: #FAE3D2;
   --unity-success-light: #CDFFD6;
+  --unity-light-red: #FF5757;
+  --unity-light-green: #2EB745;
+  --unity-light-orange: #FFAD52;
+  --unity-light-blue: #679AD8;
   --unity-white: #FFFFFF;
   --unity-black: #000000;
   --unity-gray-100: #F8F9FA;
@@ -1099,6 +1103,143 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--unity-gray-600);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   23b. CHIPS
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--unity-space-4);
+  padding: 4px 12px;
+  border-radius: var(--unity-radius-full);
+  font-size: 13px;
+  font-weight: var(--unity-font-weight-regular);
+  background: var(--unity-bg-filled);
+  border: 1px solid var(--unity-divider);
+  color: var(--unity-text-primary);
+  cursor: default;
+}
+
+.unity-chip-square {
+  border-radius: var(--unity-radius-sm);
+}
+
+.unity-chip-primary { background: var(--unity-primary-blue); border-color: var(--unity-primary-blue); color: var(--unity-white); }
+.unity-chip-success { background: var(--unity-success-light); border-color: var(--unity-success-green); color: #065F46; }
+.unity-chip-warning { background: var(--unity-message-warning-light); border-color: var(--unity-message-warning-dark); color: #92400E; }
+.unity-chip-danger { background: var(--unity-flagged-light); border-color: var(--unity-flagged-red); color: var(--unity-flagged-red); }
+
+.unity-chip-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--unity-radius-full);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+  font-size: 14px;
+  padding: 0;
+  line-height: 1;
+  transition: opacity var(--unity-transition-fast);
+}
+
+.unity-chip-close:hover {
+  opacity: 1;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   23c. MENU / CONTEXT MENU
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: var(--unity-space-4);
+  background: var(--unity-bg-main);
+  border: 1px solid var(--unity-divider);
+  border-radius: var(--unity-radius-md);
+  box-shadow: var(--unity-shadow-dialog);
+  min-width: 160px;
+  z-index: 100;
+  padding: var(--unity-space-4) 0;
+  display: none;
+}
+
+.unity-menu.visible {
+  display: block;
+}
+
+.unity-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--unity-space-8);
+  padding: var(--unity-space-8) var(--unity-space-12);
+  font-size: 13px;
+  color: var(--unity-text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--unity-transition-fast);
+}
+
+.unity-menu-item:hover {
+  background: var(--unity-bg-overlay);
+}
+
+.unity-menu-item-danger {
+  color: var(--unity-flagged-red);
+}
+
+.unity-menu-divider {
+  height: 1px;
+  background: var(--unity-divider);
+  margin: var(--unity-space-4) 0;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   23d. LISTBOX
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-listbox {
+  border: 1px solid var(--unity-stroke-gray);
+  border-radius: var(--unity-radius-md);
+  background: var(--unity-bg-main);
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.unity-listbox-item {
+  display: flex;
+  align-items: center;
+  gap: var(--unity-space-8);
+  padding: var(--unity-space-8) var(--unity-space-12);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background var(--unity-transition-fast);
+}
+
+.unity-listbox-item:hover {
+  background: var(--unity-bg-overlay);
+}
+
+.unity-listbox-item.selected {
+  background: var(--unity-btn-link-hover);
+  color: var(--unity-primary-blue);
+  font-weight: var(--unity-font-weight-semibold);
+}
+
+.unity-listbox-item:not(:last-child) {
+  border-bottom: 1px solid var(--unity-divider);
 }
 
 

@@ -177,6 +177,36 @@
       "baseClass": "unity-help-text",
       "errorVariant": "unity-help-text-error"
     },
+    "chip_unity": {
+      "baseClass": "unity-chip",
+      "modifiers": {
+        "Active": "unity-chip-active"
+      },
+      "children": {
+        "remove": "unity-chip-remove"
+      },
+      "example": "<span class=\"unity-chip unity-chip-active\"><span class=\"material-symbols-outlined icon-sm\">check</span> Selected</span>"
+    },
+    "menu_unity": {
+      "baseClass": "unity-menu",
+      "children": {
+        "item": "unity-menu-item",
+        "dangerItem": "unity-menu-item unity-menu-item-danger"
+      },
+      "example": "<div class=\"unity-menu\"><button class=\"unity-menu-item\">Edit</button><hr class=\"unity-divider\"><button class=\"unity-menu-item unity-menu-item-danger\">Delete</button></div>"
+    },
+    "listbox_unity": {
+      "baseClass": "unity-listbox",
+      "children": {
+        "item": "unity-listbox-item"
+      },
+      "modifiers": {
+        "Selected": "selected",
+        "Disabled": "disabled"
+      },
+      "ariaRole": "listbox",
+      "example": "<div class=\"unity-listbox\" role=\"listbox\"><div class=\"unity-listbox-item selected\" role=\"option\" aria-selected=\"true\">Item</div></div>"
+    },
     "Panel": {
       "baseClass": "unity-panel"
     },
