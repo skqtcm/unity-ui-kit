@@ -239,6 +239,23 @@ Options: `unity-filter-grid-2`, `unity-filter-grid-3`, `unity-filter-grid-4`, `u
 </div>
 ```
 
+### Data Section (table container)
+
+```html
+<div class="unity-data-section">
+  <div class="unity-toolbar">...</div>
+  <div class="unity-table-wrapper">
+    <table class="unity-table unity-table-dense">
+      <thead><tr><th>Column</th></tr></thead>
+      <tbody><tr><td>Data</td></tr></tbody>
+    </table>
+  </div>
+  <div class="unity-paginator">...</div>
+</div>
+```
+
+**Rule:** Always wrap toolbar + table + pagination in `unity-data-section` to get the white panel with border/shadow.
+
 ### Tables
 
 ```html
@@ -299,13 +316,34 @@ Modifier: `unity-chip-square` (rounded corners instead of pill)
 
 ```html
 <div class="unity-topbar">
-  <div class="unity-topbar-logo">LOGO</div>
+  <div class="unity-topbar-logo">
+    <img src="path/to/logo.svg" alt="LQTCHS">
+  </div>
   <div class="unity-tabs">
     <div class="unity-tab active">Active</div>
     <div class="unity-tab">Other</div>
   </div>
 </div>
 ```
+
+When logo asset is unavailable, use placeholder:
+```html
+<div class="unity-topbar-logo">
+  <div class="unity-topbar-logo-placeholder">LOGO</div>
+</div>
+```
+
+### Underline Tabs (content areas)
+
+```html
+<div class="unity-tabs-underline">
+  <div class="unity-tab active">Overview</div>
+  <div class="unity-tab">Details</div>
+  <div class="unity-tab">History</div>
+</div>
+```
+
+Use `unity-tabs-underline` for inline/content navigation. Use raised `unity-tabs` only inside `unity-topbar`.
 
 ### Navigation — Sidebar
 
@@ -679,15 +717,18 @@ unity-page
 │   │   └── unity-form-field (×4, one with unity-date-range)
 │   └── unity-actions-right
 │       └── unity-btn (Reset + Search)
-├── unity-toolbar
-│   ├── unity-toolbar-left → unity-filter-inline
-│   └── unity-toolbar-right → unity-btn (bulk actions)
-├── unity-table-wrapper
-│   └── table.unity-table.unity-table-dense
-├── unity-paginator
-│   └── unity-paginator-pages (page numbers + text nav)
+├── unity-data-section  ← groups toolbar + table + pagination
+│   ├── unity-toolbar
+│   │   ├── unity-toolbar-left → unity-filter-inline
+│   │   └── unity-toolbar-right → unity-btn (bulk actions)
+│   ├── unity-table-wrapper
+│   │   └── table.unity-table.unity-table-dense
+│   └── unity-paginator
+│       └── unity-paginator-pages (page numbers + text nav)
 └── unity-footer
 ```
+
+**Rule:** Always wrap `unity-toolbar` + `unity-table-wrapper` + `unity-paginator` inside a `unity-data-section` container. This provides the white background, border, and shadow that groups them as one visual unit.
 
 ### Recipe: Dashboard
 
@@ -757,8 +798,10 @@ unity-modal-overlay
 | Toggle between views | `unity-btn-group` |
 | Filter form above a table | `unity-search-panel` + `unity-filter-grid-{n}` |
 | Quick filter + bulk actions bar | `unity-toolbar` |
+| Toolbar + table + pagination grouped | `unity-data-section` (wrap all three) |
 | Dense data table (many columns) | `unity-table unity-table-dense` |
 | Standard table | `unity-table` |
+| Underline tabs (content nav) | `unity-tabs-underline` |
 | Status indicator (short text) | `unity-badge` |
 | Status indicator (with icon) | `unity-tag` |
 | Removable filter tokens | `unity-chip` + `unity-chip-remove` |

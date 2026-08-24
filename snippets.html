@@ -463,13 +463,35 @@
 
 <!-- ═══════════════ NAVIGATION ═══════════════ -->
 <div class="snippet-section">
-  <h2 class="unity-h3">Topbar + Tabs</h2>
+  <h2 class="unity-h3">Topbar + Raised Tabs</h2>
   <div class="unity-topbar" style="border-radius:var(--unity-radius-md);">
-    <div class="unity-topbar-logo">LOGO</div>
+    <div class="unity-topbar-logo">
+      <div class="unity-topbar-logo-placeholder">LOGO</div>
+    </div>
     <div class="unity-tabs">
       <div class="unity-tab active">Active Tab</div>
       <div class="unity-tab">Tab Two</div>
       <div class="unity-tab">Tab Three</div>
+    </div>
+  </div>
+
+  <div class="snippet-label" style="margin-top:24px;">Underline Tabs (content areas)</div>
+  <div class="unity-tabs-underline" style="max-width:500px;">
+    <div class="unity-tab active">Overview</div>
+    <div class="unity-tab">Details</div>
+    <div class="unity-tab">History</div>
+    <div class="unity-tab">Attachments</div>
+  </div>
+
+  <div class="snippet-label" style="margin-top:24px;">Logo with image (when assets available)</div>
+  <div class="unity-topbar" style="border-radius:var(--unity-radius-md);">
+    <div class="unity-topbar-logo">
+      <!-- Replace with: <img src="logo.svg" alt="LQTCHS Logo"> -->
+      <div class="unity-topbar-logo-placeholder">LQTCHS</div>
+    </div>
+    <div class="unity-tabs">
+      <div class="unity-tab active">WorkflowQueue</div>
+      <div class="unity-tab">MCM</div>
     </div>
   </div>
 </div>
@@ -571,51 +593,66 @@
   </div>
 </div>
 
-<!-- ═══════════════ ENTERPRISE: DENSE TABLE + PAGINATION ═══════════════ -->
+<!-- ═══════════════ ENTERPRISE: DATA SECTION (toolbar + table + pagination) ═══════════════ -->
 <div class="snippet-section">
-  <h2 class="unity-h3">Dense Table + Enhanced Pagination</h2>
-  <div class="unity-table-wrapper">
-    <table class="unity-table unity-table-dense">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th class="sortable">Date <span class="material-symbols-outlined icon-sm">arrow_drop_down</span></th>
-          <th>Status</th>
-          <th>Component</th>
-          <th>Assigned To</th>
-          <th><input type="checkbox"> SELECT ALL</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>In-Clinic</td>
-          <td>1/1/2037</td>
-          <td><span class="unity-badge unity-badge-warning">IN_PROGRESS</span></td>
-          <td>U.S. Army Reserve</td>
-          <td></td>
-          <td><input type="checkbox"></td>
-        </tr>
-        <tr>
-          <td>Event</td>
-          <td>4/21/2036</td>
-          <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
-          <td>Army National Guard</td>
-          <td>schavan</td>
-          <td><input type="checkbox"></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="unity-paginator">
-    <div class="unity-paginator-pages">
-      <span class="unity-paginator-page active">1</span>
-      <span class="unity-paginator-page">2</span>
-      <span class="unity-paginator-page">3</span>
-      <span class="unity-paginator-ellipsis">...</span>
-      <span class="unity-paginator-page">100</span>
-      <button class="unity-paginator-text">Next</button>
-      <span class="unity-paginator-separator">|</span>
-      <button class="unity-paginator-text">Last</button>
+  <h2 class="unity-h3">Data Section (grouped container)</h2>
+  <div class="unity-data-section">
+    <div class="unity-toolbar">
+      <div class="unity-toolbar-left">
+        <div class="unity-filter-inline">
+          <span>FILTER:</span>
+          <input type="text" placeholder="Type...">
+        </div>
+      </div>
+      <div class="unity-toolbar-right">
+        <button class="unity-btn unity-btn-sm unity-btn-primary">
+          <span class="material-symbols-outlined icon-sm">download</span> Export
+        </button>
+      </div>
+    </div>
+    <div class="unity-table-wrapper">
+      <table class="unity-table unity-table-dense">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th class="sortable">Date <span class="material-symbols-outlined icon-sm">arrow_drop_down</span></th>
+            <th>Status</th>
+            <th>Component</th>
+            <th>Assigned To</th>
+            <th><input type="checkbox"> SELECT ALL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>In-Clinic</td>
+            <td>1/1/2037</td>
+            <td><span class="unity-badge unity-badge-warning">IN_PROGRESS</span></td>
+            <td>U.S. Army Reserve</td>
+            <td></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Event</td>
+            <td>4/21/2036</td>
+            <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+            <td>Army National Guard</td>
+            <td>schavan</td>
+            <td><input type="checkbox"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="unity-paginator">
+      <div class="unity-paginator-pages">
+        <span class="unity-paginator-page active">1</span>
+        <span class="unity-paginator-page">2</span>
+        <span class="unity-paginator-page">3</span>
+        <span class="unity-paginator-ellipsis">...</span>
+        <span class="unity-paginator-page">100</span>
+        <button class="unity-paginator-text">Next</button>
+        <span class="unity-paginator-separator">|</span>
+        <button class="unity-paginator-text">Last</button>
+      </div>
     </div>
   </div>
 </div>
