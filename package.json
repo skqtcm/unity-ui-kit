@@ -6,6 +6,7 @@
   "types": "unity-ui-kit.d.ts",
   "files": [
     "index.js",
+    "unity-ui-kit.css",
     "unity-ui-kit-complete.json",
     "unity-ui-kit-icons.json",
     "unity-ui-kit-material-icons.json",
