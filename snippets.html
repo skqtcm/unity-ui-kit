@@ -340,6 +340,110 @@
   </div>
 </div>
 
+<!-- ═══════════════ PROGRESS BAR ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Progress Bar</h2>
+
+  <div class="unity-col unity-gap-16" style="max-width:500px;">
+    <div>
+      <div class="unity-progress-label"><span>Upload Progress</span><span>72%</span></div>
+      <div class="unity-progress">
+        <div class="unity-progress-bar" style="width:72%;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="unity-progress-label"><span>Complete</span><span>100%</span></div>
+      <div class="unity-progress">
+        <div class="unity-progress-bar unity-progress-bar-success" style="width:100%;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="unity-progress-label"><span>Storage Warning</span><span>85%</span></div>
+      <div class="unity-progress unity-progress-lg">
+        <div class="unity-progress-bar unity-progress-bar-warning" style="width:85%;"></div>
+      </div>
+    </div>
+    <div>
+      <div class="unity-progress-label"><span>Errors</span><span>30%</span></div>
+      <div class="unity-progress unity-progress-sm">
+        <div class="unity-progress-bar unity-progress-bar-danger" style="width:30%;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ BREADCRUMB ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Breadcrumb</h2>
+  <nav class="unity-breadcrumb">
+    <a href="#">Dashboard</a>
+    <span class="unity-breadcrumb-separator"></span>
+    <a href="#">Events</a>
+    <span class="unity-breadcrumb-separator"></span>
+    <a href="#">IL-BB-20250523-D-01</a>
+    <span class="unity-breadcrumb-separator"></span>
+    <span class="unity-breadcrumb-current">Detail</span>
+  </nav>
+</div>
+
+<!-- ═══════════════ TOGGLE / SWITCH ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Toggle / Switch</h2>
+  <div class="snippet-row" style="gap:24px;">
+    <label class="unity-switch-label">
+      <button class="unity-switch" role="switch" aria-checked="true" data-unity-switch></button>
+      <span>Enabled</span>
+    </label>
+    <label class="unity-switch-label">
+      <button class="unity-switch" role="switch" aria-checked="false" data-unity-switch></button>
+      <span>Disabled option</span>
+    </label>
+    <label class="unity-switch-label">
+      <button class="unity-switch" role="switch" aria-checked="false" aria-disabled="true" disabled data-unity-switch></button>
+      <span>Unavailable</span>
+    </label>
+  </div>
+</div>
+
+<!-- ═══════════════ EMPTY STATE ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Empty State</h2>
+  <div class="unity-card" style="max-width:500px;">
+    <div class="unity-empty-state">
+      <span class="material-symbols-outlined unity-empty-state-icon">inbox</span>
+      <div class="unity-empty-state-title">No Events Found</div>
+      <div class="unity-empty-state-description">There are no events matching your filter criteria. Try adjusting your search or create a new event.</div>
+      <button class="unity-btn unity-btn-primary unity-btn-md">
+        <span class="material-symbols-outlined icon-sm">add</span> Create Event
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ SKELETON LOADER ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Skeleton Loader</h2>
+  <div class="snippet-row" style="align-items:flex-start; gap:24px;">
+    <div class="unity-card" style="width:300px;">
+      <div class="unity-row unity-gap-12" style="margin-bottom:16px;">
+        <div class="unity-skeleton unity-skeleton-avatar"></div>
+        <div style="flex:1;">
+          <div class="unity-skeleton unity-skeleton-text" style="width:60%;"></div>
+          <div class="unity-skeleton unity-skeleton-text" style="width:40%;"></div>
+        </div>
+      </div>
+      <div class="unity-skeleton unity-skeleton-heading"></div>
+      <div class="unity-skeleton unity-skeleton-text"></div>
+      <div class="unity-skeleton unity-skeleton-text"></div>
+      <div class="unity-skeleton unity-skeleton-text" style="width:75%;"></div>
+    </div>
+    <div style="display:flex; gap:12px;">
+      <div class="unity-skeleton unity-skeleton-btn"></div>
+      <div class="unity-skeleton unity-skeleton-btn" style="width:80px;"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════ TYPOGRAPHY ═══════════════ -->
 <div class="snippet-section">
   <h2 class="unity-h3">Typography</h2>
@@ -429,11 +533,11 @@
     <button class="unity-btn unity-btn-secondary unity-btn-md" data-unity-dropdown aria-expanded="false">
       Actions <span class="material-symbols-outlined icon-sm">expand_more</span>
     </button>
-    <div class="unity-dropdown-menu" style="display:none; position:absolute; top:100%; left:0; margin-top:4px; background:var(--unity-bg-main); border:1px solid var(--unity-divider); border-radius:var(--unity-radius-md); box-shadow:var(--unity-shadow-dialog); min-width:160px; z-index:100;">
-      <a href="#" style="display:block; padding:8px 12px; color:var(--unity-text-primary); text-decoration:none; font-size:13px;">Edit</a>
-      <a href="#" style="display:block; padding:8px 12px; color:var(--unity-text-primary); text-decoration:none; font-size:13px;">Duplicate</a>
+    <div class="unity-dropdown-menu">
+      <a href="#">Edit</a>
+      <a href="#">Duplicate</a>
       <hr class="unity-divider" style="margin:4px 0;">
-      <a href="#" style="display:block; padding:8px 12px; color:var(--unity-flagged-red); text-decoration:none; font-size:13px;">Delete</a>
+      <a href="#" class="unity-dropdown-danger">Delete</a>
     </div>
   </div>
 </div>

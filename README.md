@@ -386,6 +386,70 @@ Unity.toast.show({ message: 'Upload failed', type: 'error', duration: 8000 });
 </div>
 ```
 
+### Progress Bar
+
+```html
+<div class="unity-progress-label"><span>Upload</span><span>72%</span></div>
+<div class="unity-progress">
+  <div class="unity-progress-bar" style="width:72%;"></div>
+</div>
+
+<!-- Variants: unity-progress-bar-success, unity-progress-bar-warning, unity-progress-bar-danger -->
+<!-- Sizes: unity-progress-sm (4px), default (8px), unity-progress-lg (12px) -->
+```
+
+### Breadcrumb
+
+```html
+<nav class="unity-breadcrumb">
+  <a href="#">Dashboard</a>
+  <span class="unity-breadcrumb-separator"></span>
+  <a href="#">Events</a>
+  <span class="unity-breadcrumb-separator"></span>
+  <span class="unity-breadcrumb-current">Detail</span>
+</nav>
+```
+
+### Toggle / Switch
+
+```html
+<label class="unity-switch-label">
+  <button class="unity-switch" role="switch" aria-checked="true" data-unity-switch></button>
+  <span>Label text</span>
+</label>
+
+<!-- Disabled -->
+<button class="unity-switch" role="switch" aria-checked="false" disabled data-unity-switch></button>
+```
+
+### Empty State
+
+```html
+<div class="unity-empty-state">
+  <span class="material-symbols-outlined unity-empty-state-icon">inbox</span>
+  <div class="unity-empty-state-title">No Events Found</div>
+  <div class="unity-empty-state-description">Nothing matches your filter criteria.</div>
+  <button class="unity-btn unity-btn-primary unity-btn-md">Create Event</button>
+</div>
+```
+
+### Skeleton Loader
+
+```html
+<!-- Text skeleton -->
+<div class="unity-skeleton unity-skeleton-text"></div>
+<div class="unity-skeleton unity-skeleton-text"></div>
+<div class="unity-skeleton unity-skeleton-text" style="width:60%;"></div>
+
+<!-- Heading -->
+<div class="unity-skeleton unity-skeleton-heading"></div>
+
+<!-- Avatar, button, card shapes -->
+<div class="unity-skeleton unity-skeleton-avatar"></div>
+<div class="unity-skeleton unity-skeleton-btn"></div>
+<div class="unity-skeleton unity-skeleton-card"></div>
+```
+
 ---
 
 ## Layout
@@ -528,11 +592,13 @@ Unity.toast.show({
 | `data-unity-modal-close` | Closes parent modal |
 | `data-unity-dropdown` | Toggles sibling `.unity-dropdown-menu` |
 | `data-unity-tooltip="text"` | Shows tooltip on hover/focus |
-| `data-unity-collapse="id"` | Toggles element visibility |
+| `data-unity-collapse="id"` | Toggles element visibility (animated) |
+| `data-unity-switch` | Toggle switch on/off (updates `aria-checked`) |
 
 ### Keyboard Support
 - **Escape** closes modals and dropdowns
-- **Arrow keys** navigate between tabs
+- **Arrow keys** navigate between tabs and listbox items
+- **Space / Enter** toggles switches
 - **Focus trapping** inside open modals
 
 ---
@@ -548,6 +614,8 @@ All interactive components include proper ARIA attributes:
 | Tooltip | `aria-describedby` (auto-generated) |
 | Dropdown | `aria-expanded` on trigger |
 | Accordion | `aria-expanded` on trigger |
+| Switch | `role="switch"`, `aria-checked` |
+| Listbox | `role="listbox"`, `role="option"`, `aria-selected`, keyboard arrow nav |
 | Alert | `role="alert"` on `.unity-message` |
 | Close buttons | `aria-label="Close"` |
 

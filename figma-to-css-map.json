@@ -207,6 +207,66 @@
       "ariaRole": "listbox",
       "example": "<div class=\"unity-listbox\" role=\"listbox\"><div class=\"unity-listbox-item selected\" role=\"option\" aria-selected=\"true\">Item</div></div>"
     },
+    "progress_bar": {
+      "baseClass": "unity-progress",
+      "children": {
+        "bar": "unity-progress-bar"
+      },
+      "variants": {
+        "Success": "unity-progress-bar-success",
+        "Warning": "unity-progress-bar-warning",
+        "Danger": "unity-progress-bar-danger"
+      },
+      "sizes": {
+        "Small": "unity-progress-sm",
+        "Default": "",
+        "Large": "unity-progress-lg"
+      },
+      "example": "<div class=\"unity-progress\"><div class=\"unity-progress-bar\" style=\"width:72%;\"></div></div>"
+    },
+    "breadcrumb": {
+      "baseClass": "unity-breadcrumb",
+      "children": {
+        "separator": "unity-breadcrumb-separator",
+        "current": "unity-breadcrumb-current"
+      },
+      "example": "<nav class=\"unity-breadcrumb\"><a href=\"#\">Home</a><span class=\"unity-breadcrumb-separator\"></span><span class=\"unity-breadcrumb-current\">Page</span></nav>"
+    },
+    "toggle_switch": {
+      "baseClass": "unity-switch",
+      "ariaRole": "switch",
+      "dataAttr": "data-unity-switch",
+      "wrapper": "unity-switch-label",
+      "example": "<label class=\"unity-switch-label\"><button class=\"unity-switch\" role=\"switch\" aria-checked=\"true\" data-unity-switch></button><span>Label</span></label>"
+    },
+    "empty_state": {
+      "baseClass": "unity-empty-state",
+      "children": {
+        "icon": "unity-empty-state-icon",
+        "title": "unity-empty-state-title",
+        "description": "unity-empty-state-description"
+      },
+      "example": "<div class=\"unity-empty-state\"><span class=\"material-symbols-outlined unity-empty-state-icon\">inbox</span><div class=\"unity-empty-state-title\">No Data</div><div class=\"unity-empty-state-description\">Nothing here yet.</div></div>"
+    },
+    "skeleton_loader": {
+      "baseClass": "unity-skeleton",
+      "variants": {
+        "Text": "unity-skeleton-text",
+        "Heading": "unity-skeleton-heading",
+        "Avatar": "unity-skeleton-avatar",
+        "Button": "unity-skeleton-btn",
+        "Card": "unity-skeleton-card"
+      },
+      "example": "<div class=\"unity-skeleton unity-skeleton-text\"></div>"
+    },
+    "dropdown_menu": {
+      "baseClass": "unity-dropdown-menu",
+      "children": {
+        "danger": "unity-dropdown-danger"
+      },
+      "trigger": "data-unity-dropdown",
+      "example": "<div style=\"position:relative;\"><button data-unity-dropdown>Menu</button><div class=\"unity-dropdown-menu\"><a href=\"#\">Item</a></div></div>"
+    },
     "Panel": {
       "baseClass": "unity-panel"
     },

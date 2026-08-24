@@ -119,7 +119,7 @@
         document.body.appendChild(container);
       }
       const toast = document.createElement('div');
-      toast.className = 'unity-toast unity-toast--' + type + ' entering';
+      toast.className = 'unity-toast unity-toast-' + type + ' entering';
       toast.setAttribute('role', 'alert');
       toast.textContent = message;
       container.appendChild(toast);
@@ -205,6 +205,22 @@
 
   // --- Accordion / Collapsible ---
   function initAccordions() {
+    // Convert display:none targets to maxHeight:0 for smooth animation
+    qsa('[data-unity-collapse]').forEach(function (trigger) {
+      var targetId = trigger.getAttribute('data-unity-collapse');
+      var target = document.getElementById(targetId);
+      if (!target) return;
+      if (trigger.getAttribute('aria-expanded') !== 'true') {
+        target.style.display = '';
+        target.style.overflow = 'hidden';
+        target.style.maxHeight = '0';
+        target.style.transition = 'max-height 0.2s ease';
+      } else {
+        target.style.overflow = 'hidden';
+        target.style.transition = 'max-height 0.2s ease';
+      }
+    });
+
     document.addEventListener('click', function (e) {
       const trigger = e.target.closest('[data-unity-collapse]');
       if (!trigger) return;
@@ -227,6 +243,59 @@
     });
   }
 
+  // --- Toggle / Switch ---
+  function initSwitches() {
+    document.addEventListener('click', function (e) {
+      var sw = e.target.closest('[data-unity-switch]');
+      if (!sw || sw.disabled || sw.getAttribute('aria-disabled') === 'true') return;
+      var checked = sw.getAttribute('aria-checked') === 'true';
+      sw.setAttribute('aria-checked', String(!checked));
+      sw.classList.toggle('active', !checked);
+    });
+    document.addEventListener('keydown', function (e) {
+      var sw = e.target.closest('[data-unity-switch]');
+      if (!sw || sw.disabled) return;
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        sw.click();
+      }
+    });
+  }
+
+  // --- Listbox keyboard navigation ---
+  function initListboxes() {
+    document.addEventListener('click', function (e) {
+      var item = e.target.closest('.unity-listbox-item');
+      if (!item || item.classList.contains('disabled')) return;
+      var listbox = item.closest('.unity-listbox');
+      if (!listbox) return;
+      qsa('.unity-listbox-item', listbox).forEach(function (i) {
+        i.classList.remove('selected');
+        i.setAttribute('aria-selected', 'false');
+      });
+      item.classList.add('selected');
+      item.setAttribute('aria-selected', 'true');
+    });
+
+    document.addEventListener('keydown', function (e) {
+      var listbox = e.target.closest('.unity-listbox');
+      if (!listbox) return;
+      var items = qsa('.unity-listbox-item:not(.disabled)', listbox);
+      var current = listbox.querySelector('.unity-listbox-item.selected') || items[0];
+      var idx = items.indexOf(current);
+      var next = -1;
+      if (e.key === 'ArrowDown') next = Math.min(idx + 1, items.length - 1);
+      else if (e.key === 'ArrowUp') next = Math.max(idx - 1, 0);
+      if (next > -1 && next !== idx) {
+        e.preventDefault();
+        items.forEach(function (i) { i.classList.remove('selected'); i.setAttribute('aria-selected', 'false'); });
+        items[next].classList.add('selected');
+        items[next].setAttribute('aria-selected', 'true');
+        items[next].scrollIntoView({ block: 'nearest' });
+      }
+    });
+  }
+
   // --- Init ---
   function init() {
     initModals();
@@ -234,6 +303,8 @@
     initDropdowns();
     initTooltips();
     initAccordions();
+    initSwitches();
+    initListboxes();
   }
 
   if (document.readyState === 'loading') {
