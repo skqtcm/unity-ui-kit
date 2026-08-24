@@ -450,6 +450,84 @@ Unity.toast.show({ message: 'Upload failed', type: 'error', duration: 8000 });
 <div class="unity-skeleton unity-skeleton-card"></div>
 ```
 
+### Enterprise Patterns
+
+#### Branded Header
+
+```html
+<div class="unity-header-branded">
+  <div class="unity-header-branded-title">
+    <span class="unity-header-branded-dot"></span>
+    <h1 class="unity-h2">Page Title</h1>
+  </div>
+  <div class="unity-btn-group">
+    <button class="unity-btn unity-btn-sm unity-btn-group-active">Active</button>
+    <button class="unity-btn unity-btn-sm unity-btn-group-inactive">Inactive</button>
+  </div>
+</div>
+```
+
+#### Toolbar
+
+```html
+<div class="unity-toolbar">
+  <div class="unity-toolbar-left">
+    <div class="unity-filter-inline">
+      <span>FILTER:</span>
+      <input type="text">
+    </div>
+  </div>
+  <div class="unity-toolbar-right">
+    <button class="unity-btn unity-btn-sm unity-btn-success">Action</button>
+  </div>
+</div>
+```
+
+#### Search Panel + Filter Grid
+
+```html
+<div class="unity-search-panel">
+  <div class="unity-filter-grid unity-filter-grid-4">
+    <div class="unity-form-field">
+      <label class="unity-label unity-label-uppercase">Field</label>
+      <select class="unity-input unity-select"><option>Value</option></select>
+    </div>
+    <!-- More fields... -->
+  </div>
+  <div class="unity-actions-right">
+    <button class="unity-btn unity-btn-secondary unity-btn-md">Reset</button>
+    <button class="unity-btn unity-btn-primary unity-btn-md">Search</button>
+  </div>
+</div>
+```
+
+**Filter grids:** `unity-filter-grid-2`, `unity-filter-grid-3`, `unity-filter-grid-4`, `unity-filter-grid-5`
+
+#### Date Range
+
+```html
+<div class="unity-date-range">
+  <input class="unity-input" type="date">
+  <span class="unity-date-range-separator">to</span>
+  <input class="unity-input" type="date">
+</div>
+```
+
+#### Dense Table
+
+Add `unity-table-dense` for compact data grids with many columns:
+
+```html
+<table class="unity-table unity-table-dense">...</table>
+```
+
+#### Additional Button Variants
+
+```html
+<button class="unity-btn unity-btn-success unity-btn-md">Success</button>
+<button class="unity-btn unity-btn-warning unity-btn-md">Warning</button>
+```
+
 ---
 
 ## Layout

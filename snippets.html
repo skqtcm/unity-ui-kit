@@ -474,6 +474,152 @@
   </div>
 </div>
 
+<!-- ═══════════════ ENTERPRISE: BRANDED HEADER ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Branded Header</h2>
+  <div class="unity-header-branded" style="border-radius:var(--unity-radius-md);">
+    <div class="unity-header-branded-title">
+      <span class="unity-header-branded-dot"></span>
+      <h1 class="unity-h2">Page Title</h1>
+    </div>
+    <div class="unity-btn-group">
+      <button class="unity-btn unity-btn-sm unity-btn-group-active">
+        <span class="material-symbols-outlined icon-sm">shield_person</span> Manager View
+      </button>
+      <button class="unity-btn unity-btn-sm unity-btn-group-inactive">
+        <span class="material-symbols-outlined icon-sm">person</span> User View
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ENTERPRISE: BUTTON VARIANTS ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Additional Button Variants</h2>
+  <div class="snippet-row">
+    <button class="unity-btn unity-btn-success unity-btn-md">
+      <span class="material-symbols-outlined icon-sm">check</span> Success
+    </button>
+    <button class="unity-btn unity-btn-warning unity-btn-md">
+      <span class="material-symbols-outlined icon-sm">warning</span> Warning
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════ ENTERPRISE: TOOLBAR ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Toolbar</h2>
+  <div class="unity-toolbar" style="border-radius:var(--unity-radius-md);">
+    <div class="unity-toolbar-left">
+      <div class="unity-filter-inline">
+        <span>FILTER:</span>
+        <input type="text" placeholder="Type to filter...">
+      </div>
+    </div>
+    <div class="unity-toolbar-right">
+      <button class="unity-btn unity-btn-sm unity-btn-success">
+        <span class="material-symbols-outlined icon-sm">assignment_ind</span> ASSIGN
+      </button>
+      <button class="unity-btn unity-btn-sm unity-btn-primary">
+        <span class="material-symbols-outlined icon-sm">swap_horiz</span> REASSIGN
+      </button>
+      <button class="unity-btn unity-btn-sm unity-btn-danger">
+        <span class="material-symbols-outlined icon-sm">person_remove</span> UNASSIGN
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ENTERPRISE: SEARCH PANEL ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Search Panel + Filter Grid</h2>
+  <div class="unity-search-panel" style="border-radius:var(--unity-radius-md);">
+    <div class="unity-filter-grid unity-filter-grid-4">
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Workflow</label>
+        <select class="unity-input unity-select">
+          <option>CSA</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Status</label>
+        <select class="unity-input unity-select">
+          <option>-- Select --</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Date Range</label>
+        <div class="unity-date-range">
+          <input class="unity-input" type="date">
+          <span class="unity-date-range-separator">to</span>
+          <input class="unity-input" type="date">
+        </div>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Search ID</label>
+        <input class="unity-input" type="text" placeholder="Enter ID">
+      </div>
+    </div>
+    <div class="unity-actions-right">
+      <button class="unity-btn unity-btn-secondary unity-btn-md">
+        <span class="material-symbols-outlined icon-sm">restart_alt</span> Reset
+      </button>
+      <button class="unity-btn unity-btn-primary unity-btn-md">
+        <span class="material-symbols-outlined icon-sm">search</span> Search
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ ENTERPRISE: DENSE TABLE + PAGINATION ═══════════════ -->
+<div class="snippet-section">
+  <h2 class="unity-h3">Dense Table + Enhanced Pagination</h2>
+  <div class="unity-table-wrapper">
+    <table class="unity-table unity-table-dense">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th class="sortable">Date <span class="material-symbols-outlined icon-sm">arrow_drop_down</span></th>
+          <th>Status</th>
+          <th>Component</th>
+          <th>Assigned To</th>
+          <th><input type="checkbox"> SELECT ALL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>In-Clinic</td>
+          <td>1/1/2037</td>
+          <td><span class="unity-badge unity-badge-warning">IN_PROGRESS</span></td>
+          <td>U.S. Army Reserve</td>
+          <td></td>
+          <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+          <td>Event</td>
+          <td>4/21/2036</td>
+          <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+          <td>Army National Guard</td>
+          <td>schavan</td>
+          <td><input type="checkbox"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="unity-paginator">
+    <div class="unity-paginator-pages">
+      <span class="unity-paginator-page active">1</span>
+      <span class="unity-paginator-page">2</span>
+      <span class="unity-paginator-page">3</span>
+      <span class="unity-paginator-ellipsis">...</span>
+      <span class="unity-paginator-page">100</span>
+      <button class="unity-paginator-text">Next</button>
+      <span class="unity-paginator-separator">|</span>
+      <button class="unity-paginator-text">Last</button>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════ CHIPS ═══════════════ -->
 <div class="snippet-section">
   <h2 class="unity-h3">Chips</h2>

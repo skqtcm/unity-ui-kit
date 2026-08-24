@@ -270,6 +270,51 @@
     "Panel": {
       "baseClass": "unity-panel"
     },
+    "branded_header": {
+      "baseClass": "unity-header-branded",
+      "children": {
+        "title": "unity-header-branded-title",
+        "dot": "unity-header-branded-dot"
+      },
+      "example": "<div class=\"unity-header-branded\"><div class=\"unity-header-branded-title\"><span class=\"unity-header-branded-dot\"></span><h1 class=\"unity-h2\">Page Title</h1></div></div>"
+    },
+    "button_group": {
+      "baseClass": "unity-btn-group",
+      "children": {
+        "active": "unity-btn-group-active",
+        "inactive": "unity-btn-group-inactive"
+      },
+      "example": "<div class=\"unity-btn-group\"><button class=\"unity-btn unity-btn-sm unity-btn-group-active\">Active</button><button class=\"unity-btn unity-btn-sm unity-btn-group-inactive\">Inactive</button></div>"
+    },
+    "toolbar": {
+      "baseClass": "unity-toolbar",
+      "children": {
+        "left": "unity-toolbar-left",
+        "right": "unity-toolbar-right",
+        "filterInline": "unity-filter-inline"
+      },
+      "example": "<div class=\"unity-toolbar\"><div class=\"unity-toolbar-left\"><div class=\"unity-filter-inline\"><span>FILTER:</span><input type=\"text\"></div></div><div class=\"unity-toolbar-right\"><button class=\"unity-btn unity-btn-sm unity-btn-success\">Action</button></div></div>"
+    },
+    "search_panel": {
+      "baseClass": "unity-search-panel",
+      "children": {
+        "filterGrid": "unity-filter-grid",
+        "actionsRight": "unity-actions-right"
+      },
+      "variants": {
+        "5 columns": "unity-filter-grid-5",
+        "4 columns": "unity-filter-grid-4",
+        "3 columns": "unity-filter-grid-3",
+        "2 columns": "unity-filter-grid-2"
+      }
+    },
+    "date_range": {
+      "baseClass": "unity-date-range",
+      "children": {
+        "separator": "unity-date-range-separator"
+      },
+      "example": "<div class=\"unity-date-range\"><input class=\"unity-input\" type=\"date\"><span class=\"unity-date-range-separator\">to</span><input class=\"unity-input\" type=\"date\"></div>"
+    },
     "Search bar": {
       "baseClass": "unity-input",
       "note": "Input with search icon: add material-symbols-outlined 'search' as start icon"
