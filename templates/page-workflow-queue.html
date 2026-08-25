@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WorkflowQueue — Search Tasks</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="../unity-ui-kit.css" rel="stylesheet">
+<script src="../unity-ui-kit.js" defer></script>
+</head>
+<body>
+<div class="unity-page">
+
+  <!-- TOPBAR -->
+  <div class="unity-topbar">
+    <div class="unity-topbar-logo"><img src="../assets/logo-lqtchs-dark-blue.svg" alt="LQTCHS"></div>
+    <div class="unity-tabs-underline">
+      <div class="unity-tab active">WorkflowQueue</div>
+      <div class="unity-tab">Events</div>
+      <div class="unity-tab">Reports</div>
+    </div>
+  </div>
+
+  <!-- BRANDED HEADER + SEARCH FILTERS -->
+  <div class="unity-header-branded" style="flex-direction:column; align-items:stretch; gap:var(--unity-space-20); padding-bottom:var(--unity-space-24);">
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+      <div class="unity-header-branded-title">
+        <span class="material-symbols-outlined" style="font-size:20px;">filter_alt</span>
+        <h1 class="unity-h2">Search Tasks</h1>
+      </div>
+      <div class="unity-btn-group">
+        <button class="unity-btn unity-btn-sm unity-btn-group-active">
+          <span class="material-symbols-outlined icon-sm">shield_person</span> Manager View
+        </button>
+        <button class="unity-btn unity-btn-sm unity-btn-group-inactive">
+          <span class="material-symbols-outlined icon-sm">person</span> User View
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Filters -->
+    <div class="unity-filter-grid unity-filter-grid-5">
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Workflow</label>
+        <select class="unity-input unity-select">
+          <option>CSA</option>
+          <option>RHRPWorkflow</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Task Status</label>
+        <select class="unity-input unity-select">
+          <option>6 Items Selected</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Request Status</label>
+        <select class="unity-input unity-select">
+          <option>-- Select --</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Assigned To</label>
+        <select class="unity-input unity-select">
+          <option>-- Select --</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Request Type</label>
+        <select class="unity-input unity-select">
+          <option>-- Select --</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="unity-filter-grid unity-filter-grid-4">
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Request Date</label>
+        <input class="unity-input" type="date">
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Service Component</label>
+        <select class="unity-input unity-select">
+          <option>-- Select --</option>
+          <option>U.S. Army Reserve (USAR)</option>
+          <option>Army National Guard (ARNG)</option>
+          <option>U.S. Coast Guard Reserve (USCGR)</option>
+          <option>Air National Guard (ANG)</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Event Date</label>
+        <div class="unity-date-range">
+          <input class="unity-input" type="date">
+          <span class="unity-date-range-separator">to</span>
+          <input class="unity-input" type="date">
+        </div>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Event ID/Service Member DOD ID</label>
+        <input class="unity-input" type="text" placeholder="Enter Event ID/Service Member DOD ID">
+      </div>
+    </div>
+
+    <div class="unity-actions-right">
+      <button class="unity-btn unity-btn-secondary unity-btn-md">
+        <span class="material-symbols-outlined icon-sm">restart_alt</span> Reset
+      </button>
+      <button class="unity-btn unity-btn-primary unity-btn-md">
+        <span class="material-symbols-outlined icon-sm">search</span> Search
+      </button>
+    </div>
+  </div>
+
+  <!-- DATA SECTION (toolbar + table + pagination) -->
+  <div class="unity-data-section">
+
+    <!-- Toolbar -->
+    <div class="unity-toolbar">
+      <div class="unity-toolbar-left">
+        <div class="unity-filter-inline">
+          <span>FILTER:</span>
+          <input type="text">
+        </div>
+      </div>
+      <div class="unity-toolbar-right">
+        <button class="unity-btn unity-btn-sm unity-btn-success">
+          <span class="material-symbols-outlined icon-sm">assignment_ind</span> ASSIGN
+        </button>
+        <button class="unity-btn unity-btn-sm unity-btn-primary">
+          <span class="material-symbols-outlined icon-sm">swap_horiz</span> REASSIGN
+        </button>
+        <button class="unity-btn unity-btn-sm unity-btn-danger">
+          <span class="material-symbols-outlined icon-sm">person_remove</span> UNASSIGN
+        </button>
+      </div>
+    </div>
+
+    <!-- DATA TABLE -->
+    <div class="unity-table-wrapper">
+      <table class="unity-table unity-table-dense">
+        <thead>
+          <tr>
+            <th>Request Type</th>
+            <th class="sortable">Request Date <span class="material-symbols-outlined icon-sm">arrow_drop_down</span></th>
+            <th>Request Status</th>
+            <th class="sortable">Service Component <span class="material-symbols-outlined icon-sm">arrow_drop_down</span></th>
+            <th>Event Date</th>
+            <th>Event ID/Service Member DOD ID</th>
+            <th>SSN</th>
+            <th>Services</th>
+            <th>Task Status</th>
+            <th>Last Modified Date</th>
+            <th>Assigned To</th>
+            <th><input type="checkbox"> SELECT ALL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>In-Clinic</td>
+            <td>1/1/2037</td>
+            <td>Scheduled</td>
+            <td>U.S. Army Reserve (USAR)</td>
+            <td></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 8888888888</a></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 8881</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-warning">IN_PROGRESS</span></td>
+            <td>4/14/2026</td>
+            <td></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>In-Clinic</td>
+            <td>5/17/2036</td>
+            <td>Received; NOT Pre-Approved</td>
+            <td>U.S. Army Reserve (USAR)</td>
+            <td></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 9123000107</a></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 0107</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+            <td>8/18/2026</td>
+            <td>tlamb</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>In-Clinic</td>
+            <td>5/17/2036</td>
+            <td>Received; NOT Pre-Approved</td>
+            <td>U.S. Army Reserve (USAR)</td>
+            <td></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 9123000107</a></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 0107</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+            <td>2/24/2026</td>
+            <td>tlamb</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>In-Clinic</td>
+            <td>5/17/2036</td>
+            <td>Received; NOT Pre-Approved</td>
+            <td>U.S. Army Reserve (USAR)</td>
+            <td></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 2222222222</a></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 9341</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-success">NEW</span></td>
+            <td>4/28/2026</td>
+            <td></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>In-Clinic</td>
+            <td>5/17/2036</td>
+            <td>Received; NOT Pre-Approved</td>
+            <td>U.S. Army Reserve (USAR)</td>
+            <td></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 2222222222</a></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 9341</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+            <td>3/2/2026</td>
+            <td>ragallage</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>In-Clinic</td>
+            <td>5/17/2036</td>
+            <td>Received; NOT Pre-Approved</td>
+            <td>U.S. Army Reserve (USAR)</td>
+            <td></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 9123000100</a></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 0100</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+            <td>2/24/2026</td>
+            <td>tlamb</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>In-Clinic</td>
+            <td>5/17/2036</td>
+            <td>Received; NOT Pre-Approved</td>
+            <td>U.S. Army Reserve (USAR)</td>
+            <td></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 2222222222</a></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 9341</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+            <td>2/24/2026</td>
+            <td>ragallage</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>Event</td>
+            <td>4/21/2036</td>
+            <td>Received</td>
+            <td>Army National Guard (ARNG)</td>
+            <td>4/21/2036</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> FL-OR-20360421-D-01</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-disabled">lock</span></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+            <td>7/30/2026</td>
+            <td>schavan</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>In-Clinic</td>
+            <td>4/20/2036</td>
+            <td>Approved</td>
+            <td>U.S. Coast Guard Reserve (USCGR)</td>
+            <td></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 1111111111</a></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 9797</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+            <td>5/4/2026</td>
+            <td>kallur</td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td>In-Clinic</td>
+            <td>4/14/2036</td>
+            <td>Scrubbed: Clean</td>
+            <td>Air National Guard (ANG)</td>
+            <td></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 2554686042</a></td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 2111</a></td>
+            <td><span class="material-symbols-outlined icon-sm unity-text-primary">description</span></td>
+            <td><span class="unity-badge unity-badge-default">ASSIGNED</span></td>
+            <td>4/15/2026</td>
+            <td>rkallu</td>
+            <td><input type="checkbox"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="unity-paginator">
+      <span>1-25 of 21149 records</span>
+      <div class="unity-paginator-pages">
+        <span class="unity-paginator-page"><span class="material-symbols-outlined icon-sm">chevron_left</span></span>
+        <span class="unity-paginator-page active">1</span>
+        <span class="unity-paginator-page">2</span>
+        <span class="unity-paginator-page">3</span>
+        <span class="unity-paginator-page">4</span>
+        <span class="unity-paginator-page">5</span>
+        <span class="unity-paginator-ellipsis">...</span>
+        <span class="unity-paginator-page">846</span>
+        <span class="unity-paginator-page"><span class="material-symbols-outlined icon-sm">chevron_right</span></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="unity-footer">
+    <div class="unity-footer-row">
+      <div class="unity-footer-copyright">Copyright &copy; 1980 - 2026 <a href="#">Leidos QTC Health Services</a></div>
+      <div class="unity-footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms of Use</a>
+        <span class="unity-sub unity-text-secondary">Version 1.1.98.19081</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
