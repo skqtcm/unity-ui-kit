@@ -59,8 +59,8 @@
 | `unity-topbar-spacer` | Flex spacer to push items right. |
 | `unity-topbar-search` | Search input box in topbar. |
 | `unity-topbar-tools` | Icon toolbar group (settings, notifications). |
-| `unity-topbar-icon` | 40px icon button (hover highlight). |
-| `unity-topbar-avatar` | 36px circular avatar placeholder. |
+| `unity-topbar-icon` | 32px icon button (blue on hover). |
+| `unity-topbar-avatar` | 40px circular avatar placeholder. |
 | `unity-block-header` | Sub-page header (back arrow + title + badge + actions). |
 
 ### Typography
@@ -352,10 +352,10 @@ Modifier: `unity-chip-square` (rounded corners instead of pill)
 </div>
 ```
 
-When logo asset is unavailable, use placeholder:
+Always use the actual logo — never use placeholders:
 ```html
 <div class="unity-topbar-logo">
-  <div class="unity-topbar-logo-placeholder">LOGO</div>
+  <img src="../assets/logo-lqtchs-dark-blue.svg" alt="LQTCHS">
 </div>
 ```
 

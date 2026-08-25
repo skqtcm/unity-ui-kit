@@ -42,7 +42,7 @@
       "figmaNodeId": "4056:81317",
       "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-topbar-icon",
-      "note": "Icon-only button used in topbar/toolbar. Maps to unity-topbar-icon (40px hover circle).",
+      "note": "Icon-only button used in topbar/toolbar. Maps to unity-topbar-icon (32px, blue on hover).",
       "states": {
         "Default": "",
         "Hover": ":hover",
