@@ -1416,22 +1416,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--unity-radius-sm);
-  border: 1px solid transparent;
+  border-radius: 0;
+  border: none;
   cursor: pointer;
   font-size: 14px;
+  color: var(--unity-text-primary);
   transition: all var(--unity-transition-fast);
 }
 
 .unity-paginator-page:hover {
-  background: var(--unity-bg-overlay);
-  border-color: var(--unity-stroke-gray);
+  background: rgba(104, 154, 217, 0.15);
+  border-radius: 99px;
+  color: var(--unity-primary-blue);
 }
 
 .unity-paginator-page.active {
-  background: var(--unity-primary-blue);
+  background: var(--unity-dark-blue);
   color: var(--unity-white);
-  border-color: var(--unity-primary-blue);
+  border-radius: 99px;
 }
 
 
