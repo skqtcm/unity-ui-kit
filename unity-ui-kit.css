@@ -1853,6 +1853,57 @@ body {
 
 
 /* ═══════════════════════════════════════════════════════════
+   23d. ACCORDION
+   ═══════════════════════════════════════════════════════════ */
+
+.unity-accordion {
+  border: 1px solid var(--unity-divider);
+  border-radius: var(--unity-radius-md);
+  overflow: hidden;
+}
+
+.unity-accordion-item {
+  border-bottom: 1px solid var(--unity-divider);
+}
+
+.unity-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.unity-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--unity-space-16);
+  background: var(--unity-bg-main);
+  border: none;
+  cursor: pointer;
+  font-family: var(--unity-font-family);
+  font-size: 14px;
+  font-weight: var(--unity-font-weight-semibold);
+  color: var(--unity-text-primary);
+  transition: background var(--unity-transition-fast);
+}
+
+.unity-accordion-header:hover {
+  background: var(--unity-bg-overlay);
+}
+
+.unity-accordion-header[aria-expanded="true"] .material-symbols-outlined {
+  transform: rotate(180deg);
+}
+
+.unity-accordion-header .material-symbols-outlined {
+  transition: transform var(--unity-transition-fast);
+  color: var(--unity-text-secondary);
+}
+
+.unity-accordion-body {
+  padding: 0 var(--unity-space-16) var(--unity-space-16);
+}
+
+/* ═══════════════════════════════════════════════════════════
    23e. PROGRESS BAR
    ═══════════════════════════════════════════════════════════ */
 

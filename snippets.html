@@ -321,21 +321,33 @@
 <!-- ═══════════════ ACCORDION ═══════════════ -->
 <div class="snippet-section">
   <h2 class="unity-h3">Accordion</h2>
-  <div class="unity-card" style="max-width:500px;">
-    <button class="unity-btn unity-btn-link unity-btn-md" data-unity-collapse="accordion-1" aria-expanded="false" style="width:100%;justify-content:space-between;">
-      <span>Section One — Click to expand</span>
-      <span class="material-symbols-outlined icon-sm">expand_more</span>
-    </button>
-    <div id="accordion-1" style="display:none; padding:var(--unity-space-12) 0;">
-      <p class="unity-body unity-text-secondary">Hidden content revealed on toggle. Supports any nested elements.</p>
+  <div class="unity-accordion" style="max-width:500px;">
+    <div class="unity-accordion-item">
+      <button class="unity-accordion-header" data-unity-collapse="accordion-1" aria-expanded="true">
+        <span>Section One — Personal Information</span>
+        <span class="material-symbols-outlined icon-sm">expand_more</span>
+      </button>
+      <div class="unity-accordion-body" id="accordion-1">
+        <p class="unity-body unity-text-secondary">This content is visible by default. It can contain any elements — forms, tables, or text. Click the header to collapse.</p>
+      </div>
     </div>
-    <hr class="unity-divider" style="margin:8px 0;">
-    <button class="unity-btn unity-btn-link unity-btn-md" data-unity-collapse="accordion-2" aria-expanded="false" style="width:100%;justify-content:space-between;">
-      <span>Section Two — Click to expand</span>
-      <span class="material-symbols-outlined icon-sm">expand_more</span>
-    </button>
-    <div id="accordion-2" style="display:none; padding:var(--unity-space-12) 0;">
-      <p class="unity-body unity-text-secondary">Another collapsible section with different content.</p>
+    <div class="unity-accordion-item">
+      <button class="unity-accordion-header" data-unity-collapse="accordion-2" aria-expanded="false">
+        <span>Section Two — Contact Details</span>
+        <span class="material-symbols-outlined icon-sm">expand_more</span>
+      </button>
+      <div class="unity-accordion-body" id="accordion-2">
+        <p class="unity-body unity-text-secondary">Another collapsible section with different content. Expands on click.</p>
+      </div>
+    </div>
+    <div class="unity-accordion-item">
+      <button class="unity-accordion-header" data-unity-collapse="accordion-3" aria-expanded="false">
+        <span>Section Three — Employment History</span>
+        <span class="material-symbols-outlined icon-sm">expand_more</span>
+      </button>
+      <div class="unity-accordion-body" id="accordion-3">
+        <p class="unity-body unity-text-secondary">Third section content goes here.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -359,13 +371,13 @@
     </div>
     <div>
       <div class="unity-progress-label"><span>Storage Warning</span><span>85%</span></div>
-      <div class="unity-progress unity-progress-lg">
+      <div class="unity-progress">
         <div class="unity-progress-bar unity-progress-bar-warning" style="width:85%;"></div>
       </div>
     </div>
     <div>
       <div class="unity-progress-label"><span>Errors</span><span>30%</span></div>
-      <div class="unity-progress unity-progress-sm">
+      <div class="unity-progress">
         <div class="unity-progress-bar unity-progress-bar-danger" style="width:30%;"></div>
       </div>
     </div>
@@ -463,36 +475,24 @@
 
 <!-- ═══════════════ NAVIGATION ═══════════════ -->
 <div class="snippet-section">
-  <h2 class="unity-h3">Topbar + Raised Tabs</h2>
-  <div class="unity-topbar" style="border-radius:var(--unity-radius-md);">
-    <div class="unity-topbar-logo">
-      <div class="unity-topbar-logo-placeholder">LOGO</div>
-    </div>
-    <div class="unity-tabs">
-      <div class="unity-tab active">Active Tab</div>
-      <div class="unity-tab">Tab Two</div>
-      <div class="unity-tab">Tab Three</div>
-    </div>
-  </div>
-
-  <div class="snippet-label" style="margin-top:24px;">Underline Tabs (content areas)</div>
-  <div class="unity-tabs-underline" style="max-width:500px;">
-    <div class="unity-tab active">Overview</div>
-    <div class="unity-tab">Details</div>
-    <div class="unity-tab">History</div>
-    <div class="unity-tab">Attachments</div>
-  </div>
-
-  <div class="snippet-label" style="margin-top:24px;">Logo with image + Underline Tabs in Topbar</div>
+  <h2 class="unity-h3">Topbar with Underline Tabs</h2>
   <div class="unity-topbar" style="border-radius:var(--unity-radius-md);">
     <div class="unity-topbar-logo">
       <img src="assets/logo-lqtchs-dark-blue.svg" alt="LQTCHS">
     </div>
     <div class="unity-tabs-underline">
       <div class="unity-tab active">WorkflowQueue</div>
-      <div class="unity-tab">MCM</div>
+      <div class="unity-tab">Events</div>
       <div class="unity-tab">Reports</div>
     </div>
+  </div>
+
+  <div class="snippet-label" style="margin-top:24px;">Underline Tabs (standalone, content areas)</div>
+  <div class="unity-tabs-underline" style="max-width:500px;">
+    <div class="unity-tab active">Overview</div>
+    <div class="unity-tab">Details</div>
+    <div class="unity-tab">History</div>
+    <div class="unity-tab">Attachments</div>
   </div>
 </div>
 
