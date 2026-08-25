@@ -218,7 +218,7 @@
         "White": "unity-badge-default (white bg context)"
       },
       "sizes": {
-        "Small": "unity-badge-text (10.5px)",
+        "Small": "unity-badge-text (12px)",
         "Default": "unity-body (14px)",
         "Large": "",
         "X-Large": ""
@@ -419,8 +419,8 @@
       "baseClass": "unity-avatar",
       "sizes": {
         "S": "unity-avatar-sm (28px)",
-        "M": "unity-avatar (36px, default)",
-        "L": "unity-avatar-lg (48px)"
+        "M": "unity-avatar (40px, default)",
+        "L": "unity-avatar-lg (56px)"
       },
       "example": "<div class=\"unity-avatar unity-avatar-sm\">JD</div>"
     },

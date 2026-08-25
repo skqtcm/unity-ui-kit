@@ -433,21 +433,6 @@ body {
 }
 
 /* Toggle / Switch */
-.unity-switch {
-  position: relative;
-  width: 36px;
-  height: 20px;
-  background: var(--unity-toggle-gray);
-  border-radius: var(--unity-radius-full);
-  cursor: pointer;
-  transition: background var(--unity-transition-fast);
-}
-
-.unity-switch.active {
-  background: var(--unity-primary-blue);
-}
-
-
 /* ═══════════════════════════════════════════════════════════
    7. CARDS & CONTAINERS
    ═══════════════════════════════════════════════════════════ */
