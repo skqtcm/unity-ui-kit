@@ -8,11 +8,11 @@
 ## RULES (Non-negotiable)
 
 1. **NEVER write custom CSS.** Not a single rule, not a `<style>` block, not a class definition.
-2. **NEVER use inline styles.** No `style="..."` attributes on any element.
+2. **NEVER use inline styles** except the explicit exceptions listed in "ALLOWED INLINE STYLES" below.
 3. **NEVER hardcode colors, spacing, fonts, or shadows.** Everything comes from kit classes and tokens.
 4. **ONLY use classes documented in this file.** If a class doesn't exist here, it doesn't exist.
 5. **ONLY use the HTML structure patterns shown here.** Don't invent element nesting.
-6. **Always include the three CDN links + kit CSS + kit JS** in every HTML file.
+6. **Always include the two CDN links (Public Sans font + Material Symbols icons) + kit CSS + kit JS** in every HTML file.
 
 ---
 
@@ -50,6 +50,18 @@
 | `unity-content` | Main content area. `flex:1`, padding 24px, flex-col, gap 20px. |
 | `unity-page-header` | Flex row, space-between. For title + action buttons. |
 | `unity-container` | Max-width 1440px, centered, horizontal padding 24px. |
+| `unity-topbar` | White topbar. 64px height, bottom border. |
+| `unity-topbar-branded` | Gradient topbar (logged-out state). |
+| `unity-topbar-logo` | Logo container inside topbar. |
+| `unity-topbar-logo-placeholder` | Text placeholder when logo SVG unavailable. |
+| `unity-topbar-hamburger` | Menu toggle icon in topbar. |
+| `unity-topbar-title` | App title text in topbar. |
+| `unity-topbar-spacer` | Flex spacer to push items right. |
+| `unity-topbar-search` | Search input box in topbar. |
+| `unity-topbar-tools` | Icon toolbar group (settings, notifications). |
+| `unity-topbar-icon` | 40px icon button (hover highlight). |
+| `unity-topbar-avatar` | 36px circular avatar placeholder. |
+| `unity-block-header` | Sub-page header (back arrow + title + badge + actions). |
 
 ### Typography
 
@@ -77,6 +89,9 @@
 | `unity-text-secondary` | #848086 (muted) |
 | `unity-text-placeholder` | #6B7280 |
 | `unity-text-disabled` | #BDB8C1 |
+| `unity-text-success` | #008817 (success green) |
+| `unity-text-warning` | #FACE00 (warning yellow) |
+| `unity-text-danger` | #B21D38 (flagged red) |
 
 ### Icons (Material Symbols)
 
@@ -124,6 +139,13 @@ Browse icons: https://fonts.google.com/icons
 </button>
 ```
 
+**Full-width (block) button:** Add `unity-btn-block` — width 100%, text left-aligned.
+```html
+<button class="unity-btn unity-btn-secondary unity-btn-sm unity-btn-block">
+  <span class="material-symbols-outlined icon-sm">upload</span> Upload File
+</button>
+```
+
 **Disabled:** Add `disabled` attribute OR `unity-btn-disabled` class.
 
 ### Segmented Button Group
@@ -151,7 +173,7 @@ Browse icons: https://fonts.google.com/icons
 ```
 
 **Modifiers:**
-- `unity-label-required` — adds red asterisk
+- `unity-label-required` — adds dark blue asterisk (*)
 - `unity-label-uppercase` — 11px, uppercase, bold, letter-spacing
 - `unity-input-error` — red border
 - `unity-help-text-error` — red help text
@@ -191,6 +213,10 @@ Browse icons: https://fonts.google.com/icons
 ```
 
 Options: `unity-filter-grid-2`, `unity-filter-grid-3`, `unity-filter-grid-4`, `unity-filter-grid-5`
+
+**When to use which grid:**
+- `unity-form-grid` — auto-responsive columns (wraps on narrow screens). Use inside cards for data entry forms.
+- `unity-filter-grid-{n}` — fixed N columns. Use inside `unity-search-panel` for filter controls.
 
 ### Checkboxes & Radios
 
@@ -319,7 +345,7 @@ Modifier: `unity-chip-square` (rounded corners instead of pill)
   <div class="unity-topbar-logo">
     <img src="path/to/logo.svg" alt="LQTCHS">
   </div>
-  <div class="unity-tabs">
+  <div class="unity-tabs-underline">
     <div class="unity-tab active">Active</div>
     <div class="unity-tab">Other</div>
   </div>
@@ -333,7 +359,9 @@ When logo asset is unavailable, use placeholder:
 </div>
 ```
 
-### Underline Tabs (content areas)
+### Tabs
+
+`unity-tabs-underline` is the standard tab component (matches Figma). Blue underline for active, gray text for inactive.
 
 ```html
 <div class="unity-tabs-underline">
@@ -343,19 +371,92 @@ When logo asset is unavailable, use placeholder:
 </div>
 ```
 
-Use `unity-tabs-underline` for inline/content navigation. Use raised `unity-tabs` only inside `unity-topbar`.
+Use `unity-tabs-underline` everywhere — both in `unity-topbar` and in content areas. The legacy raised `unity-tabs` is available but NOT the Figma standard.
+
+### Topbar — Logged In (with hamburger, search, tools)
+
+```html
+<div class="unity-topbar">
+  <div class="unity-topbar-hamburger">
+    <span class="material-symbols-outlined">menu</span>
+  </div>
+  <span class="unity-topbar-title">App Title</span>
+  <div class="unity-topbar-spacer"></div>
+  <div class="unity-topbar-search">
+    <span class="material-symbols-outlined icon-sm unity-text-secondary">search</span>
+    <input type="text" placeholder="Search">
+  </div>
+  <div class="unity-topbar-tools">
+    <div class="unity-topbar-icon"><span class="material-symbols-outlined">settings</span></div>
+    <div class="unity-topbar-icon"><span class="material-symbols-outlined">notifications</span></div>
+  </div>
+  <div class="unity-topbar-avatar"><span class="material-symbols-outlined">person</span></div>
+</div>
+```
+
+### Topbar — Branded/Logged Out (gradient)
+
+```html
+<div class="unity-topbar-branded">
+  <div class="unity-topbar-logo">
+    <img src="path/to/logo-white.svg" alt="LQTCHS">
+  </div>
+</div>
+```
 
 ### Navigation — Sidebar
 
+Purple gradient sidebar, 216px wide, 48px-tall nav links. Active link uses subtle white overlay. Includes search row, badge counts, and footer section.
+
 ```html
 <aside class="unity-navbar">
+  <div class="unity-navbar-logo">
+    <img src="path/to/logo-white.svg" alt="Leidos QTC Health Services">
+  </div>
+  <div class="unity-navbar-search">
+    <span class="material-symbols-outlined icon-sm">search</span> Search
+  </div>
   <a href="#" class="unity-nav-link active">
-    <span class="material-symbols-outlined icon-sm">dashboard</span> Dashboard
+    <span class="material-symbols-outlined icon-sm">cases</span> Case Management
+    <span class="unity-nav-link-badge">11</span>
   </a>
   <a href="#" class="unity-nav-link">
-    <span class="material-symbols-outlined icon-sm">settings</span> Settings
+    <span class="material-symbols-outlined icon-sm">note_add</span> New Referral
   </a>
+  <div class="unity-navbar-footer">
+    <a href="#" class="unity-nav-link">
+      <span class="material-symbols-outlined icon-sm">history</span> History
+    </a>
+  </div>
 </aside>
+```
+
+| Class | Purpose |
+|-------|---------|
+| `unity-navbar` | Sidebar container (216px, gradient, full-height) |
+| `unity-navbar-collapsed` | Collapsed sidebar variant (56px, icons-only) |
+| `unity-navbar-logo` | Logo area in sidebar |
+| `unity-navbar-search` | Search row in sidebar |
+| `unity-navbar-footer` | Footer section (auto margin-top, border separator) |
+| `unity-nav-link` | Nav item (48px height, icon + label) |
+| `unity-nav-link-badge` | Red count badge on nav link |
+
+### Block Header (sub-page navigation)
+
+```html
+<div class="unity-block-header">
+  <div class="unity-block-header-back">
+    <span class="material-symbols-outlined">arrow_back</span>
+  </div>
+  <span class="unity-block-header-title">Title</span>
+  <div class="unity-block-header-meta">
+    <span class="unity-block-header-id">6347249.2</span>
+    <span class="unity-block-header-label">FOH</span>
+  </div>
+  <div class="unity-block-header-actions">
+    <div class="unity-topbar-icon"><span class="material-symbols-outlined">more_vert</span></div>
+  </div>
+</div>
 ```
 
 ### Branded Header (purple)
@@ -461,14 +562,13 @@ Trigger with `data-unity-dropdown` attribute on a button.
 <div class="unity-paginator">
   <span>1-10 of 47 records</span>
   <div class="unity-paginator-pages">
+    <span class="unity-paginator-page"><span class="material-symbols-outlined icon-sm">chevron_left</span></span>
     <span class="unity-paginator-page active">1</span>
     <span class="unity-paginator-page">2</span>
     <span class="unity-paginator-page">3</span>
     <span class="unity-paginator-ellipsis">...</span>
     <span class="unity-paginator-page">100</span>
-    <button class="unity-paginator-text">Next</button>
-    <span class="unity-paginator-separator">|</span>
-    <button class="unity-paginator-text">Last</button>
+    <span class="unity-paginator-page"><span class="material-symbols-outlined icon-sm">chevron_right</span></span>
   </div>
 </div>
 ```
@@ -518,6 +618,8 @@ Sizes: `unity-progress-sm` (4px), default (8px), `unity-progress-lg` (12px)
   <span class="unity-breadcrumb-current">Current Page</span>
 </nav>
 ```
+
+Note: Leave separator spans empty — the "/" is auto-generated by CSS.
 
 ### Tooltips
 
@@ -574,7 +676,18 @@ Sizes: `unity-progress-sm` (4px), default (8px), `unity-progress-lg` (12px)
 ```js
 Unity.toast.show({ message: 'Saved!', type: 'success', duration: 5000 });
 // Types: info, success, warning, error
+// Default duration: 5000ms (auto-dismisses)
 ```
+
+For static prototypes showing a visible toast:
+```html
+<div class="unity-toast unity-toast-success visible">
+  <span class="material-symbols-outlined icon-sm">check_circle</span>
+  <span>Record saved successfully</span>
+</div>
+```
+
+Variants: `unity-toast-info`, `unity-toast-success`, `unity-toast-warning`, `unity-toast-error`
 
 ### Divider
 
@@ -603,6 +716,11 @@ Unity.toast.show({ message: 'Saved!', type: 'success', duration: 5000 });
 <a class="unity-action-link">Edit</a>
 ```
 
+**Editable cell (icon + value inline):** Use inside `<td>` for clickable edit actions:
+```html
+<td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> 8888888888</a></td>
+```
+
 ---
 
 ## LAYOUT UTILITIES
@@ -612,11 +730,14 @@ Unity.toast.show({ message: 'Saved!', type: 'success', duration: 5000 });
 | Class | Behavior |
 |-------|----------|
 | `unity-row` | `display:flex; align-items:center; gap:8px` |
+| `unity-row-between` | `display:flex; align-items:center; justify-content:space-between` |
 | `unity-col` | `display:flex; flex-direction:column; gap:8px` |
 
 ### Gap
 
 `unity-gap-4`, `unity-gap-8`, `unity-gap-12`, `unity-gap-16`, `unity-gap-20`, `unity-gap-24`
+
+Use `unity-gap-*` to override the default 8px gap on `unity-row` or `unity-col`. Use `unity-mt-*`/`unity-mb-*` for spacing between independent sections that are not in a flex container.
 
 ### Padding
 
@@ -627,6 +748,8 @@ Unity.toast.show({ message: 'Saved!', type: 'success', duration: 5000 });
 `unity-mt-8`, `unity-mt-16`, `unity-mt-24`, `unity-mb-8`, `unity-mb-16`, `unity-mb-24`
 
 ### 12-Column Grid
+
+**CAUTION:** `unity-col` (standalone) is a flex-column utility. `unity-col-{n}` is a grid column span. They are different systems — do not confuse them. You can combine both on one element: `<div class="unity-col-4 unity-col unity-gap-12">` (grid span of 4, flex-column inside).
 
 ```html
 <div class="unity-grid">
@@ -656,6 +779,22 @@ Responsive: `unity-md-col-{n}` (768px+), `unity-lg-col-{n}` (1024px+)
   <button class="unity-btn ...">Submit</button>
 </div>
 ```
+
+---
+
+## STATE CLASSES
+
+These classes control visibility and active states across components:
+
+| Class | Used on | Effect |
+|-------|---------|--------|
+| `visible` | `.unity-modal-overlay`, `.unity-dropdown-menu`, `.unity-menu` | Makes the element visible (default is hidden) |
+| `active` | `.unity-tab`, `.unity-paginator-page`, `.unity-nav-link`, `.unity-step`, `.unity-switch` | Active/current state |
+| `completed` | `.unity-step` | Step is done (shows checkmark, green connector) |
+| `disabled` | `tr`, `.unity-listbox-item` | Muted/non-interactive state |
+| `selected` | `.unity-radio-option`, `.unity-listbox-item` | Currently selected item |
+
+For static prototypes showing modals/dropdowns, add `visible` to the overlay/menu element.
 
 ---
 
@@ -698,6 +837,11 @@ The following are the ONLY cases where inline `style` is acceptable:
 
 1. `style="width:XX%"` on `.unity-progress-bar` — dynamic data binding
 2. `style="grid-template-columns: repeat(N, 1fr)"` on `.unity-form-grid` — when filter-grid classes don't match
+3. `style="width:Npx"` on table `<th>` — fixed column widths (e.g., checkbox column)
+4. **Page-level layout structure** (used exactly once per page):
+   - `style="flex-direction:row;"` on `.unity-page` — enables sidebar layout
+   - `style="flex:1; display:flex; flex-direction:column;"` on the main content wrapper div beside the sidebar
+   - `style="margin-top:48px;"` on secondary layout examples in the same file
 
 **Everything else must use kit classes.**
 
@@ -745,17 +889,61 @@ unity-page
 └── unity-footer
 ```
 
-### Recipe: Detail View with Sidebar
+### Recipe: Detail View with Sidebar (Expanded)
 
 ```
-unity-page (flex-direction: row via utility)
-├── aside.unity-navbar (sidebar)
-└── div (flex:1, flex-col)
+unity-page (style="flex-direction:row;")
+├── aside.unity-navbar (sidebar, 216px)
+│   ├── unity-navbar-logo → <img> white logo
+│   ├── unity-navbar-search (icon + "Search")
+│   ├── unity-nav-link.active (icon + label + optional unity-nav-link-badge)
+│   ├── unity-nav-link (×n)
+│   └── unity-navbar-footer
+│       └── unity-nav-link (×n)
+└── div (style="flex:1; display:flex; flex-direction:column;")
     ├── unity-content
     │   ├── unity-breadcrumb
     │   ├── unity-page-header
     │   ├── unity-grid (info cards)
     │   └── unity-card (stepper, etc.)
+    └── unity-footer
+```
+
+### Recipe: Detail View with Sidebar (Collapsed)
+
+```
+unity-page (style="flex-direction:row;")
+├── aside.unity-navbar-collapsed (56px icon-only)
+│   ├── unity-navbar-logo → <img> white logo (28px)
+│   ├── unity-nav-link (icon only, badges position absolute top-right)
+│   └── unity-navbar-footer
+│       └── unity-nav-link (icon only)
+└── div (style="flex:1; display:flex; flex-direction:column;")
+    ├── unity-topbar (hamburger + title + spacer + tools + avatar)
+    ├── unity-block-header (optional sub-page nav)
+    ├── unity-content
+    └── unity-footer
+```
+
+### Recipe: Full Navigation Layout (Sidebar + Topbar + Block Header)
+
+```
+unity-page (style="flex-direction:row;")
+├── aside.unity-navbar
+└── div (style="flex:1; display:flex; flex-direction:column;")
+    ├── unity-topbar
+    │   ├── unity-topbar-hamburger
+    │   ├── unity-topbar-title
+    │   ├── unity-topbar-spacer
+    │   ├── unity-topbar-search
+    │   ├── unity-topbar-tools → unity-topbar-icon (×n)
+    │   └── unity-topbar-avatar
+    ├── unity-block-header
+    │   ├── unity-block-header-back
+    │   ├── unity-block-header-title
+    │   ├── unity-block-header-meta (unity-block-header-id + unity-block-header-label)
+    │   └── unity-block-header-actions
+    ├── unity-content
     └── unity-footer
 ```
 
@@ -771,6 +959,22 @@ unity-page
 │   │   └── unity-form-grid (fields)
 │   ├── unity-card (more sections)
 │   └── unity-actions-right (Cancel + Save)
+└── unity-footer
+```
+
+### Recipe: Login / Unauthenticated Page
+
+```
+unity-page
+├── unity-topbar-branded (gradient bar with white logo)
+├── unity-content
+│   ├── unity-page-header (welcome title)
+│   └── unity-card (sign-in form)
+│       ├── unity-card-header
+│       └── unity-col unity-gap-16
+│           ├── unity-form-field (username)
+│           ├── unity-form-field (password)
+│           └── unity-btn unity-btn-primary unity-btn-lg unity-btn-block
 └── unity-footer
 ```
 
@@ -794,18 +998,20 @@ unity-modal-overlay
 |------|-----|
 | Page title + actions on same row | `unity-page-header` |
 | Purple branded header | `unity-header-branded` |
-| White header with tabs | `unity-topbar` + `unity-tabs` |
+| White header with tabs | `unity-topbar` + `unity-tabs-underline` |
 | Toggle between views | `unity-btn-group` |
 | Filter form above a table | `unity-search-panel` + `unity-filter-grid-{n}` |
 | Quick filter + bulk actions bar | `unity-toolbar` |
 | Toolbar + table + pagination grouped | `unity-data-section` (wrap all three) |
 | Dense data table (many columns) | `unity-table unity-table-dense` |
+| Simple table in a card (no toolbar/pagination) | `unity-card` containing `unity-table` |
 | Standard table | `unity-table` |
-| Underline tabs (content nav) | `unity-tabs-underline` |
+| Tabs (any context) | `unity-tabs-underline` |
 | Status indicator (short text) | `unity-badge` |
 | Status indicator (with icon) | `unity-tag` |
 | Removable filter tokens | `unity-chip` + `unity-chip-remove` |
 | Side navigation (dark) | `unity-navbar` + `unity-nav-link` |
+| Drawer/slide-out panel (no padding) | `unity-panel` |
 | Loading placeholder | `unity-skeleton` |
 | No data message | `unity-empty-state` |
 | Step-by-step progress | `unity-stepper` |

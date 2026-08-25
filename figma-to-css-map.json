@@ -1,292 +1,530 @@
 {
   "meta": {
     "description": "Maps Figma Unity UI Kit component names to CSS classes",
-    "version": "1.1",
+    "version": "1.2",
+    "figmaFile": "https://www.figma.com/design/4k8jrWQQxHYeDseVQzZWGe/Unity-UI-Kit-v1.0",
+    "figmaFileKey": "4k8jrWQQxHYeDseVQzZWGe",
     "exportedAt": "2026-08-24"
   },
   "components": {
     "button_unity": {
+      "figmaNodeId": "4056:81081",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-btn",
       "variants": {
         "Primary": "unity-btn-primary",
         "Secondary": "unity-btn-secondary",
         "Link": "unity-btn-link",
         "Danger": "unity-btn-danger",
-        "Disabled": "unity-btn-disabled"
+        "Success": "unity-btn-success"
       },
       "sizes": {
-        "Large": "unity-btn-lg",
-        "Medium": "unity-btn-md",
-        "Small": "unity-btn-sm"
+        "L": "unity-btn-lg",
+        "M": "unity-btn-md",
+        "S": "unity-btn-sm"
       },
-      "example": "<button class=\"unity-btn unity-btn-primary unity-btn-lg\"><span class=\"material-symbols-outlined icon-sm\">add</span> Label</button>"
+      "states": {
+        "Default": "",
+        "Hover": ":hover",
+        "Active": ":active",
+        "Focus": ":focus-visible",
+        "Disabled": "unity-btn-disabled / disabled attribute"
+      },
+      "modifiers": {
+        "Icon Only": "icon-only (no label text)",
+        "Start Icon": "<span class=\"material-symbols-outlined icon-sm\">icon_name</span> before label",
+        "End Icon": "<span class=\"material-symbols-outlined icon-sm\">icon_name</span> after label",
+        "Block": "unity-btn-block"
+      },
+      "example": "<button class=\"unity-btn unity-btn-primary unity-btn-md\"><span class=\"material-symbols-outlined icon-sm\">add</span> Label</button>"
+    },
+    "nav-button_unity": {
+      "figmaNodeId": "4056:81317",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-topbar-icon",
+      "note": "Icon-only button used in topbar/toolbar. Maps to unity-topbar-icon (40px hover circle).",
+      "states": {
+        "Default": "",
+        "Hover": ":hover",
+        "Focus": ":focus-visible",
+        "Active": "active",
+        "Disabled": "disabled"
+      }
+    },
+    "split_button": {
+      "figmaNodeId": "4056:81329",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-btn",
+      "note": "Split button with dropdown trigger. Use unity-btn + data-unity-dropdown on the chevron portion.",
+      "variants": {
+        "Primary": "unity-btn-primary",
+        "Secondary": "unity-btn-secondary"
+      },
+      "sizes": {
+        "L": "unity-btn-lg",
+        "M": "unity-btn-md",
+        "S": "unity-btn-sm"
+      }
+    },
+    "button-group_unity": {
+      "figmaNodeId": "4056:81395",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-btn-group",
+      "children": {
+        "activeButton": "unity-btn-group-active",
+        "inactiveButton": "unity-btn-group-inactive"
+      },
+      "note": "Segmented toggle with 2-5 buttons. Disabled variant uses disabled attribute.",
+      "example": "<div class=\"unity-btn-group\"><button class=\"unity-btn unity-btn-sm unity-btn-group-active\"><span class=\"material-symbols-outlined icon-sm\">view_list</span> List</button><button class=\"unity-btn unity-btn-sm unity-btn-group-inactive\"><span class=\"material-symbols-outlined icon-sm\">grid_view</span> Grid</button></div>"
     },
     "input": {
+      "figmaNodeId": "4056:96578",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-input",
-      "modifiers": {
-        "Error": "unity-input-error",
-        "Disabled": "disabled attribute"
-      },
       "wrapper": "unity-form-field",
       "label": "unity-label",
       "helpText": "unity-help-text",
+      "states": {
+        "Default": "",
+        "Hover": ":hover",
+        "Focus": ":focus",
+        "Disabled": "disabled attribute",
+        "Selected": "",
+        "Read Only": "readonly attribute"
+      },
+      "modifiers": {
+        "Error": "unity-input-error",
+        "Label Required": "unity-label-required (on label)",
+        "Label Uppercase": "unity-label-uppercase (on label)",
+        "Help Text Error": "unity-help-text-error",
+        "Start Icon": "material-symbols-outlined icon before input",
+        "End Icon": "material-symbols-outlined icon after input",
+        "Select Type": "unity-select (adds dropdown arrow)"
+      },
       "example": "<div class=\"unity-form-field\"><label class=\"unity-label unity-label-required\">Field Name</label><input class=\"unity-input\" placeholder=\"Enter value\"><span class=\"unity-help-text\">Helper text</span></div>"
     },
     "select_unity": {
+      "figmaNodeId": "4056:96738",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-input unity-select",
-      "example": "<select class=\"unity-input unity-select\"><option>Option 1</option></select>"
+      "states": {
+        "Default": "",
+        "Selected": "",
+        "Hover": ":hover",
+        "Focus": ":focus",
+        "Disabled": "disabled attribute"
+      },
+      "modifiers": {
+        "Error": "unity-input-error",
+        "Start Icon": "material-symbols-outlined icon before select"
+      },
+      "example": "<div class=\"unity-form-field\"><label class=\"unity-label\">Field</label><select class=\"unity-input unity-select\"><option>Option 1</option></select></div>"
     },
     "textarea": {
+      "figmaNodeId": "4056:99250",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-input unity-textarea",
-      "example": "<textarea class=\"unity-input unity-textarea\" rows=\"4\"></textarea>"
+      "states": {
+        "Default": "",
+        "Hover": ":hover",
+        "Focus": ":focus",
+        "Disabled": "disabled attribute"
+      },
+      "modifiers": {
+        "Error": "unity-input-error"
+      },
+      "example": "<div class=\"unity-form-field\"><label class=\"unity-label\">Description</label><textarea class=\"unity-input unity-textarea\" rows=\"4\"></textarea></div>"
     },
     "checkbox_unity": {
+      "figmaNodeId": "4056:91946",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-checkbox",
-      "example": "<label class=\"unity-checkbox\"><input type=\"checkbox\"> Label text</label>"
+      "states": {
+        "Default": "",
+        "Focus": ":focus-visible",
+        "Hover": ":hover",
+        "Checked": "checked attribute",
+        "Disabled": "disabled attribute"
+      },
+      "example": "<label class=\"unity-checkbox\"><input type=\"checkbox\" checked> Label text</label>"
     },
     "radiobutton_unity": {
+      "figmaNodeId": "4056:98556",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-radio",
       "cardVariant": "unity-radio-option",
       "groupClass": "unity-radio-group",
-      "example": "<div class=\"unity-radio-group\"><label class=\"unity-radio-option\"><input type=\"radio\" name=\"group\"><span>Option A</span></label></div>"
-    },
-    "card_content": {
-      "baseClass": "unity-card",
-      "header": "unity-card-header",
-      "title": "unity-card-title",
-      "example": "<div class=\"unity-card\"><div class=\"unity-card-header\"><h3 class=\"unity-card-title\">Title</h3></div><div>Content</div></div>"
-    },
-    "message": {
-      "baseClass": "unity-message",
-      "variants": {
-        "Warning": "unity-message-warning",
-        "Error": "unity-message-error",
-        "Success": "unity-message-success",
-        "Info": "unity-message-info"
+      "states": {
+        "Default": "",
+        "Focus": ":focus-visible",
+        "Selected": "checked attribute",
+        "Disabled": "disabled attribute"
       },
-      "example": "<div class=\"unity-message unity-message-warning\"><span class=\"material-symbols-outlined filled\">warning</span><span>Message text</span></div>"
+      "example": "<div class=\"unity-radio-group\"><label class=\"unity-radio-option\"><input type=\"radio\" name=\"group\" checked><span>Option A</span></label><label class=\"unity-radio-option\"><input type=\"radio\" name=\"group\"><span>Option B</span></label></div>"
+    },
+    "inputswitch_mcm": {
+      "figmaNodeId": "4056:99991",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-switch",
+      "wrapper": "unity-switch-label",
+      "ariaRole": "switch",
+      "dataAttr": "data-unity-switch",
+      "states": {
+        "Default": "",
+        "Hover": ":hover",
+        "Focus": ":focus-visible",
+        "Checked": "aria-checked=\"true\" + active class"
+      },
+      "example": "<label class=\"unity-switch-label\"><button class=\"unity-switch\" role=\"switch\" aria-checked=\"true\" data-unity-switch></button><span>Label</span></label>"
+    },
+    "DatePicker": {
+      "figmaNodeId": "4056:94817",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-input",
+      "note": "Use <input type=\"date\"> with unity-input class. For date range, use unity-date-range wrapper.",
+      "pickerVariants": ["Date", "Time", "Month", "Year", "Multiple Months"],
+      "example": "<div class=\"unity-form-field\"><label class=\"unity-label\">Date</label><input class=\"unity-input\" type=\"date\"></div>"
+    },
+    "chips_unity": {
+      "figmaNodeId": "2088:58542",
+      "figmaPage": "Chips",
+      "baseClass": "unity-chip",
+      "variants": {
+        "Pill": "unity-chip (default)",
+        "Square": "unity-chip unity-chip-square"
+      },
+      "colorModifiers": {
+        "Active": "unity-chip-active",
+        "Primary": "unity-chip-primary",
+        "Success": "unity-chip-success",
+        "Warning": "unity-chip-warning",
+        "Danger": "unity-chip-danger"
+      },
+      "children": {
+        "remove": "unity-chip-remove"
+      },
+      "example": "<span class=\"unity-chip unity-chip-active\">Selected <button class=\"unity-chip-remove\" aria-label=\"Remove\">&times;</button></span>"
     },
     "badge_unity": {
+      "figmaNodeId": "4056:10866",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-badge",
       "variants": {
         "Default": "unity-badge-default",
         "Success": "unity-badge-success",
         "Warning": "unity-badge-warning",
         "Danger": "unity-badge-danger",
-        "Secondary": "unity-badge-secondary"
+        "Secondary": "unity-badge-secondary",
+        "White": "unity-badge-default (white bg context)"
       },
-      "example": "<span class=\"unity-badge unity-badge-warning\">Pending</span>"
+      "sizes": {
+        "Small": "unity-badge-text (10.5px)",
+        "Default": "unity-body (14px)",
+        "Large": "",
+        "X-Large": ""
+      },
+      "example": "<span class=\"unity-badge unity-badge-success\">Active</span>"
     },
     "tag_unity": {
+      "figmaNodeId": "4056:99019",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-tag",
       "variants": {
         "Primary": "unity-tag-primary",
+        "Contrast": "unity-tag-primary",
+        "Info": "unity-tag-info",
         "Success": "unity-tag-success",
         "Warning": "unity-tag-warning",
         "Danger": "unity-tag-danger",
-        "Info": "unity-tag-info"
+        "FOH": "unity-tag-info"
+      },
+      "modifiers": {
+        "Pale": "default (pale background is the standard style)",
+        "Icon": "<span class=\"material-symbols-outlined icon-sm\">icon</span> before text"
       },
       "example": "<span class=\"unity-tag unity-tag-success\"><span class=\"material-symbols-outlined icon-sm\">check</span> Active</span>"
     },
-    "table-th": {
-      "baseClass": "unity-table thead th",
-      "note": "Use inside .unity-table"
+    "message": {
+      "figmaNodeId": "4056:97438",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-message",
+      "variants": {
+        "Error": "unity-message-error",
+        "Info": "unity-message-info",
+        "Warning": "unity-message-warning",
+        "Success": "unity-message-success",
+        "ContextError": "unity-message-error",
+        "ContextInfo": "unity-message-info",
+        "ContextWarn": "unity-message-warning",
+        "Contextsuccess": "unity-message-success"
+      },
+      "screenVariants": ["Desktop", "Mobile"],
+      "example": "<div class=\"unity-message unity-message-warning\"><span class=\"material-symbols-outlined filled\">warning</span><span>Warning message text</span></div>"
     },
-    "table-td": {
-      "baseClass": "unity-table tbody td",
-      "note": "Use inside .unity-table"
-    },
-    "Paginator": {
-      "baseClass": "unity-paginator",
-      "example": "<div class=\"unity-paginator\"><span>1-10 of 47</span><div class=\"unity-paginator-pages\"><span class=\"unity-paginator-page active\">1</span><span class=\"unity-paginator-page\">2</span></div></div>"
-    },
-    "Topbar": {
-      "baseClass": "unity-topbar",
-      "children": {
-        "logo": "unity-topbar-logo",
-        "tabs": "unity-tabs",
-        "tab": "unity-tab"
-      }
-    },
-    "Navigation Bar": {
-      "baseClass": "unity-navbar",
-      "children": {
-        "link": "unity-nav-link"
-      }
-    },
-    "RHRP footer": {
-      "baseClass": "unity-footer",
-      "children": {
-        "cui": "unity-footer-cui",
-        "row": "unity-footer-row",
-        "copyright": "unity-footer-copyright",
-        "links": "unity-footer-links"
-      }
+    "toast": {
+      "figmaNodeId": "4056:99572",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-toast",
+      "variants": {
+        "Info": "unity-toast-info",
+        "Success": "unity-toast-success",
+        "Warn": "unity-toast-warning",
+        "Error": "unity-toast-error",
+        "Secondary": "unity-toast-info",
+        "Contrast": "unity-toast-info"
+      },
+      "jsApi": "Unity.toast.show({ message: 'Text', type: 'success', duration: 5000 })",
+      "example": "<div class=\"unity-toast unity-toast-success visible\"><span class=\"material-symbols-outlined icon-sm\">check_circle</span><span>Saved successfully</span></div>"
     },
     "dialog toast": {
+      "figmaNodeId": "4056:99621",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-modal",
       "overlay": "unity-modal-overlay",
+      "variants": {
+        "Info": "default",
+        "Warning": "default",
+        "Error": "default",
+        "Success": "default"
+      },
       "children": {
         "header": "unity-modal-header",
         "title": "unity-modal-title",
         "close": "unity-modal-close",
         "body": "unity-modal-body",
         "footer": "unity-modal-footer"
-      }
+      },
+      "dataAttrs": {
+        "open": "data-unity-modal-open=\"id\"",
+        "close": "data-unity-modal-close"
+      },
+      "example": "<div class=\"unity-modal-overlay\" id=\"my-modal\" role=\"dialog\" aria-modal=\"true\"><div class=\"unity-modal\"><div class=\"unity-modal-header\"><h2 class=\"unity-modal-title\">Title</h2><button class=\"unity-modal-close\" data-unity-modal-close aria-label=\"Close\"><span class=\"material-symbols-outlined\">close</span></button></div><div class=\"unity-modal-body\"><p>Content</p></div><div class=\"unity-modal-footer\"><button class=\"unity-btn unity-btn-secondary unity-btn-md\" data-unity-modal-close>Cancel</button><button class=\"unity-btn unity-btn-primary unity-btn-md\">Confirm</button></div></div></div>"
     },
-    "toast": {
-      "baseClass": "unity-toast",
+    "Topbar": {
+      "figmaNodeId": "4056:98007",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-topbar",
       "variants": {
-        "Info": "unity-toast-info",
-        "Success": "unity-toast-success",
-        "Warning": "unity-toast-warning",
-        "Error": "unity-toast-error"
-      }
+        "Logged in: true": "unity-topbar (with hamburger, search, tools, avatar)",
+        "Logged in: false": "unity-topbar-branded (gradient, logo only)"
+      },
+      "children": {
+        "logo": "unity-topbar-logo",
+        "logoPlaceholder": "unity-topbar-logo-placeholder",
+        "hamburger": "unity-topbar-hamburger",
+        "title": "unity-topbar-title",
+        "spacer": "unity-topbar-spacer",
+        "search": "unity-topbar-search",
+        "tools": "unity-topbar-tools",
+        "icon": "unity-topbar-icon",
+        "avatar": "unity-topbar-avatar",
+        "tabs": "unity-tabs-underline"
+      },
+      "example": "<div class=\"unity-topbar\"><div class=\"unity-topbar-hamburger\"><span class=\"material-symbols-outlined\">menu</span></div><span class=\"unity-topbar-title\">App</span><div class=\"unity-topbar-spacer\"></div><div class=\"unity-topbar-search\"><span class=\"material-symbols-outlined icon-sm unity-text-secondary\">search</span><input type=\"text\" placeholder=\"Search\"></div><div class=\"unity-topbar-tools\"><div class=\"unity-topbar-icon\"><span class=\"material-symbols-outlined\">settings</span></div><div class=\"unity-topbar-icon\"><span class=\"material-symbols-outlined\">notifications</span></div></div><div class=\"unity-topbar-avatar\"><span class=\"material-symbols-outlined\">person</span></div></div>"
     },
-    "Tooltips": {
-      "baseClass": "unity-tooltip",
-      "wrapper": "unity-tooltip-wrapper"
+    "Navigation Bar": {
+      "figmaNodeId": "4056:98101",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-navbar",
+      "variants": {
+        "Expanded: true": "unity-navbar (216px, full labels)",
+        "Expanded: false": "unity-navbar-collapsed (56px, icons only)"
+      },
+      "children": {
+        "logo": "unity-navbar-logo",
+        "search": "unity-navbar-search",
+        "link": "unity-nav-link",
+        "linkBadge": "unity-nav-link-badge",
+        "footer": "unity-navbar-footer"
+      },
+      "example": "<aside class=\"unity-navbar\"><div class=\"unity-navbar-logo\"><img src=\"logo-white.svg\" alt=\"Logo\"></div><div class=\"unity-navbar-search\"><span class=\"material-symbols-outlined icon-sm\">search</span> Search</div><a href=\"#\" class=\"unity-nav-link active\"><span class=\"material-symbols-outlined icon-sm\">cases</span> Cases <span class=\"unity-nav-link-badge\">11</span></a><div class=\"unity-navbar-footer\"><a href=\"#\" class=\"unity-nav-link\"><span class=\"material-symbols-outlined icon-sm\">history</span> History</a></div></aside>"
+    },
+    "Block Header": {
+      "figmaNodeId": "1704:916",
+      "figmaPage": "Navigation",
+      "baseClass": "unity-block-header",
+      "children": {
+        "back": "unity-block-header-back",
+        "title": "unity-block-header-title",
+        "id": "unity-block-header-id",
+        "label": "unity-block-header-label",
+        "meta": "unity-block-header-meta",
+        "actions": "unity-block-header-actions"
+      },
+      "properties": {
+        "Go Back Arrow": "unity-block-header-back (toggle visibility)",
+        "Case Number": "unity-block-header-id",
+        "Tag": "unity-block-header-label (uses unity-tag inside)"
+      },
+      "example": "<div class=\"unity-block-header\"><div class=\"unity-block-header-back\"><span class=\"material-symbols-outlined\">arrow_back</span></div><span class=\"unity-block-header-title\">Case Details</span><div class=\"unity-block-header-meta\"><span class=\"unity-block-header-id\">6347249.2</span><span class=\"unity-block-header-label\">FOH</span></div><div class=\"unity-block-header-actions\"><div class=\"unity-topbar-icon\"><span class=\"material-symbols-outlined\">more_vert</span></div></div></div>"
+    },
+    ".atom / tab": {
+      "figmaNodeId": "4056:99095",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-tab",
+      "container": "unity-tabs-underline",
+      "states": {
+        "Selected: true": "active class",
+        "Selected: false": "default (gray text)",
+        "Disabled: true": "disabled style"
+      },
+      "example": "<div class=\"unity-tabs-underline\"><div class=\"unity-tab active\">Overview</div><div class=\"unity-tab\">Details</div><div class=\"unity-tab\">History</div></div>"
     },
     "Stepper": {
+      "figmaNodeId": "4056:98688",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-stepper",
+      "orientations": ["Horizontal", "Vertical"],
+      "stepsCount": ["2", "3", "4", "5", "6"],
       "children": {
         "step": "unity-step",
         "number": "unity-step-number",
         "connector": "unity-step-connector"
-      }
+      },
+      "stepStates": {
+        "Inactive": "default",
+        "Active": "active class",
+        "Done": "completed class",
+        "Checked": "completed class (with check icon)"
+      },
+      "example": "<div class=\"unity-stepper\"><div class=\"unity-step completed\"><div class=\"unity-step-number\"><span class=\"material-symbols-outlined icon-sm\">check</span></div><span class=\"unity-sub-bold\">Step 1</span></div><div class=\"unity-step-connector\"></div><div class=\"unity-step active\"><div class=\"unity-step-number\">2</div><span class=\"unity-sub-bold\">Step 2</span></div><div class=\"unity-step-connector\"></div><div class=\"unity-step\"><div class=\"unity-step-number\">3</div><span class=\"unity-sub-bold\">Step 3</span></div></div>"
+    },
+    "Paginator": {
+      "figmaNodeId": "2365:17794",
+      "figmaPage": "Table",
+      "baseClass": "unity-paginator",
+      "variants": {
+        "Default": "standard (text + page numbers)",
+        "Extandet": "extended (with per-page selector)",
+        "Minimized": "minimal (prev/next only)",
+        "w Search": "with go-to-page input"
+      },
+      "children": {
+        "pages": "unity-paginator-pages",
+        "page": "unity-paginator-page",
+        "ellipsis": "unity-paginator-ellipsis"
+      },
+      "example": "<div class=\"unity-paginator\"><span>1-10 of 47 records</span><div class=\"unity-paginator-pages\"><span class=\"unity-paginator-page\"><span class=\"material-symbols-outlined icon-sm\">chevron_left</span></span><span class=\"unity-paginator-page active\">1</span><span class=\"unity-paginator-page\">2</span><span class=\"unity-paginator-page\">3</span><span class=\"unity-paginator-ellipsis\">...</span><span class=\"unity-paginator-page\">100</span><span class=\"unity-paginator-page\"><span class=\"material-symbols-outlined icon-sm\">chevron_right</span></span></div></div>"
+    },
+    "Tooltips": {
+      "figmaNodeId": "4056:99908",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "data-unity-tooltip attribute",
+      "positions": ["Top", "Bottom", "Right", "Left"],
+      "example": "<button data-unity-tooltip=\"Tooltip text\">Hover me</button>"
     },
     "avatar": {
+      "figmaNodeId": "4056:10475",
+      "figmaPage": "Common Component Library 1.0",
       "baseClass": "unity-avatar",
       "sizes": {
-        "Small": "unity-avatar-sm",
-        "Default": "",
-        "Large": "unity-avatar-lg"
-      }
-    },
-    "Loading...": {
-      "baseClass": "unity-spinner"
-    },
-    "divider": {
-      "baseClass": "unity-divider",
-      "element": "hr"
-    },
-    "inputswitch_mcm": {
-      "baseClass": "unity-switch"
-    },
-    "Help Text": {
-      "baseClass": "unity-help-text",
-      "errorVariant": "unity-help-text-error"
-    },
-    "chip_unity": {
-      "baseClass": "unity-chip",
-      "modifiers": {
-        "Active": "unity-chip-active"
+        "S": "unity-avatar-sm (28px)",
+        "M": "unity-avatar (36px, default)",
+        "L": "unity-avatar-lg (48px)"
       },
-      "children": {
-        "remove": "unity-chip-remove"
-      },
-      "example": "<span class=\"unity-chip unity-chip-active\"><span class=\"material-symbols-outlined icon-sm\">check</span> Selected</span>"
+      "example": "<div class=\"unity-avatar unity-avatar-sm\">JD</div>"
     },
-    "menu_unity": {
-      "baseClass": "unity-menu",
-      "children": {
-        "item": "unity-menu-item",
-        "dangerItem": "unity-menu-item unity-menu-item-danger"
-      },
-      "example": "<div class=\"unity-menu\"><button class=\"unity-menu-item\">Edit</button><hr class=\"unity-divider\"><button class=\"unity-menu-item unity-menu-item-danger\">Delete</button></div>"
-    },
-    "listbox_unity": {
+    "Listbox": {
+      "figmaNodeId": "6059:44611",
+      "figmaPage": "Listbox",
       "baseClass": "unity-listbox",
+      "ariaRole": "listbox",
       "children": {
         "item": "unity-listbox-item"
       },
-      "modifiers": {
-        "Selected": "selected",
-        "Disabled": "disabled"
-      },
-      "ariaRole": "listbox",
-      "example": "<div class=\"unity-listbox\" role=\"listbox\"><div class=\"unity-listbox-item selected\" role=\"option\" aria-selected=\"true\">Item</div></div>"
-    },
-    "progress_bar": {
-      "baseClass": "unity-progress",
-      "children": {
-        "bar": "unity-progress-bar"
-      },
-      "variants": {
-        "Success": "unity-progress-bar-success",
-        "Warning": "unity-progress-bar-warning",
-        "Danger": "unity-progress-bar-danger"
-      },
-      "sizes": {
-        "Small": "unity-progress-sm",
+      "itemStates": {
         "Default": "",
-        "Large": "unity-progress-lg"
+        "Hover": ":hover",
+        "Active": "",
+        "Selected": "selected class",
+        "Disabled": "disabled class",
+        "Level Selected": "",
+        "Level": ""
       },
-      "example": "<div class=\"unity-progress\"><div class=\"unity-progress-bar\" style=\"width:72%;\"></div></div>"
-    },
-    "breadcrumb": {
-      "baseClass": "unity-breadcrumb",
-      "children": {
-        "separator": "unity-breadcrumb-separator",
-        "current": "unity-breadcrumb-current"
-      },
-      "example": "<nav class=\"unity-breadcrumb\"><a href=\"#\">Home</a><span class=\"unity-breadcrumb-separator\"></span><span class=\"unity-breadcrumb-current\">Page</span></nav>"
-    },
-    "toggle_switch": {
-      "baseClass": "unity-switch",
-      "ariaRole": "switch",
-      "dataAttr": "data-unity-switch",
-      "wrapper": "unity-switch-label",
-      "example": "<label class=\"unity-switch-label\"><button class=\"unity-switch\" role=\"switch\" aria-checked=\"true\" data-unity-switch></button><span>Label</span></label>"
-    },
-    "empty_state": {
-      "baseClass": "unity-empty-state",
-      "children": {
-        "icon": "unity-empty-state-icon",
-        "title": "unity-empty-state-title",
-        "description": "unity-empty-state-description"
-      },
-      "example": "<div class=\"unity-empty-state\"><span class=\"material-symbols-outlined unity-empty-state-icon\">inbox</span><div class=\"unity-empty-state-title\">No Data</div><div class=\"unity-empty-state-description\">Nothing here yet.</div></div>"
-    },
-    "skeleton_loader": {
-      "baseClass": "unity-skeleton",
-      "variants": {
-        "Text": "unity-skeleton-text",
-        "Heading": "unity-skeleton-heading",
-        "Avatar": "unity-skeleton-avatar",
-        "Button": "unity-skeleton-btn",
-        "Card": "unity-skeleton-card"
-      },
-      "example": "<div class=\"unity-skeleton unity-skeleton-text\"></div>"
-    },
-    "dropdown_menu": {
-      "baseClass": "unity-dropdown-menu",
-      "children": {
-        "danger": "unity-dropdown-danger"
-      },
-      "trigger": "data-unity-dropdown",
-      "example": "<div style=\"position:relative;\"><button data-unity-dropdown>Menu</button><div class=\"unity-dropdown-menu\"><a href=\"#\">Item</a></div></div>"
+      "example": "<div class=\"unity-listbox\" role=\"listbox\"><div class=\"unity-listbox-item selected\" role=\"option\" aria-selected=\"true\">Selected</div><div class=\"unity-listbox-item\" role=\"option\">Option</div><div class=\"unity-listbox-item disabled\" role=\"option\" aria-disabled=\"true\">Disabled</div></div>"
     },
     "Panel": {
-      "baseClass": "unity-panel"
-    },
-    "branded_header": {
-      "baseClass": "unity-header-branded",
-      "children": {
-        "title": "unity-header-branded-title",
-        "dot": "unity-header-branded-dot"
+      "figmaNodeId": "6174:15724",
+      "figmaPage": "Panel",
+      "baseClass": "unity-panel",
+      "variants": {
+        "left side": "panel on left",
+        "right side": "panel on right"
       },
-      "example": "<div class=\"unity-header-branded\"><div class=\"unity-header-branded-title\"><span class=\"unity-header-branded-dot\"></span><h1 class=\"unity-h2\">Page Title</h1></div></div>"
+      "modifiers": {
+        "expanded: true": "visible",
+        "expanded: false": "hidden"
+      }
     },
-    "button_group": {
-      "baseClass": "unity-btn-group",
+    "RHRP footer": {
+      "figmaNodeId": "3273:5648",
+      "figmaPage": "RHRP",
+      "baseClass": "unity-footer",
+      "screenVariants": ["Controlled Unclassified Information", "Mobile"],
       "children": {
-        "active": "unity-btn-group-active",
-        "inactive": "unity-btn-group-inactive"
+        "cui": "unity-footer-cui",
+        "row": "unity-footer-row",
+        "copyright": "unity-footer-copyright",
+        "links": "unity-footer-links"
       },
-      "example": "<div class=\"unity-btn-group\"><button class=\"unity-btn unity-btn-sm unity-btn-group-active\">Active</button><button class=\"unity-btn unity-btn-sm unity-btn-group-inactive\">Inactive</button></div>"
+      "example": "<div class=\"unity-footer\"><div class=\"unity-footer-cui\">Controlled Unclassified Information</div><div class=\"unity-footer-row\"><div class=\"unity-footer-copyright\">Copyright &copy; 1980-2026 <a href=\"#\">QTC</a></div><div class=\"unity-footer-links\"><a href=\"#\">Privacy</a><a href=\"#\">Terms of Use</a></div></div></div>"
+    },
+    "Loading...": {
+      "figmaNodeId": "3679:49657",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-spinner",
+      "example": "<div class=\"unity-spinner\"></div>"
+    },
+    "divider": {
+      "figmaNodeId": "2367:35478",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-divider",
+      "element": "hr",
+      "orientations": ["Horizontal", "Vertical"],
+      "example": "<hr class=\"unity-divider\">"
+    },
+    "Help Text": {
+      "figmaNodeId": "3247:68215",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-help-text",
+      "modifiers": {
+        "Error": "unity-help-text-error"
+      }
+    },
+    "Label": {
+      "figmaNodeId": "1933:3440",
+      "figmaPage": "Common Component Library 1.0",
+      "baseClass": "unity-label",
+      "modifiers": {
+        "Required": "unity-label-required",
+        "Uppercase": "unity-label-uppercase"
+      }
+    }
+  },
+  "composites": {
+    "card_content": {
+      "note": "Not a standalone Figma component — assembled from kit classes",
+      "baseClass": "unity-card",
+      "children": {
+        "header": "unity-card-header",
+        "title": "unity-card-title"
+      },
+      "example": "<div class=\"unity-card\"><div class=\"unity-card-header\"><h3 class=\"unity-card-title\">Title</h3><button class=\"unity-btn unity-btn-link unity-btn-sm\">Action</button></div><div>Content</div></div>"
+    },
+    "data_section": {
+      "note": "Groups toolbar + table + pagination as one visual unit",
+      "baseClass": "unity-data-section",
+      "children": {
+        "toolbar": "unity-toolbar",
+        "tableWrapper": "unity-table-wrapper",
+        "table": "unity-table",
+        "tableDense": "unity-table-dense",
+        "paginator": "unity-paginator"
+      },
+      "example": "<div class=\"unity-data-section\"><div class=\"unity-toolbar\">...</div><div class=\"unity-table-wrapper\"><table class=\"unity-table unity-table-dense\">...</table></div><div class=\"unity-paginator\">...</div></div>"
     },
     "toolbar": {
+      "note": "Assembled from kit classes — no standalone Figma component",
       "baseClass": "unity-toolbar",
       "children": {
         "left": "unity-toolbar-left",
@@ -296,32 +534,106 @@
       "example": "<div class=\"unity-toolbar\"><div class=\"unity-toolbar-left\"><div class=\"unity-filter-inline\"><span>FILTER:</span><input type=\"text\"></div></div><div class=\"unity-toolbar-right\"><button class=\"unity-btn unity-btn-sm unity-btn-success\">Action</button></div></div>"
     },
     "search_panel": {
+      "note": "Assembled from kit classes — no standalone Figma component",
       "baseClass": "unity-search-panel",
       "children": {
         "filterGrid": "unity-filter-grid",
         "actionsRight": "unity-actions-right"
       },
-      "variants": {
-        "5 columns": "unity-filter-grid-5",
-        "4 columns": "unity-filter-grid-4",
+      "gridVariants": {
+        "2 columns": "unity-filter-grid-2",
         "3 columns": "unity-filter-grid-3",
-        "2 columns": "unity-filter-grid-2"
-      }
+        "4 columns": "unity-filter-grid-4",
+        "5 columns": "unity-filter-grid-5"
+      },
+      "example": "<div class=\"unity-search-panel\"><div class=\"unity-filter-grid unity-filter-grid-4\">...</div><div class=\"unity-actions-right\"><button class=\"unity-btn unity-btn-secondary unity-btn-md\">Reset</button><button class=\"unity-btn unity-btn-primary unity-btn-md\">Search</button></div></div>"
+    },
+    "branded_header": {
+      "note": "Assembled from kit classes — no standalone Figma component",
+      "baseClass": "unity-header-branded",
+      "children": {
+        "title": "unity-header-branded-title",
+        "dot": "unity-header-branded-dot"
+      },
+      "example": "<div class=\"unity-header-branded\"><div class=\"unity-header-branded-title\"><span class=\"unity-header-branded-dot\"></span><h1 class=\"unity-h2\">Page Title</h1></div><div class=\"unity-btn-group\">...</div></div>"
     },
     "date_range": {
+      "note": "Assembled from kit classes",
       "baseClass": "unity-date-range",
       "children": {
         "separator": "unity-date-range-separator"
       },
       "example": "<div class=\"unity-date-range\"><input class=\"unity-input\" type=\"date\"><span class=\"unity-date-range-separator\">to</span><input class=\"unity-input\" type=\"date\"></div>"
     },
-    "Search bar": {
-      "baseClass": "unity-input",
-      "note": "Input with search icon: add material-symbols-outlined 'search' as start icon"
+    "dropdown_menu": {
+      "note": "Assembled from kit classes",
+      "baseClass": "unity-dropdown-menu",
+      "trigger": "data-unity-dropdown",
+      "children": {
+        "danger": "unity-dropdown-danger"
+      },
+      "example": "<button data-unity-dropdown>Menu</button><div class=\"unity-dropdown-menu\"><a href=\"#\">Edit</a><a href=\"#\">Duplicate</a><hr class=\"unity-divider\"><a href=\"#\" class=\"unity-dropdown-danger\">Delete</a></div>"
     },
-    "DatePicker": {
-      "baseClass": "unity-input",
-      "note": "Input type=date or with calendar icon"
+    "context_menu": {
+      "note": "Assembled from kit classes",
+      "baseClass": "unity-menu",
+      "children": {
+        "item": "unity-menu-item",
+        "divider": "unity-menu-divider",
+        "dangerItem": "unity-menu-item unity-menu-item-danger"
+      },
+      "example": "<div class=\"unity-menu\"><button class=\"unity-menu-item\"><span class=\"material-symbols-outlined icon-sm\">edit</span> Edit</button><div class=\"unity-menu-divider\"></div><button class=\"unity-menu-item unity-menu-item-danger\">Delete</button></div>"
+    },
+    "breadcrumb": {
+      "note": "Assembled from kit classes",
+      "baseClass": "unity-breadcrumb",
+      "children": {
+        "separator": "unity-breadcrumb-separator",
+        "current": "unity-breadcrumb-current"
+      },
+      "example": "<nav class=\"unity-breadcrumb\"><a href=\"#\">Home</a><span class=\"unity-breadcrumb-separator\"></span><a href=\"#\">Section</a><span class=\"unity-breadcrumb-separator\"></span><span class=\"unity-breadcrumb-current\">Current</span></nav>"
+    },
+    "progress_bar": {
+      "note": "Assembled from kit classes",
+      "baseClass": "unity-progress",
+      "children": {
+        "bar": "unity-progress-bar",
+        "label": "unity-progress-label"
+      },
+      "colorVariants": {
+        "Default": "unity-progress-bar",
+        "Success": "unity-progress-bar-success",
+        "Warning": "unity-progress-bar-warning",
+        "Danger": "unity-progress-bar-danger"
+      },
+      "sizes": {
+        "Small": "unity-progress-sm (4px)",
+        "Default": "8px",
+        "Large": "unity-progress-lg (12px)"
+      },
+      "example": "<div class=\"unity-progress-label\"><span>Upload</span><span>72%</span></div><div class=\"unity-progress\"><div class=\"unity-progress-bar\" style=\"width:72%\"></div></div>"
+    },
+    "empty_state": {
+      "note": "Assembled from kit classes",
+      "baseClass": "unity-empty-state",
+      "children": {
+        "icon": "unity-empty-state-icon",
+        "title": "unity-empty-state-title",
+        "description": "unity-empty-state-description"
+      },
+      "example": "<div class=\"unity-empty-state\"><span class=\"material-symbols-outlined unity-empty-state-icon\">inbox</span><div class=\"unity-empty-state-title\">No Data Found</div><div class=\"unity-empty-state-description\">Try adjusting your filters.</div><button class=\"unity-btn unity-btn-primary unity-btn-md\">Add New</button></div>"
+    },
+    "skeleton_loader": {
+      "note": "Assembled from kit classes",
+      "baseClass": "unity-skeleton",
+      "variants": {
+        "Text": "unity-skeleton-text",
+        "Heading": "unity-skeleton-heading",
+        "Avatar": "unity-skeleton-avatar",
+        "Button": "unity-skeleton-btn",
+        "Card": "unity-skeleton-card"
+      },
+      "example": "<div class=\"unity-skeleton unity-skeleton-text\"></div>"
     }
   },
   "tokens": {
@@ -336,7 +648,7 @@
       "note": "Available as --unity-space-{value}px, e.g. --unity-space-16"
     },
     "typography": {
-      "cssPrefix": "unity-h1 through unity-h6, unity-body, unity-sub",
+      "classes": ["unity-h1", "unity-h2", "unity-h3", "unity-h4", "unity-h5", "unity-h6", "unity-body", "unity-body-semibold", "unity-body-light", "unity-sub", "unity-sub-bold", "unity-table-heading", "unity-badge-text"],
       "note": "Applied via CSS classes, not custom properties"
     },
     "effects": {
@@ -353,13 +665,14 @@
   },
   "icons": {
     "figma": "Use unity-ui-kit-icons.json keys with importComponentSetByKeyAsync() in Figma Plugin API",
-    "web": "Use Material Symbols: <span class=\"material-symbols-outlined\">icon_name</span>",
+    "web": "Use Material Symbols Outlined: <span class=\"material-symbols-outlined\">icon_name</span>",
     "sizes": {
       "16px": "icon-sm",
-      "20px": "icon-md (default)",
+      "20px": "default (no class needed)",
       "24px": "icon-lg",
       "32px": "icon-xl"
     },
-    "filled": "Add class 'filled' for solid variant"
+    "filled": "Add class 'filled' for solid variant",
+    "browse": "https://fonts.google.com/icons"
   }
 }

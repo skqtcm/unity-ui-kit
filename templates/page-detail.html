@@ -13,41 +13,77 @@
 <div class="unity-page" style="flex-direction:row;">
 
   <!-- Side Navigation -->
-  <aside class="unity-navbar" style="width:240px; min-height:100vh;">
-    <div class="unity-topbar-logo" style="margin-bottom:var(--unity-space-24);">LQTCHS</div>
+  <aside class="unity-navbar" id="sidebar">
+    <div class="unity-navbar-logo">
+      <img src="../assets/logo-lqtchs-white.svg" alt="Leidos QTC Health Services" class="unity-logo-expanded">
+      <img src="../assets/logo-mark-white.svg" alt="LQTCHS" class="unity-logo-collapsed">
+    </div>
+    <div class="unity-navbar-search">
+      <span class="material-symbols-outlined icon-sm">search</span> <span class="unity-nav-label">Search</span>
+    </div>
     <a href="#" class="unity-nav-link active">
-      <span class="material-symbols-outlined icon-sm">dashboard</span> Dashboard
+      <span class="material-symbols-outlined icon-sm">dashboard</span> <span class="unity-nav-label">Dashboard</span>
     </a>
     <a href="#" class="unity-nav-link">
-      <span class="material-symbols-outlined icon-sm">event</span> Events
+      <span class="material-symbols-outlined icon-sm">event</span> <span class="unity-nav-label">Events</span>
     </a>
     <a href="#" class="unity-nav-link">
-      <span class="material-symbols-outlined icon-sm">people</span> Service Members
+      <span class="material-symbols-outlined icon-sm">people</span> <span class="unity-nav-label">Service Members</span>
     </a>
     <a href="#" class="unity-nav-link">
-      <span class="material-symbols-outlined icon-sm">upload_file</span> Uploads
+      <span class="material-symbols-outlined icon-sm">upload_file</span> <span class="unity-nav-label">Uploads</span>
     </a>
     <a href="#" class="unity-nav-link">
-      <span class="material-symbols-outlined icon-sm">bar_chart</span> Reports
+      <span class="material-symbols-outlined icon-sm">bar_chart</span> <span class="unity-nav-label">Reports</span>
     </a>
-    <div style="flex:1;"></div>
-    <a href="#" class="unity-nav-link">
-      <span class="material-symbols-outlined icon-sm">settings</span> Settings
-    </a>
-    <a href="#" class="unity-nav-link">
-      <span class="material-symbols-outlined icon-sm">logout</span> Sign Out
-    </a>
+    <div class="unity-navbar-footer">
+      <a href="#" class="unity-nav-link">
+        <span class="material-symbols-outlined icon-sm">settings</span> <span class="unity-nav-label">Settings</span>
+      </a>
+      <a href="#" class="unity-nav-link">
+        <span class="material-symbols-outlined icon-sm">logout</span> <span class="unity-nav-label">Sign Out</span>
+      </a>
+    </div>
   </aside>
 
   <!-- Main Content -->
   <div style="flex:1; display:flex; flex-direction:column;">
+
+    <!-- Topbar -->
+    <div class="unity-topbar">
+      <div class="unity-topbar-hamburger" id="sidebar-toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </div>
+      <span class="unity-topbar-title">Events</span>
+      <div class="unity-topbar-spacer"></div>
+      <div class="unity-topbar-search">
+        <span class="material-symbols-outlined icon-sm unity-text-secondary">search</span>
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="unity-topbar-tools">
+        <div class="unity-topbar-icon">
+          <span class="material-symbols-outlined">settings</span>
+        </div>
+        <div class="unity-topbar-icon">
+          <span class="material-symbols-outlined">notifications</span>
+        </div>
+      </div>
+      <div class="unity-topbar-avatar">
+        <span class="material-symbols-outlined">person</span>
+      </div>
+    </div>
+
     <!-- Content -->
     <div class="unity-content">
       <!-- Breadcrumb + Title -->
       <div>
-        <div class="unity-sub unity-text-secondary" style="margin-bottom:var(--unity-space-4);">
-          <a class="unity-action-link">Events</a> / <a class="unity-action-link">IL-BB-20250523-D-01</a> / Detail
-        </div>
+        <nav class="unity-breadcrumb">
+          <a href="#">Events</a>
+          <span class="unity-breadcrumb-separator"></span>
+          <a href="#">IL-BB-20250523-D-01</a>
+          <span class="unity-breadcrumb-separator"></span>
+          <span class="unity-breadcrumb-current">Detail</span>
+        </nav>
         <div class="unity-page-header">
           <h1 class="unity-h2">Event Detail — IL-BB-20250523-D-01</h1>
           <div class="unity-row">
@@ -68,27 +104,27 @@
             </button>
           </div>
           <div class="unity-col unity-gap-12">
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">Event ID</span>
               <span class="unity-body-semibold">IL-BB-20250523-D-01</span>
             </div>
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">Type</span>
               <span>Medical — Dental</span>
             </div>
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">Service Component</span>
               <span>USANG</span>
             </div>
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">Location</span>
               <span>Camp Lincoln, IL</span>
             </div>
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">Date</span>
               <span>May 23–25, 2025</span>
             </div>
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">Status</span>
               <span class="unity-badge unity-badge-warning">Pending UIC</span>
             </div>
@@ -100,25 +136,25 @@
             <h3 class="unity-card-title">Service Members</h3>
           </div>
           <div class="unity-col unity-gap-12">
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">Total Rostered</span>
               <span class="unity-h3">47</span>
             </div>
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">UIC Mismatches</span>
-              <span class="unity-h3" style="color:var(--unity-flagged-red);">5</span>
+              <span class="unity-h3 unity-text-danger">5</span>
             </div>
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">Scheduled</span>
               <span class="unity-h3">32</span>
             </div>
-            <div class="unity-row" style="justify-content:space-between;">
+            <div class="unity-row-between">
               <span class="unity-text-secondary">Completed</span>
-              <span class="unity-h3" style="color:var(--unity-success-green);">10</span>
+              <span class="unity-h3 unity-text-success">10</span>
             </div>
           </div>
           <hr class="unity-divider">
-          <button class="unity-btn unity-btn-primary unity-btn-md" style="width:100%;">
+          <button class="unity-btn unity-btn-primary unity-btn-md unity-btn-block">
             <span class="material-symbols-outlined icon-sm">people</span> View Full Roster
           </button>
         </div>
@@ -129,17 +165,17 @@
         <div class="unity-card-header">
           <h3 class="unity-card-title">Event Workflow</h3>
         </div>
-        <div class="unity-stepper" style="justify-content:center; padding:var(--unity-space-16) 0;">
+        <div class="unity-stepper">
           <div class="unity-step completed">
             <div class="unity-step-number"><span class="material-symbols-outlined icon-sm">check</span></div>
             <span class="unity-sub-bold">Created</span>
           </div>
-          <div class="unity-step-connector" style="background:var(--unity-success-green);"></div>
+          <div class="unity-step-connector"></div>
           <div class="unity-step completed">
             <div class="unity-step-number"><span class="material-symbols-outlined icon-sm">check</span></div>
             <span class="unity-sub-bold">Roster Uploaded</span>
           </div>
-          <div class="unity-step-connector" style="background:var(--unity-success-green);"></div>
+          <div class="unity-step-connector"></div>
           <div class="unity-step active">
             <div class="unity-step-number">3</div>
             <span class="unity-sub-bold">UIC Review</span>
@@ -179,6 +215,25 @@
     </div>
   </div>
 </div>
+
+<script>
+(function () {
+  var toggle = document.getElementById('sidebar-toggle');
+  var sidebar = document.getElementById('sidebar');
+  if (!toggle || !sidebar) return;
+
+  toggle.addEventListener('click', function () {
+    var isExpanded = sidebar.classList.contains('unity-navbar');
+    if (isExpanded) {
+      sidebar.classList.remove('unity-navbar');
+      sidebar.classList.add('unity-navbar-collapsed');
+    } else {
+      sidebar.classList.remove('unity-navbar-collapsed');
+      sidebar.classList.add('unity-navbar');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>

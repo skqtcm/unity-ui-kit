@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sidebar Navigation — Unity UI Kit Template</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="../unity-ui-kit.css" rel="stylesheet">
+<script src="../unity-ui-kit.js" defer></script>
+</head>
+<body>
+<div class="unity-page" style="flex-direction:row;">
+
+  <!-- Sidebar Navigation -->
+  <aside class="unity-navbar" id="sidebar">
+    <div class="unity-navbar-logo">
+      <img src="../assets/logo-lqtchs-white.svg" alt="Leidos QTC Health Services" class="unity-logo-expanded">
+      <img src="../assets/logo-mark-white.svg" alt="LQTCHS" class="unity-logo-collapsed">
+    </div>
+
+    <div class="unity-navbar-search">
+      <span class="material-symbols-outlined icon-sm">search</span> <span class="unity-nav-label">Search</span>
+    </div>
+
+    <a href="#" class="unity-nav-link active">
+      <span class="material-symbols-outlined icon-sm">cases</span> <span class="unity-nav-label">Case Management</span>
+      <span class="unity-nav-link-badge">11</span>
+    </a>
+    <a href="#" class="unity-nav-link">
+      <span class="material-symbols-outlined icon-sm">note_add</span> <span class="unity-nav-label">New Referral</span>
+    </a>
+    <a href="#" class="unity-nav-link">
+      <span class="material-symbols-outlined icon-sm">fax</span> <span class="unity-nav-label">Incoming Fax &amp; Reports</span>
+      <span class="unity-nav-link-badge">3</span>
+    </a>
+
+    <div class="unity-navbar-footer">
+      <a href="#" class="unity-nav-link">
+        <span class="material-symbols-outlined icon-sm">history</span> <span class="unity-nav-label">History</span>
+      </a>
+      <a href="#" class="unity-nav-link">
+        <span class="material-symbols-outlined icon-sm">apps</span> <span class="unity-nav-label">More Applications</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main content area -->
+  <div style="flex:1; display:flex; flex-direction:column;">
+
+    <!-- Topbar (logged in) -->
+    <div class="unity-topbar">
+      <div class="unity-topbar-hamburger" id="sidebar-toggle">
+        <span class="material-symbols-outlined">menu</span>
+      </div>
+      <span class="unity-topbar-title">Case Management</span>
+      <div class="unity-topbar-spacer"></div>
+      <div class="unity-topbar-search">
+        <span class="material-symbols-outlined icon-sm unity-text-secondary">search</span>
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="unity-topbar-tools">
+        <div class="unity-topbar-icon">
+          <span class="material-symbols-outlined">settings</span>
+        </div>
+        <div class="unity-topbar-icon">
+          <span class="material-symbols-outlined">notifications</span>
+        </div>
+      </div>
+      <div class="unity-topbar-avatar">
+        <span class="material-symbols-outlined">person</span>
+      </div>
+    </div>
+
+    <!-- Block Header (sub-page nav) -->
+    <div class="unity-block-header">
+      <div class="unity-block-header-back">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </div>
+      <span class="unity-block-header-title">Title</span>
+      <div class="unity-block-header-meta">
+        <span class="unity-block-header-id">6347249.2</span>
+        <span class="unity-block-header-label">FOH</span>
+      </div>
+      <div class="unity-block-header-actions">
+        <div class="unity-topbar-icon">
+          <span class="material-symbols-outlined">more_vert</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="unity-content">
+      <div class="unity-card">
+        <div class="unity-card-header">
+          <h3 class="unity-card-title">Content Area</h3>
+        </div>
+        <p class="unity-body unity-text-secondary">This template demonstrates the full Figma navigation layout: sidebar + topbar + block header. Click the hamburger menu to toggle between expanded and collapsed sidebar states.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="unity-footer">
+      <div class="unity-footer-row">
+        <div class="unity-footer-copyright">Copyright &copy; 1980-2026 <a href="#">QTC - A Leidos Company</a></div>
+        <div class="unity-footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var toggle = document.getElementById('sidebar-toggle');
+  var sidebar = document.getElementById('sidebar');
+  if (!toggle || !sidebar) return;
+
+  toggle.addEventListener('click', function () {
+    var isExpanded = sidebar.classList.contains('unity-navbar');
+    if (isExpanded) {
+      sidebar.classList.remove('unity-navbar');
+      sidebar.classList.add('unity-navbar-collapsed');
+    } else {
+      sidebar.classList.remove('unity-navbar-collapsed');
+      sidebar.classList.add('unity-navbar');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
