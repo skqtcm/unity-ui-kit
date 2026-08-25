@@ -79,7 +79,7 @@
 | `unity-sub` | 12px / 150%, Light |
 | `unity-sub-bold` | 12px / 150%, Bold |
 | `unity-table-heading` | 13px, SemiBold, uppercase, letter-spacing |
-| `unity-badge-text` | 10.5px / 150%, SemiBold |
+| `unity-badge-text` | 12px / 150%, SemiBold |
 
 ### Text Color Utilities
 
