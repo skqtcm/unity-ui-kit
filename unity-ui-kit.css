@@ -82,7 +82,7 @@
 
   /* ── Effects / Shadows ── */
   --unity-shadow-container: 0px 1px 2px 0px rgba(0, 0, 0, 0.08);
-  --unity-shadow-dialog: 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+  --unity-shadow-dialog: 0px 2px 12px 0px rgba(18, 18, 23, 0.15);
   --unity-shadow-drawer: -4px 0px 8px 0px rgba(0, 0, 0, 0.08);
   --unity-shadow-stepmenu: 3px 4px 4px 0px rgba(0, 0, 0, 0.25);
   --unity-focus-default: 0 0 0 2.8px rgba(191, 219, 254, 1);
@@ -327,8 +327,8 @@ body {
 
 /* Textarea */
 .unity-textarea {
-  min-height: 80px;
-  padding: var(--unity-space-12);
+  min-height: 120px;
+  padding: 10px var(--unity-space-12);
   resize: vertical;
 }
 
@@ -395,9 +395,9 @@ body {
 }
 
 .unity-radio input[type="radio"] {
-  width: 16px;
-  height: 16px;
-  margin-top: 2px;
+  width: 22px;
+  height: 22px;
+  margin-top: 0;
   accent-color: var(--unity-primary-blue);
   cursor: pointer;
   flex-shrink: 0;
@@ -865,7 +865,7 @@ body {
 .unity-tabs-underline .unity-tab.active {
   background: transparent;
   color: var(--unity-primary-blue);
-  font-weight: var(--unity-font-weight-semibold);
+  font-weight: var(--unity-font-weight-regular);
   border-bottom-color: var(--unity-primary-blue);
 }
 
@@ -885,10 +885,10 @@ body {
   display: flex;
   align-items: center;
   gap: var(--unity-space-8);
-  padding: 0 var(--unity-space-8);
+  padding: 0 var(--unity-space-16);
   height: 48px;
   border-radius: 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
   text-decoration: none;
   transition: all var(--unity-transition-fast);
@@ -915,8 +915,8 @@ body {
   border-radius: 50%;
   background: var(--unity-flagged-red);
   color: var(--unity-white);
-  font-size: 11px;
-  font-weight: var(--unity-font-weight-bold);
+  font-size: 12px;
+  font-weight: var(--unity-font-weight-semibold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -949,7 +949,7 @@ body {
 }
 
 .unity-navbar-logo img {
-  height: 40px;
+  height: 48px;
   width: auto;
   object-fit: contain;
 }
@@ -1090,7 +1090,7 @@ body {
 .unity-modal {
   background: var(--unity-bg-modal);
   border-radius: var(--unity-radius-lg);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--unity-shadow-dialog);
   width: 100%;
   max-width: 560px;
   max-height: 90vh;
@@ -1135,7 +1135,7 @@ body {
 
 .unity-modal-body p {
   margin-bottom: var(--unity-space-16);
-  line-height: 22px;
+  line-height: 14px;
 }
 
 .unity-modal-footer {
@@ -1527,7 +1527,7 @@ body {
   left: 0;
   margin-top: var(--unity-space-4);
   background: var(--unity-bg-main);
-  border: 1px solid var(--unity-divider);
+  border: 1px solid #cbd5e1;
   border-radius: var(--unity-radius-md);
   box-shadow: var(--unity-shadow-dialog);
   min-width: 160px;
@@ -1541,15 +1541,19 @@ body {
 
 .unity-dropdown-menu a,
 .unity-dropdown-menu button {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
-  padding: var(--unity-space-8) var(--unity-space-12);
+  min-height: 32px;
+  padding: var(--unity-space-4) var(--unity-space-8);
   color: var(--unity-text-primary);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 20px;
   font-family: var(--unity-font-family);
   background: none;
   border: none;
+  border-radius: var(--unity-radius-sm);
   text-align: left;
   cursor: pointer;
   transition: background var(--unity-transition-fast);
