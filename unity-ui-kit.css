@@ -710,19 +710,30 @@ body {
   justify-content: center;
   width: 32px;
   height: 32px;
-  border-radius: var(--unity-radius-sm);
+  border-radius: var(--unity-radius-md);
   cursor: pointer;
   color: var(--unity-text-secondary);
   transition: all var(--unity-transition-fast);
 }
 
 .unity-topbar-icon:hover {
-  background: var(--unity-gray-100);
-  color: var(--unity-text-primary);
+  background: var(--unity-btn-link-hover);
+  color: var(--unity-primary-blue);
 }
 
 .unity-topbar-icon:active {
-  background: var(--unity-gray-200);
+  background: var(--unity-btn-link-active);
+  color: var(--unity-primary-blue);
+}
+
+.unity-topbar-icon:focus-visible {
+  box-shadow: var(--unity-focus-default);
+  color: var(--unity-primary-blue);
+}
+
+.unity-topbar-icon:disabled, .unity-topbar-icon.disabled {
+  color: var(--unity-text-disabled);
+  pointer-events: none;
 }
 
 .unity-topbar-avatar {
