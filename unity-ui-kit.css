@@ -380,10 +380,44 @@ body {
 }
 
 .unity-checkbox input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
   width: 22px;
   height: 22px;
-  accent-color: var(--unity-primary-blue);
+  border: 2px solid var(--unity-stroke-gray);
+  border-radius: 6px;
+  background: var(--unity-white);
   cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: all var(--unity-transition-fast);
+}
+
+.unity-checkbox input[type="checkbox"]:checked {
+  background: var(--unity-primary-blue);
+  border-color: var(--unity-primary-blue);
+}
+
+.unity-checkbox input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--unity-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.unity-checkbox input[type="checkbox"]:focus-visible {
+  box-shadow: var(--unity-focus-default);
+}
+
+.unity-checkbox input[type="checkbox"]:disabled {
+  background: var(--unity-bg-disabled);
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* Radio */
@@ -395,12 +429,43 @@ body {
 }
 
 .unity-radio input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
   width: 22px;
   height: 22px;
   margin-top: 0;
-  accent-color: var(--unity-primary-blue);
+  border: 2px solid var(--unity-stroke-gray);
+  border-radius: 50%;
+  background: var(--unity-white);
   cursor: pointer;
   flex-shrink: 0;
+  position: relative;
+  transition: all var(--unity-transition-fast);
+}
+
+.unity-radio input[type="radio"]:checked {
+  background: var(--unity-primary-blue);
+  border-color: var(--unity-primary-blue);
+}
+
+.unity-radio input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--unity-white);
+}
+
+.unity-radio input[type="radio"]:focus-visible {
+  box-shadow: var(--unity-focus-default);
+}
+
+.unity-radio input[type="radio"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* Radio group with card-style options */
@@ -515,6 +580,36 @@ body {
 /* Table wrapper for overflow */
 .unity-table-wrapper {
   overflow-x: auto;
+}
+
+.unity-table input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--unity-stroke-gray);
+  border-radius: 6px;
+  background: var(--unity-white);
+  cursor: pointer;
+  position: relative;
+  transition: all var(--unity-transition-fast);
+}
+
+.unity-table input[type="checkbox"]:checked {
+  background: var(--unity-primary-blue);
+  border-color: var(--unity-primary-blue);
+}
+
+.unity-table input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--unity-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 
