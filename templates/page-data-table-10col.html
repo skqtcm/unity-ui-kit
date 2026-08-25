@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory Management — Asset Tracking</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="../unity-ui-kit.css" rel="stylesheet">
+<script src="../unity-ui-kit.js" defer></script>
+</head>
+<body>
+<div class="unity-page">
+
+  <!-- TOPBAR -->
+  <div class="unity-topbar">
+    <div class="unity-topbar-logo">
+      <img src="../assets/logo-lqtchs-dark-blue.svg" alt="LQTCHS">
+    </div>
+    <div class="unity-tabs-underline">
+      <div class="unity-tab">Dashboard</div>
+      <div class="unity-tab active">Inventory</div>
+      <div class="unity-tab">Orders</div>
+      <div class="unity-tab">Reports</div>
+    </div>
+    <div class="unity-topbar-spacer"></div>
+    <div class="unity-topbar-search">
+      <span class="material-symbols-outlined icon-sm unity-text-secondary">search</span>
+      <input type="text" placeholder="Search assets...">
+    </div>
+    <div class="unity-topbar-tools">
+      <div class="unity-topbar-icon"><span class="material-symbols-outlined">notifications</span></div>
+      <div class="unity-topbar-icon"><span class="material-symbols-outlined">settings</span></div>
+    </div>
+    <div class="unity-topbar-avatar"><span class="material-symbols-outlined">person</span></div>
+  </div>
+
+  <!-- SEARCH PANEL -->
+  <div class="unity-search-panel">
+    <div class="unity-filter-grid unity-filter-grid-5">
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Category</label>
+        <select class="unity-input unity-select">
+          <option>All Categories</option>
+          <option>Hardware</option>
+          <option>Software</option>
+          <option>Peripherals</option>
+          <option>Network Equipment</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Status</label>
+        <select class="unity-input unity-select">
+          <option>All Statuses</option>
+          <option>Active</option>
+          <option>In Maintenance</option>
+          <option>Retired</option>
+          <option>On Order</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Location</label>
+        <select class="unity-input unity-select">
+          <option>All Locations</option>
+          <option>Building A — Floor 1</option>
+          <option>Building A — Floor 2</option>
+          <option>Building B</option>
+          <option>Remote / Off-site</option>
+        </select>
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Assigned To</label>
+        <input class="unity-input" type="text" placeholder="Enter name or ID">
+      </div>
+      <div class="unity-form-field">
+        <label class="unity-label unity-label-uppercase">Purchase Date</label>
+        <div class="unity-date-range">
+          <input class="unity-input" type="date">
+          <span class="unity-date-range-separator">to</span>
+          <input class="unity-input" type="date">
+        </div>
+      </div>
+    </div>
+    <div class="unity-actions-right">
+      <button class="unity-btn unity-btn-secondary unity-btn-md">
+        <span class="material-symbols-outlined icon-sm">restart_alt</span> Reset
+      </button>
+      <button class="unity-btn unity-btn-primary unity-btn-md">
+        <span class="material-symbols-outlined icon-sm">search</span> Search
+      </button>
+    </div>
+  </div>
+
+  <!-- DATA SECTION -->
+  <div class="unity-data-section">
+
+    <!-- Toolbar -->
+    <div class="unity-toolbar">
+      <div class="unity-toolbar-left">
+        <div class="unity-filter-inline">
+          <span>FILTER:</span>
+          <input type="text">
+        </div>
+      </div>
+      <div class="unity-toolbar-right">
+        <button class="unity-btn unity-btn-sm unity-btn-primary">
+          <span class="material-symbols-outlined icon-sm">add</span> Add Asset
+        </button>
+        <button class="unity-btn unity-btn-sm unity-btn-secondary">
+          <span class="material-symbols-outlined icon-sm">download</span> Export
+        </button>
+      </div>
+    </div>
+
+    <!-- TABLE (10 columns) -->
+    <div class="unity-table-wrapper">
+      <table class="unity-table unity-table-dense">
+        <thead>
+          <tr>
+            <th class="sortable">Asset ID <span class="material-symbols-outlined icon-sm">arrow_drop_down</span></th>
+            <th>Asset Name</th>
+            <th>Category</th>
+            <th class="sortable">Status <span class="material-symbols-outlined icon-sm">arrow_drop_down</span></th>
+            <th>Location</th>
+            <th>Assigned To</th>
+            <th class="sortable">Purchase Date <span class="material-symbols-outlined icon-sm">arrow_drop_down</span></th>
+            <th>Warranty Exp.</th>
+            <th>Cost</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a class="unity-action-link">AST-001024</a></td>
+            <td>Dell Latitude 5540</td>
+            <td>Hardware</td>
+            <td><span class="unity-badge unity-badge-success">Active</span></td>
+            <td>Building A — Floor 2</td>
+            <td>J. Martinez</td>
+            <td>03/15/2025</td>
+            <td>03/15/2028</td>
+            <td>$1,249.00</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+          <tr>
+            <td><a class="unity-action-link">AST-001025</a></td>
+            <td>HP EliteDisplay E243</td>
+            <td>Peripherals</td>
+            <td><span class="unity-badge unity-badge-success">Active</span></td>
+            <td>Building A — Floor 1</td>
+            <td>S. Patel</td>
+            <td>01/08/2025</td>
+            <td>01/08/2028</td>
+            <td>$329.00</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+          <tr>
+            <td><a class="unity-action-link">AST-001026</a></td>
+            <td>Cisco Catalyst 9200</td>
+            <td>Network Equipment</td>
+            <td><span class="unity-badge unity-badge-warning">In Maintenance</span></td>
+            <td>Building B</td>
+            <td>Network Ops</td>
+            <td>11/20/2024</td>
+            <td>11/20/2027</td>
+            <td>$4,875.00</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+          <tr>
+            <td><a class="unity-action-link">AST-001027</a></td>
+            <td>Microsoft 365 E5 License</td>
+            <td>Software</td>
+            <td><span class="unity-badge unity-badge-success">Active</span></td>
+            <td>Remote / Off-site</td>
+            <td>R. Thompson</td>
+            <td>06/01/2025</td>
+            <td>06/01/2026</td>
+            <td>$57.00/mo</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+          <tr>
+            <td><a class="unity-action-link">AST-001028</a></td>
+            <td>Lenovo ThinkPad X1 Carbon</td>
+            <td>Hardware</td>
+            <td><span class="unity-badge unity-badge-secondary">Retired</span></td>
+            <td>Building A — Floor 1</td>
+            <td>Unassigned</td>
+            <td>02/10/2021</td>
+            <td>02/10/2024</td>
+            <td>$1,589.00</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+          <tr>
+            <td><a class="unity-action-link">AST-001029</a></td>
+            <td>Logitech MX Master 3S</td>
+            <td>Peripherals</td>
+            <td><span class="unity-badge unity-badge-success">Active</span></td>
+            <td>Building A — Floor 2</td>
+            <td>K. Nguyen</td>
+            <td>09/22/2025</td>
+            <td>09/22/2027</td>
+            <td>$99.00</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+          <tr>
+            <td><a class="unity-action-link">AST-001030</a></td>
+            <td>Ubiquiti UniFi AP Pro</td>
+            <td>Network Equipment</td>
+            <td><span class="unity-badge unity-badge-success">Active</span></td>
+            <td>Building B</td>
+            <td>Network Ops</td>
+            <td>08/14/2024</td>
+            <td>08/14/2027</td>
+            <td>$379.00</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+          <tr>
+            <td><a class="unity-action-link">AST-001031</a></td>
+            <td>Adobe Creative Cloud</td>
+            <td>Software</td>
+            <td><span class="unity-badge unity-badge-success">Active</span></td>
+            <td>Remote / Off-site</td>
+            <td>Design Team</td>
+            <td>04/01/2025</td>
+            <td>04/01/2026</td>
+            <td>$89.99/mo</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+          <tr>
+            <td><a class="unity-action-link">AST-001032</a></td>
+            <td>Dell PowerEdge R750</td>
+            <td>Hardware</td>
+            <td><span class="unity-badge unity-badge-default">On Order</span></td>
+            <td>Building B</td>
+            <td>Infrastructure</td>
+            <td>08/20/2026</td>
+            <td>08/20/2029</td>
+            <td>$12,450.00</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+          <tr>
+            <td><a class="unity-action-link">AST-001033</a></td>
+            <td>Samsung 27" Curved Monitor</td>
+            <td>Peripherals</td>
+            <td><span class="unity-badge unity-badge-warning">In Maintenance</span></td>
+            <td>Building A — Floor 1</td>
+            <td>A. Johnson</td>
+            <td>07/03/2024</td>
+            <td>07/03/2027</td>
+            <td>$449.00</td>
+            <td><a class="unity-action-link"><span class="material-symbols-outlined icon-sm">edit</span> Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="unity-paginator">
+      <span>1-10 of 1,247 records</span>
+      <div class="unity-paginator-pages">
+        <span class="unity-paginator-page"><span class="material-symbols-outlined icon-sm">chevron_left</span></span>
+        <span class="unity-paginator-page active">1</span>
+        <span class="unity-paginator-page">2</span>
+        <span class="unity-paginator-page">3</span>
+        <span class="unity-paginator-page">4</span>
+        <span class="unity-paginator-page">5</span>
+        <span class="unity-paginator-ellipsis">...</span>
+        <span class="unity-paginator-page">125</span>
+        <span class="unity-paginator-page"><span class="material-symbols-outlined icon-sm">chevron_right</span></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="unity-footer">
+    <div class="unity-footer-row">
+      <div class="unity-footer-copyright">Copyright &copy; 1980 - 2026 <a href="#">Leidos QTC Health Services</a></div>
+      <div class="unity-footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

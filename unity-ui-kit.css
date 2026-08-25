@@ -210,9 +210,9 @@ body {
 }
 
 /* Sizes */
-.unity-btn-lg { height: 40px; padding: 0 24px; font-size: 15px; }
-.unity-btn-md { height: 36px; padding: 0 20px; font-size: 14px; }
-.unity-btn-sm { height: 32px; padding: 0 16px; font-size: 12px; }
+.unity-btn-lg { height: 40px; padding: 0 24px; font-size: 15px; font-weight: 600; }
+.unity-btn-md { height: 32px; padding: 0 16px; font-size: 14px; font-weight: 400; }
+.unity-btn-sm { height: 24px; padding: 0 12px; font-size: 12px; font-weight: 400; }
 .unity-btn-block { width: 100%; justify-content: flex-start; }
 
 /* Primary */

@@ -129,8 +129,8 @@ Browse icons: https://fonts.google.com/icons
 | Class | Height |
 |-------|--------|
 | `unity-btn-lg` | 40px |
-| `unity-btn-md` | 36px |
-| `unity-btn-sm` | 32px |
+| `unity-btn-md` | 32px |
+| `unity-btn-sm` | 24px |
 
 **With icon:**
 ```html
