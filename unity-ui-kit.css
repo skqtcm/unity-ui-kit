@@ -682,6 +682,12 @@ body {
   padding: 0 var(--unity-space-12);
   height: 42px;
   min-width: 200px;
+  transition: border-color var(--unity-transition-fast), box-shadow var(--unity-transition-fast);
+}
+
+.unity-topbar-search:focus-within {
+  border-color: var(--unity-primary-blue);
+  box-shadow: var(--unity-focus-default);
 }
 
 .unity-topbar-search input {
@@ -718,6 +724,10 @@ body {
 
 .unity-topbar-icon:hover {
   background: var(--unity-btn-link-hover);
+  color: var(--unity-primary-blue);
+}
+
+.unity-topbar-icon:hover .material-symbols-outlined {
   color: var(--unity-primary-blue);
 }
 
