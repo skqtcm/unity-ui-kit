@@ -1900,7 +1900,13 @@ body {
 }
 
 .unity-accordion-body {
-  padding: 0 var(--unity-space-16) var(--unity-space-16);
+  padding: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.unity-accordion-body-inner {
+  padding: var(--unity-space-4) var(--unity-space-16) var(--unity-space-16);
 }
 
 /* ═══════════════════════════════════════════════════════════
