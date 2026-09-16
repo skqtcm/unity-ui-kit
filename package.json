@@ -22,5 +22,8 @@
   "private": true,
   "dependencies": {
     "@material-symbols/metadata": "^0.46.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.9.0"
   }
 }

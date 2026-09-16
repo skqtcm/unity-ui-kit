@@ -11,9 +11,36 @@ Built for creating pixel-accurate, accessible HTML prototypes that match the Fig
 
 ---
 
+## Installation
+
+### Option 1 — npm (from Azure DevOps)
+
+```bash
+npm install git+https://sqaazdapp01.qtcm.com/DefaultCollection/UX_Team/_git/Unity_UI-Kit
+```
+
+Then reference the assets from `node_modules/unity-ui-kit/`:
+
+```html
+<link href="node_modules/unity-ui-kit/unity-ui-kit.css" rel="stylesheet">
+<script src="node_modules/unity-ui-kit/unity-ui-kit.js" defer></script>
+```
+
+### Option 2 — Git submodule
+
+```bash
+git submodule add https://sqaazdapp01.qtcm.com/DefaultCollection/UX_Team/_git/Unity_UI-Kit vendor/unity-ui-kit
+```
+
+### Option 3 — Manual copy
+
+Download or clone the repo and copy `unity-ui-kit.css` and `unity-ui-kit.js` into your project.
+
+---
+
 ## Quick Start
 
-Add these three lines to any HTML file:
+Add these lines to any HTML file:
 
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
