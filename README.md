@@ -16,7 +16,7 @@ Built for creating pixel-accurate, accessible HTML prototypes that match the Fig
 ### Option 1 — npm (from Azure DevOps)
 
 ```bash
-npm install git+https://sqaazdapp01.qtcm.com/DefaultCollection/UX_Team/_git/Unity_UI-Kit
+npm install git+https://qtcado.qtcm.com/DefaultCollection/UX_Team/_git/Unity_UI-Kit
 ```
 
 Then reference the assets from `node_modules/unity-ui-kit/`:
@@ -29,7 +29,7 @@ Then reference the assets from `node_modules/unity-ui-kit/`:
 ### Option 2 — Git submodule
 
 ```bash
-git submodule add https://sqaazdapp01.qtcm.com/DefaultCollection/UX_Team/_git/Unity_UI-Kit vendor/unity-ui-kit
+git submodule add https://qtcado.qtcm.com/DefaultCollection/UX_Team/_git/Unity_UI-Kit vendor/unity-ui-kit
 ```
 
 ### Option 3 — Manual copy
